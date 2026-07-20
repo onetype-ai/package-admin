@@ -1,0 +1,28 @@
+$ot.ui.explorer.Fn('item.visible', function(item)
+{
+	const condition = item.Get('condition');
+
+	if(condition.app.length && !condition.app.includes($ot.ui.apps.active()?.Get('id')))
+	{
+		return false;
+	}
+
+	if(condition.mode.length && !condition.mode.includes($ot.ui.modes.active()?.Get('id')))
+	{
+		return false;
+	}
+
+	if(condition.user && !$ot.get('user'))
+	{
+		return false;
+	}
+
+	/* @todo permission check — wire once permissions has/grant API exists */
+
+	if(condition.callback && condition.callback.call({}, item) === false)
+	{
+		return false;
+	}
+
+	return true;
+});

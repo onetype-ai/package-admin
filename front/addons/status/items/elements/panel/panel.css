@@ -1,0 +1,67 @@
+/* ===== STATUS PANEL ===== */
+
+.e-62866281
+{
+	display: block;
+	width: 100%;
+}
+
+.e-62866281 > .box
+{
+	display: flex;
+	flex-direction: column;
+	height: 300px;
+	background: var(--ot-bg-1);
+	border-top: 1px solid var(--ot-bg-1-border);
+}
+
+.e-62866281 .head
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-shrink: 0;
+	height: 38px;
+	padding: 0 8px 0 14px;
+	border-bottom: 1px solid var(--ot-bg-1-border);
+}
+
+.e-62866281 .title
+{
+	font-size: 12px;
+	font-weight: 500;
+	color: var(--ot-text-1);
+}
+
+.e-62866281 .close
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-2);
+	cursor: pointer;
+	transition: color var(--ot-transition-fast), background var(--ot-transition-fast);
+}
+
+.e-62866281 .close:hover
+{
+	background: var(--ot-bg-2);
+	color: var(--ot-text-1);
+}
+
+.e-62866281 .close > i
+{
+	font-size: 18px;
+}
+
+/* Render wrapper under the head — ot-node replaces the template div, so target by position */
+
+.e-62866281 > .box > :not(.head)
+{
+	flex: 1;
+	min-height: 0;
+	overflow: auto;
+}

@@ -1,0 +1,117 @@
+.e-49430f40
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Light scheme — the workspace well overrides the framework variables */
+
+body.ot-layout-light .e-49430f40 > .box
+{
+	--ot-bg-1: rgba(255, 255, 255, 1);
+	--ot-bg-1-border: rgba(242, 242, 242, 1);
+	--ot-bg-1-opacity: rgba(255, 255, 255, 0.85);
+	--ot-bg-1-hover: rgba(245, 245, 245, 1);
+
+	--ot-bg-2: rgba(250, 250, 250, 1);
+	--ot-bg-2-border: rgba(237, 237, 237, 1);
+	--ot-bg-2-opacity: rgba(250, 250, 250, 0.85);
+	--ot-bg-2-hover: rgba(240, 240, 240, 1);
+
+	--ot-bg-3: rgba(245, 245, 245, 1);
+	--ot-bg-3-border: rgba(232, 232, 232, 1);
+	--ot-bg-3-opacity: rgba(245, 245, 245, 0.85);
+	--ot-bg-3-hover: rgba(235, 235, 235, 1);
+
+	--ot-text-1: rgb(30, 30, 30);
+	--ot-text-2: rgb(60, 60, 60);
+	--ot-text-3: rgb(90, 90, 90);
+}
+
+/* Dark scheme — the same pattern mirrored, depths +5, hovers +10, borders +13 */
+
+body.ot-layout-dark .e-49430f40 > .box
+{
+	--ot-bg-1: rgba(30, 30, 30, 1);
+	--ot-bg-1-border: rgba(43, 43, 43, 1);
+	--ot-bg-1-opacity: rgba(30, 30, 30, 0.85);
+	--ot-bg-1-hover: rgba(40, 40, 40, 1);
+
+	--ot-bg-2: rgba(35, 35, 35, 1);
+	--ot-bg-2-border: rgba(48, 48, 48, 1);
+	--ot-bg-2-opacity: rgba(35, 35, 35, 0.85);
+	--ot-bg-2-hover: rgba(45, 45, 45, 1);
+
+	--ot-bg-3: rgba(40, 40, 40, 1);
+	--ot-bg-3-border: rgba(53, 53, 53, 1);
+	--ot-bg-3-opacity: rgba(40, 40, 40, 0.85);
+	--ot-bg-3-hover: rgba(50, 50, 50, 1);
+
+	--ot-text-1: rgb(225, 225, 225);
+	--ot-text-2: rgb(195, 195, 195);
+	--ot-text-3: rgb(165, 165, 165);
+}
+
+.e-49430f40 > .box
+{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border: 1px solid var(--ot-bg-1-border);
+	border-radius: var(--ot-radius-l) 0 0 var(--ot-radius-l);
+	background: var(--ot-bg-2);
+	color: var(--ot-text-1);
+	overflow: hidden;
+}
+
+.e-49430f40 > .box > .middle
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+}
+
+.e-49430f40 > .box > .slot.left,
+.e-49430f40 > .box > .slot.right
+{
+	position: relative;
+	display: flex;
+	flex-shrink: 0;
+}
+
+.e-49430f40 > .box > .middle > .slot.top
+{
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.e-49430f40 > .box > .middle > .slot.bottom
+{
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+}
+
+.e-49430f40 > .box > .middle > .slot.center
+{
+	position: relative;
+	flex: 1;
+	min-height: 0;
+	overflow: auto;
+}
+
+.e-49430f40 > .box > .middle > .slot > div
+{
+	display: contents;
+}
+
+.e-49430f40 > .box > .slot,
+.e-49430f40 > .box > div > .slot
+{
+	z-index: 5;
+}

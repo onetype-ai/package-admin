@@ -1,0 +1,16 @@
+{
+    "name": "@onetype/admin",
+    "version": "0.1.0",
+    "description": "Admin workspace for the OneType platform. The shell with dock, navbar, canvas, apps, dashboard and screens.",
+    "type": "module",
+    "license": "MIT",
+    "author": "Dejan Tomic <hi@iamdejan.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/onetype-ai/package-admin.git"
+    },
+    "peerDependencies": {
+        "@onetype/framework": ">=2.0.0",
+        "@onetype/platform": ">=0.1.0"
+    }
+}

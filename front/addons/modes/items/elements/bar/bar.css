@@ -1,0 +1,17 @@
+.e-479aeea0
+{
+	display: block;
+	width: fit-content;
+	margin: 0 auto;
+	height: 0;
+	pointer-events: none;
+}
+
+.e-479aeea0 > .holder
+{
+	--ot-height-m: 44px;
+
+	display: flex;
+	margin-top: -50px;
+	pointer-events: auto;
+}

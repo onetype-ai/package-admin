@@ -1,0 +1,228 @@
+.e-7f52fac2
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+.e-7f52fac2 > .box
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-l);
+	width: 100%;
+	min-height: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: var(--ot-spacing-l);
+}
+
+/* Pattern — full width backdrop behind the board */
+
+.e-7f52fac2 > .box.dots,
+.e-7f52fac2 > .box.lines
+{
+	--pattern: color-mix(in srgb, var(--ot-text-3) 14%, transparent);
+
+	max-width: none;
+}
+
+.e-7f52fac2 > .box.dots
+{
+	background-image: radial-gradient(var(--pattern) 1px, transparent 1px);
+	background-size: 22px 22px;
+}
+
+.e-7f52fac2 > .box.lines
+{
+	background-image:
+		linear-gradient(var(--pattern) 1px, transparent 1px),
+		linear-gradient(90deg, var(--pattern) 1px, transparent 1px);
+	background-size: 48px 48px;
+}
+
+.e-7f52fac2 > .box.dots > .section,
+.e-7f52fac2 > .box.lines > .section
+{
+	max-width: 1280px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Section */
+
+.e-7f52fac2 > .box > .section
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-m);
+}
+
+/* Panel section — whole section on its own background */
+
+.e-7f52fac2 > .box > .section.panel
+{
+	padding: var(--ot-spacing-l);
+	border-radius: var(--ot-radius-l);
+	border: 1px solid var(--line);
+}
+
+.e-7f52fac2 > .box > .section.panel.bg-1 { background: var(--ot-bg-1); --line: var(--ot-bg-1-border); }
+.e-7f52fac2 > .box > .section.panel.bg-2 { background: var(--ot-bg-2); --line: var(--ot-bg-2-border); }
+.e-7f52fac2 > .box > .section.panel.bg-3 { background: var(--ot-bg-3); --line: var(--ot-bg-3-border); }
+
+/* Grid */
+
+.e-7f52fac2 > .box > .section > .grid
+{
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-auto-flow: dense;
+	gap: var(--ot-spacing-m);
+}
+
+/* Card */
+
+.e-7f52fac2 .card
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	grid-column: span 4;
+	background: var(--ot-bg-1);
+	border: 1px solid var(--ot-bg-1-border);
+	border-radius: var(--ot-radius-l);
+	overflow: hidden;
+	transition: border-color var(--ot-transition-fast);
+}
+
+.e-7f52fac2 .card::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+	pointer-events: none;
+}
+
+.e-7f52fac2 .card.brand::after,
+.e-7f52fac2 .card.blue::after,
+.e-7f52fac2 .card.red::after,
+.e-7f52fac2 .card.orange::after,
+.e-7f52fac2 .card.green::after
+{
+	content: '';
+	position: absolute;
+	top: -40%;
+	left: -20%;
+	width: 260px;
+	height: 260px;
+	border-radius: 50%;
+	background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.e-7f52fac2 .card.brand { --glow: var(--ot-brand-opacity); }
+.e-7f52fac2 .card.blue { --glow: var(--ot-blue-opacity); }
+.e-7f52fac2 .card.red { --glow: var(--ot-red-opacity); }
+.e-7f52fac2 .card.orange { --glow: var(--ot-orange-opacity); }
+.e-7f52fac2 .card.green { --glow: var(--ot-green-opacity); }
+
+.e-7f52fac2 .card:hover
+{
+	border-color: var(--ot-bg-3-border);
+}
+
+.e-7f52fac2 .card > header
+{
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-m) var(--ot-spacing-m) 0;
+}
+
+.e-7f52fac2 .card > header > .wrap
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid var(--ot-bg-3-border);
+	border-radius: var(--ot-radius-m);
+	background: color-mix(in srgb, var(--ot-bg-3) 60%, transparent);
+	color: var(--ot-text-2);
+	flex-shrink: 0;
+}
+
+.e-7f52fac2 .card.brand > header > .wrap { background: var(--ot-brand-opacity); border-color: transparent; color: var(--ot-brand); }
+.e-7f52fac2 .card.blue > header > .wrap { background: var(--ot-blue-opacity); border-color: transparent; color: var(--ot-blue); }
+.e-7f52fac2 .card.red > header > .wrap { background: var(--ot-red-opacity); border-color: transparent; color: var(--ot-red); }
+.e-7f52fac2 .card.orange > header > .wrap { background: var(--ot-orange-opacity); border-color: transparent; color: var(--ot-orange); }
+.e-7f52fac2 .card.green > header > .wrap { background: var(--ot-green-opacity); border-color: transparent; color: var(--ot-green); }
+
+.e-7f52fac2 .card > header > .wrap > i
+{
+	font-size: 17px;
+}
+
+.e-7f52fac2 .card > header > .text
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	min-width: 0;
+}
+
+.e-7f52fac2 .card > header > .text > .title
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.e-7f52fac2 .card > header > .text > .description
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.e-7f52fac2 .card > .body
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+	padding: var(--ot-spacing-m);
+}
+
+@media (max-width: 900px)
+{
+	.e-7f52fac2 .card
+	{
+		grid-column: span 6 !important;
+	}
+}
+
+@media (max-width: 560px)
+{
+	.e-7f52fac2 .card
+	{
+		grid-column: span 12 !important;
+	}
+}

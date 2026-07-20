@@ -1,0 +1,70 @@
+.u-125d2db5
+{
+	display: block;
+	height: 100%;
+}
+
+.u-125d2db5 > .box
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var(--ot-spacing-m);
+	height: 100%;
+}
+
+.u-125d2db5 > .box > .empty
+{
+	margin: auto;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+.u-125d2db5 > .box > .bar
+{
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.u-125d2db5 > .box > .bar > .head
+{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: var(--ot-spacing-s);
+}
+
+.u-125d2db5 > .box > .bar > .head > .label
+{
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-m);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.u-125d2db5 > .box > .bar > .head > .value
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-s);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+	flex-shrink: 0;
+}
+
+.u-125d2db5 > .box > .bar > .track
+{
+	height: 8px;
+	background: var(--ot-bg-3);
+	border-radius: 99px;
+	overflow: hidden;
+}
+
+.u-125d2db5 > .box > .bar > .track > .fill
+{
+	height: 100%;
+	border-radius: 99px;
+	transition: width var(--ot-transition);
+}
