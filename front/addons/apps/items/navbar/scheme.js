@@ -10,10 +10,8 @@ onetype.AddonReady('admin.navbar', (navbar) =>
 		onClick: () =>
 		{
 			const active = admin.apps.active();
-			const schemes = ['midnight', 'studio', 'daylight', 'eclipse'];
-			const index = schemes.indexOf(active.Get('scheme'));
 
-			active.Set('scheme', schemes[(index + 1) % schemes.length]);
+			active.Set('scheme', active.Get('scheme') === 'dark' ? 'light' : 'dark');
 			admin.apps.theme();
 		}
 	});

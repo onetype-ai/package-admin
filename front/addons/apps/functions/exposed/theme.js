@@ -3,17 +3,9 @@ admin.apps.FnExpose('theme', function()
 	const root = document.documentElement;
 	const active = admin.apps.active();
 	const color = active?.Get('color');
-	const scheme = active ? active.Get('scheme') : 'studio';
+	const scheme = active ? active.Get('scheme') : 'dark';
 
-	const schemes = {
-		midnight: [],
-		studio: ['ot-layout-light'],
-		daylight: ['ot-light'],
-		eclipse: ['ot-light', 'ot-layout-dark']
-	};
-
-	document.body.classList.remove('ot-light', 'ot-layout-light', 'ot-layout-dark');
-	document.body.classList.add(...(schemes[scheme] ? schemes[scheme] : []));
+	document.body.classList.toggle('ot-light', scheme === 'light');
 
 	if(!color || color.includes('var('))
 	{
