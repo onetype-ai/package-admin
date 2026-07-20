@@ -1,4 +1,4 @@
-$ot.ui.dashboard.types.Item({
+admin.dashboard.types.Item({
 	id: 'numbers',
 	config: {
 		color: {

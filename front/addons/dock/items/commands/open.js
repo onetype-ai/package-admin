@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:dock:open',
+admin.dock.CommandAdd({
+	id: 'open',
 	exposed: true,
-	description: 'Open a dock item. Items with a render show it here instead of running click; opening one closes any other open item first. Persists the open item and emits $ot.ui.dock.open. Does nothing when the item is already open.',
-	metadata: { addon: 'ui.dock' },
+	description: 'Open a dock item. Items with a render show it here instead of running click; opening one closes any other open item first. Persists the open item and emits admin.dock.open. Does nothing when the item is already open.',
 	in: {
 		id: {
 			type: 'string',
@@ -18,7 +17,7 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const item = $ot.ui.dock.ItemGet(properties.id);
+		const item = admin.dock.ItemGet(properties.id);
 
 		if(!item)
 		{
@@ -30,7 +29,7 @@ commands.Item({
 			return resolve(null, 'Dock item ' + properties.id + ' has no render.', 400);
 		}
 
-		const changed = $ot.ui.dock.Fn('open', properties.id);
+		const changed = admin.dock.open(properties.id);
 
 		if(!changed)
 		{

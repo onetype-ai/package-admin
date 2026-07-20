@@ -1,5 +1,5 @@
-onetype.EmitRegister('ui.explorer.open', {
+onetype.EmitRegister('admin.explorer.open', {
 	description: 'Fired after the explorer opens.',
-	metadata: { addon: 'ui.explorer' },
+	metadata: { addon: 'admin.explorer' },
 	config: {}
 });

@@ -1,8 +1,8 @@
-$ot.ui.dashboard.Fn('visible', function(item)
+admin.dashboard.Fn('visible', function(item)
 {
 	const condition = item.Get('condition');
 
-	const app = $ot.ui.apps.active()?.Get('id');
+	const app = admin.apps.active()?.Get('id');
 
 	if(condition.app === true && !app)
 	{
@@ -19,7 +19,7 @@ $ot.ui.dashboard.Fn('visible', function(item)
 		return false;
 	}
 
-	const mode = $ot.ui.modes.active()?.Get('id');
+	const mode = admin.modes.active()?.Get('id');
 
 	if(condition.mode === true && !mode)
 	{

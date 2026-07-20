@@ -1,10 +1,9 @@
-elements.ItemAdd({
-	id: 'dashboard',
+admin.dashboard.ElementAdd({
+	id: 'board',
 	icon: 'dashboard',
 	name: 'Dashboard',
 	description: 'Responsive board that lays out dashboard widgets on a twelve column grid, grouped into sections, and resolves each widget data.',
 	category: 'Dashboard',
-	metadata: { addon: 'ui.dashboard' },
 	config: {
 		pattern: {
 			type: 'string',
@@ -71,7 +70,7 @@ elements.ItemAdd({
 				icon: section ? section.Get('icon') : '',
 				color: section ? section.Get('color') : '',
 				background: section ? section.Get('background') : null,
-				widgets: $ot.ui.dashboard.Fn('widgets', section ? section.Get('id') : null).map(map)
+				widgets: admin.dashboard.Fn('widgets', section ? section.Get('id') : null).map(map)
 			};
 		};
 
@@ -80,7 +79,7 @@ elements.ItemAdd({
 			this.timers.forEach(clearInterval);
 			this.timers = [];
 			this.pending = [];
-			this.sections = [group(null), ...$ot.ui.dashboard.Fn('sections').map(group)].filter((section) => section.widgets.length);
+			this.sections = [group(null), ...admin.dashboard.Fn('sections').map(group)].filter((section) => section.widgets.length);
 		};
 
 		const refresh = () =>
@@ -100,11 +99,11 @@ elements.ItemAdd({
 			this.OnDestroy(() => this.timers.forEach(clearInterval));
 		}
 
-		this.On('@addon.item.added', (item) => ['ui.dashboard.widgets', 'ui.dashboard.sections'].includes(item.addon.GetName()) && refresh());
-		this.On('@addon.item.removed', (item) => ['ui.dashboard.widgets', 'ui.dashboard.sections'].includes(item.addon.GetName()) && refresh());
-		this.On('ui.apps.open', refresh);
-		this.On('ui.apps.close', refresh);
-		this.On('ui.modes.switch', refresh);
+		this.On('@addon.item.added', (item) => ['admin.dashboard.widgets', 'admin.dashboard.sections'].includes(item.addon.GetName()) && refresh());
+		this.On('@addon.item.removed', (item) => ['admin.dashboard.widgets', 'admin.dashboard.sections'].includes(item.addon.GetName()) && refresh());
+		this.On('admin.apps.open', refresh);
+		this.On('admin.apps.close', refresh);
+		this.On('admin.modes.switch', refresh);
 
 		this.retry = (widget) =>
 		{
@@ -120,7 +119,7 @@ elements.ItemAdd({
 
 		this.card = (widget) => widget.color ? 'card ' + widget.color : 'card';
 
-		this.body = (widget) => $ot.ui.dashboard.types.Render(widget.type, { color: widget.color, payload: widget.payload }).Element;
+		this.body = (widget) => admin.dashboard.types.Render(widget.type, { color: widget.color, payload: widget.payload }).Element;
 
 		return `
 			<div :class="pattern ? 'box ' + pattern : 'box'">

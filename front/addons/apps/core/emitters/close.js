@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.apps.close', {
+onetype.EmitRegister('admin.apps.close', {
 	description: 'Fired after the active app closes and none is selected.',
-	metadata: { addon: 'ui.apps' },
+	metadata: { addon: 'admin.apps' },
 	config: {
 		id: {
 			type: 'string',

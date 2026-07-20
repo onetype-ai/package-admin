@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:screens:close',
+admin.screens.CommandAdd({
+	id: 'close',
 	exposed: true,
-	description: 'Close the active screen, restore the root route and emit $ot.ui.screens.close. The normal shell layouts take over again.',
-	metadata: { addon: 'ui.screens' },
+	description: 'Close the active screen, restore the root route and emit admin.screens.close. The normal shell layouts take over again.',
 	in: {},
 	out: {
 		id: {
@@ -12,14 +11,14 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const active = $ot.ui.screens.active();
+		const active = admin.screens.active();
 
 		if(!active)
 		{
 			return resolve(null, 'No screen is open.', 400);
 		}
 
-		$ot.ui.screens.Fn('close');
+		admin.screens.close();
 
 		resolve({ id: active.Get('id') }, 'Screen ' + active.Get('id') + ' is closed.');
 	}

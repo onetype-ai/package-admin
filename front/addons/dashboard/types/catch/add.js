@@ -1,6 +1,6 @@
-$ot.ui.dashboard.types.ItemOn('add', (item) =>
+admin.dashboard.types.ItemOn('add', (item) =>
 {
-	$ot.ui.dashboard.types.RenderAdd(item.Get('id'), function()
+	admin.dashboard.types.RenderAdd(item.Get('id'), function()
 	{
 		this.Define(item.Get('config'));
 

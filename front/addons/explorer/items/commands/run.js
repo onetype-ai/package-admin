@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:explorer:run',
+admin.explorer.CommandAdd({
+	id: 'run',
 	exposed: true,
-	description: 'Run an explorer entry by id, the same as selecting it in the search results. Emits $ot.ui.explorer.run.',
-	metadata: { addon: 'ui.explorer' },
+	description: 'Run an explorer entry by id, the same as selecting it in the search results. Emits admin.explorer.run.',
 	in: {
 		id: {
 			type: 'string',
@@ -18,7 +17,7 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const item = $ot.ui.explorer.ItemGet(properties.id);
+		const item = admin.explorer.ItemGet(properties.id);
 
 		if(!item)
 		{
@@ -27,7 +26,7 @@ commands.Item({
 
 		item.Get('callback')();
 
-		onetype.Emit('ui.explorer.run', { id: properties.id });
+		onetype.Emit('admin.explorer.run', { id: properties.id });
 
 		resolve({ id: properties.id }, 'Entry ' + properties.id + ' executed.');
 	}

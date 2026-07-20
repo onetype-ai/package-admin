@@ -1,13 +1,12 @@
-commands.Item({
-	id: 'ui:dock:close',
+admin.dock.CommandAdd({
+	id: 'close',
 	exposed: true,
-	description: 'Close the open dock item. Persists the state and emits $ot.ui.dock.close. Does nothing when no item is open.',
-	metadata: { addon: 'ui.dock' },
+	description: 'Close the open dock item. Persists the state and emits admin.dock.close. Does nothing when no item is open.',
 	in: {},
 	out: {},
 	callback: function(properties, resolve)
 	{
-		const changed = $ot.ui.dock.Fn('close');
+		const changed = admin.dock.close();
 
 		if(!changed)
 		{

@@ -1,13 +1,12 @@
-commands.Item({
-	id: 'ui:explorer:open',
+admin.explorer.CommandAdd({
+	id: 'open',
 	exposed: true,
-	description: 'Open the explorer, the universal search over applications, modes, pages, commands and settings. Emits $ot.ui.explorer.open. Does nothing when the explorer is already open.',
-	metadata: { addon: 'ui.explorer' },
+	description: 'Open the explorer, the universal search over applications, modes, pages, commands and settings. Emits admin.explorer.open. Does nothing when the explorer is already open.',
 	in: {},
 	out: {},
 	callback: function(properties, resolve)
 	{
-		const changed = $ot.ui.explorer.Fn('open');
+		const changed = admin.explorer.open();
 
 		if(!changed)
 		{

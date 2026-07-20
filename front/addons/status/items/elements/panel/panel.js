@@ -1,10 +1,9 @@
-elements.ItemAdd({
-	id: 'status-panel',
+admin.status.ElementAdd({
+	id: 'panel',
 	icon: 'bottom_panel_open',
 	name: 'Status Panel',
 	description: 'Chrome around the open status tab, title and close button.',
 	category: 'Status',
-	metadata: { addon: 'ui.status' },
 	config: {
 		tab: {
 			type: 'string',
@@ -15,14 +14,14 @@ elements.ItemAdd({
 	{
 		this.title = () =>
 		{
-			const item = $ot.ui.status.ItemGet(this.tab);
+			const item = admin.status.ItemGet(this.tab);
 
 			return item ? (item.Get('label') || item.Get('id')) : '';
 		};
 
 		this.content = () =>
 		{
-			const item = $ot.ui.status.ItemGet(this.tab);
+			const item = admin.status.ItemGet(this.tab);
 
 			if(!item || !item.Get('render') || !item.Fn('visible'))
 			{
@@ -34,7 +33,7 @@ elements.ItemAdd({
 
 		this.close = () =>
 		{
-			$ot.ui.layouts.close('status-panel');
+			admin.layouts.Command('close', { id: 'status-panel' });
 		};
 
 		return `

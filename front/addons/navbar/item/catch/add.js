@@ -1,10 +1,10 @@
-$ot.ui.navbar.ItemOn('add', (item) =>
+admin.navbar.ItemOn('add', (item) =>
 {
 	const render = item.Get('render');
 
 	if(render)
 	{
-		$ot.ui.navbar.RenderAdd(item.Get('id'), function()
+		admin.navbar.RenderAdd(item.Get('id'), function()
 		{
 			if(typeof render === 'function')
 			{

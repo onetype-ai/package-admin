@@ -1,13 +1,13 @@
-$ot.ui.explorer.Fn('item.visible', function(item)
+admin.explorer.Fn('item.visible', function(item)
 {
 	const condition = item.Get('condition');
 
-	if(condition.app.length && !condition.app.includes($ot.ui.apps.active()?.Get('id')))
+	if(condition.app.length && !condition.app.includes(admin.apps.active()?.Get('id')))
 	{
 		return false;
 	}
 
-	if(condition.mode.length && !condition.mode.includes($ot.ui.modes.active()?.Get('id')))
+	if(condition.mode.length && !condition.mode.includes(admin.modes.active()?.Get('id')))
 	{
 		return false;
 	}

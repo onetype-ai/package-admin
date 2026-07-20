@@ -1,10 +1,10 @@
-$ot.ui.layouts.ItemOn('add', (item) =>
+admin.layouts.ItemOn('add', (item) =>
 {
 	const render = item.Get('render');
 
 	if(render)
 	{
-		$ot.ui.layouts.RenderAdd(item.Get('id'), function()
+		admin.layouts.RenderAdd(item.Get('id'), function()
 		{
 			if(typeof render === 'function')
 			{

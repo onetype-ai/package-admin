@@ -1,10 +1,10 @@
-.e-3c503a78
+.e-4b1a7b0c
 {
 	display: block;
 	height: 100%;
 }
 
-.e-3c503a78 > .box
+.e-4b1a7b0c > .box
 {
 	position: relative;
 	height: 100%;
@@ -13,7 +13,7 @@
 
 /* Bar */
 
-.e-3c503a78 .bar
+.e-4b1a7b0c .bar
 {
 	display: flex;
 	align-items: center;
@@ -23,7 +23,7 @@
 	padding: 0 6px;
 }
 
-.e-3c503a78 .side
+.e-4b1a7b0c .side
 {
 	display: flex;
 	align-items: center;
@@ -31,7 +31,7 @@
 	height: 100%;
 }
 
-.e-3c503a78 .segment
+.e-4b1a7b0c .segment
 {
 	display: flex;
 	align-items: center;
@@ -45,24 +45,24 @@
 	transition: color var(--ot-transition-fast), background var(--ot-transition-fast);
 }
 
-.e-3c503a78 .segment.tab
+.e-4b1a7b0c .segment.tab
 {
 	cursor: pointer;
 }
 
-.e-3c503a78 .segment.tab:hover
+.e-4b1a7b0c .segment.tab:hover
 {
 	background: var(--ot-bg-3);
 	color: var(--ot-text-1);
 }
 
-.e-3c503a78 .segment.open
+.e-4b1a7b0c .segment.open
 {
 	background: var(--ot-brand-opacity);
 	color: var(--ot-brand);
 }
 
-.e-3c503a78 .segment > i
+.e-4b1a7b0c .segment > i
 {
 	font-size: 15px;
 }

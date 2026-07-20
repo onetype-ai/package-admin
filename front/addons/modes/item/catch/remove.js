@@ -1,4 +1,4 @@
-$ot.ui.modes.ItemOn('remove', (item) =>
+admin.modes.ItemOn('remove', (item) =>
 {
-	$ot.ui.explorer.ItemRemove('mode-' + item.Get('id'));
+	admin.explorer.ItemRemove('mode-' + item.Get('id'));
 });

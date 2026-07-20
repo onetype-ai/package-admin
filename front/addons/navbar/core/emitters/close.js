@@ -1,5 +1,5 @@
-onetype.EmitRegister('ui.navbar.close', {
+onetype.EmitRegister('admin.navbar.close', {
 	description: 'Fired after the open navbar item surface closes.',
-	metadata: { addon: 'ui.navbar' },
+	metadata: { addon: 'admin.navbar' },
 	config: {}
 });

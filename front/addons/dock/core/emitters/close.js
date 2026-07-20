@@ -1,5 +1,5 @@
-onetype.EmitRegister('ui.dock.close', {
+onetype.EmitRegister('admin.dock.close', {
 	description: 'Fired after the open dock item closes.',
-	metadata: { addon: 'ui.dock' },
+	metadata: { addon: 'admin.dock' },
 	config: {}
 });

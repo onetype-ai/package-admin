@@ -1,4 +1,4 @@
-$ot.ui.layouts.Fn('data', function()
+admin.layouts.Fn('data', function()
 {
-	return $ot.ui.screens.Fn('data');
+	return admin.screens.data();
 });

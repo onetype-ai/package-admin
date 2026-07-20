@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:navbar:open',
+admin.navbar.CommandAdd({
+	id: 'open',
 	exposed: true,
-	description: 'Open the popup of a navbar item. Closes any other open item first, tracks the state and emits $ot.ui.navbar.open. Does nothing when the item is already open.',
-	metadata: { addon: 'ui.navbar' },
+	description: 'Open the popup of a navbar item. Closes any other open item first, tracks the state and emits admin.navbar.open. Does nothing when the item is already open.',
 	in: {
 		id: {
 			type: 'string',
@@ -18,7 +17,7 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const item = $ot.ui.navbar.ItemGet(properties.id);
+		const item = admin.navbar.ItemGet(properties.id);
 
 		if(!item)
 		{
@@ -30,12 +29,12 @@ commands.Item({
 			return resolve(null, 'Navbar item ' + properties.id + ' has no popup to open.', 400);
 		}
 
-		if($ot.modules.settings.get('ui.navbar.open', null) === properties.id)
+		if(admin.navbar.StoreGet('open') === properties.id)
 		{
 			return resolve({ id: properties.id }, 'Navbar item ' + properties.id + ' is already open.');
 		}
 
-		if(!$ot.ui.navbar.Fn('open', properties.id))
+		if(!admin.navbar.open(properties.id))
 		{
 			return resolve(null, 'Navbar item ' + properties.id + ' is not on screen to anchor its dropdown.', 400);
 		}

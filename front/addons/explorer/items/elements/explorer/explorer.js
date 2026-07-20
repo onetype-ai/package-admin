@@ -1,10 +1,9 @@
-elements.ItemAdd({
-	id: 'explorer',
+admin.explorer.ElementAdd({
+	id: 'panel',
 	icon: 'search',
 	name: 'Explorer',
 	description: 'Universal search over everything in the editor: applications, modes, pages, commands and settings.',
 	category: 'Explorer',
-	metadata: { addon: 'ui.explorer' },
 	render: function()
 	{
 		this.query = '';
@@ -16,7 +15,7 @@ elements.ItemAdd({
 		{
 			let flat = 0;
 
-			this.groups = $ot.ui.explorer.Fn('search', this.query).map((group) =>
+			this.groups = admin.explorer.search(this.query).map((group) =>
 			{
 				group.results = group.results.map((entry) => ({ ...entry, flat: flat++ }));
 
@@ -46,7 +45,7 @@ elements.ItemAdd({
 		{
 			$ot.float.close();
 
-			$ot.ui.explorer.run(entry.id);
+			admin.explorer.Command('run', { id: entry.id });
 		};
 
 		this.scroll = () =>

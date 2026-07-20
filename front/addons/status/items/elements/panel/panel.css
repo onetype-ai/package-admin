@@ -1,12 +1,12 @@
 /* ===== STATUS PANEL ===== */
 
-.e-62866281
+.e-10d2d143
 {
 	display: block;
 	width: 100%;
 }
 
-.e-62866281 > .box
+.e-10d2d143 > .box
 {
 	display: flex;
 	flex-direction: column;
@@ -15,7 +15,7 @@
 	border-top: 1px solid var(--ot-bg-1-border);
 }
 
-.e-62866281 .head
+.e-10d2d143 .head
 {
 	display: flex;
 	align-items: center;
@@ -26,14 +26,14 @@
 	border-bottom: 1px solid var(--ot-bg-1-border);
 }
 
-.e-62866281 .title
+.e-10d2d143 .title
 {
 	font-size: 12px;
 	font-weight: 500;
 	color: var(--ot-text-1);
 }
 
-.e-62866281 .close
+.e-10d2d143 .close
 {
 	display: flex;
 	align-items: center;
@@ -46,20 +46,20 @@
 	transition: color var(--ot-transition-fast), background var(--ot-transition-fast);
 }
 
-.e-62866281 .close:hover
+.e-10d2d143 .close:hover
 {
 	background: var(--ot-bg-2);
 	color: var(--ot-text-1);
 }
 
-.e-62866281 .close > i
+.e-10d2d143 .close > i
 {
 	font-size: 18px;
 }
 
 /* Render wrapper under the head — ot-node replaces the template div, so target by position */
 
-.e-62866281 > .box > :not(.head)
+.e-10d2d143 > .box > :not(.head)
 {
 	flex: 1;
 	min-height: 0;

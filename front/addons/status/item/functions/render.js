@@ -1,4 +1,4 @@
-$ot.ui.status.Fn('item.render', function(item)
+admin.status.Fn('item.render', function(item)
 {
-	return $ot.ui.status.Render(item.Get('id'), { ...item.Get('data') }).Element;
+	return admin.status.Render(item.Get('id'), { ...item.Get('data') }).Element;
 });

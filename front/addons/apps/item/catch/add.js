@@ -1,6 +1,6 @@
-$ot.ui.apps.ItemOn('add', (item) =>
+admin.apps.ItemOn('add', (item) =>
 {
-	onetype.AddonReady('ui.dock', (dock) =>
+	onetype.AddonReady('admin.dock', (dock) =>
 	{
 		if(!item.Get('isVisible') || item.Get('isHidden'))
 		{
@@ -18,11 +18,11 @@ $ot.ui.apps.ItemOn('add', (item) =>
 			isActive: () => item.Get('isActive'),
 			render: item.Get('render'),
 			badge: item.Get('badge'),
-			onClick: () => item.Get('isActive') ? $ot.ui.apps.close() : $ot.ui.apps.open(item.Get('id'))
+			onClick: () => item.Get('isActive') ? admin.apps.Command('close') : admin.apps.Command('open', { id: item.Get('id') })
 		});
 	});
 
-	onetype.AddonReady('ui.explorer', (explorer) =>
+	onetype.AddonReady('admin.explorer', (explorer) =>
 	{
 		if(item.Get('isHidden'))
 		{
@@ -38,7 +38,7 @@ $ot.ui.apps.ItemOn('add', (item) =>
 			label: item.Get('name'),
 			hint: 'Open application',
 			keywords: [item.Get('id')],
-			callback: () => $ot.ui.apps.open(item.Get('id'))
+			callback: () => admin.apps.Command('open', { id: item.Get('id') })
 		});
 	});
 });

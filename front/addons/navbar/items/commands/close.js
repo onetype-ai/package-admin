@@ -1,15 +1,14 @@
-commands.Item({
-	id: 'ui:navbar:close',
+admin.navbar.CommandAdd({
+	id: 'close',
 	exposed: true,
-	description: 'Close the open navbar item popup. Tracks the state and emits $ot.ui.navbar.close. Does nothing when no item is open.',
-	metadata: { addon: 'ui.navbar' },
+	description: 'Close the open navbar item popup. Tracks the state and emits admin.navbar.close. Does nothing when no item is open.',
 	in: {},
 	out: {},
 	callback: function(properties, resolve)
 	{
-		const open = $ot.modules.settings.get('ui.navbar.open', null);
+		const open = admin.navbar.StoreGet('open');
 
-		if(!$ot.ui.navbar.Fn('close'))
+		if(!admin.navbar.close())
 		{
 			return resolve({}, 'No navbar item is open, nothing to close.');
 		}

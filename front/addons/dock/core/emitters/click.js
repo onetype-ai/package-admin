@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.dock.click', {
+onetype.EmitRegister('admin.dock.click', {
 	description: 'Fired when a dock item is clicked, before its own click or open/close runs.',
-	metadata: { addon: 'ui.dock' },
+	metadata: { addon: 'admin.dock' },
 	config: {
 		id: {
 			type: 'string',

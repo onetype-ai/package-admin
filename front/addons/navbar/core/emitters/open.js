@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.navbar.open', {
+onetype.EmitRegister('admin.navbar.open', {
 	description: 'Fired after a navbar item surface opens.',
-	metadata: { addon: 'ui.navbar' },
+	metadata: { addon: 'admin.navbar' },
 	config: {
 		id: {
 			type: 'string',

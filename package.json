@@ -3,6 +3,9 @@
     "version": "0.1.0",
     "description": "Admin workspace for the OneType platform. The shell with dock, navbar, canvas, apps, dashboard and screens.",
     "type": "module",
+    "imports": {
+        "#admin/*": "./back/*"
+    },
     "license": "MIT",
     "author": "Dejan Tomic <hi@iamdejan.com>",
     "repository": {

@@ -1,4 +1,4 @@
-$ot.ui.layouts.Fn('item.render', function(item)
+admin.layouts.Fn('item.render', function(item)
 {
-	return $ot.ui.layouts.Render(item.Get('id'), { ...$ot.ui.layouts.Fn('data'), ...($ot.ui.layouts.StoreGet('values.' + item.Get('id')) || {}) }).Element;
+	return admin.layouts.Render(item.Get('id'), { ...admin.layouts.Fn('data'), ...(admin.layouts.StoreGet('values.' + item.Get('id')) || {}) }).Element;
 });

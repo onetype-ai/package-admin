@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.navbar', (navbar) =>
+onetype.AddonReady('admin.navbar', (navbar) =>
 {
 	navbar.Item({
 		id: 'scheme',
@@ -9,12 +9,12 @@ onetype.AddonReady('ui.navbar', (navbar) =>
 		condition: { app: true },
 		onClick: () =>
 		{
-			const active = $ot.ui.apps.active();
+			const active = admin.apps.active();
 			const schemes = ['midnight', 'studio', 'daylight', 'eclipse'];
 			const index = schemes.indexOf(active.Get('scheme'));
 
 			active.Set('scheme', schemes[(index + 1) % schemes.length]);
-			$ot.ui.apps.Fn('theme');
+			admin.apps.theme();
 		}
 	});
 });

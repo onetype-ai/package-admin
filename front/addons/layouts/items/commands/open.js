@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:layouts:open',
+admin.layouts.CommandAdd({
+	id: 'open',
 	exposed: true,
-	description: 'Open a layout item by id, optionally passing data to the renders. Persists the state and emits $ot.ui.layouts.open. An item that is already open only receives the new data.',
-	metadata: { addon: 'ui.layouts' },
+	description: 'Open a layout item by id, optionally passing data to the renders. Persists the state and emits admin.layouts.open. An item that is already open only receives the new data.',
 	in: {
 		id: {
 			type: 'string',
@@ -22,7 +21,7 @@ commands.Item({
 	},
 	callback: async function(properties, resolve)
 	{
-		const context = await onetype.Middleware('ui.layouts.open', { properties, cancel: false });
+		const context = await onetype.Middleware('admin.layouts.open', { properties, cancel: false });
 
 		if(context.value.cancel)
 		{
@@ -31,12 +30,12 @@ commands.Item({
 
 		properties = context.value.properties;
 
-		if(!$ot.ui.layouts.ItemGet(properties.id))
+		if(!admin.layouts.ItemGet(properties.id))
 		{
 			return resolve(null, 'Layout item ' + properties.id + ' not found.', 404);
 		}
 
-		const changed = $ot.ui.layouts.Fn('open', properties.id, properties.data);
+		const changed = admin.layouts.open(properties.id, properties.data);
 
 		if(!changed && !properties.data)
 		{

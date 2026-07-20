@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.layouts', (layouts) =>
+onetype.AddonReady('admin.layouts', (layouts) =>
 {
 	layouts.Item({
 		id: 'status-panel',
@@ -7,7 +7,7 @@ onetype.AddonReady('ui.layouts', (layouts) =>
 		order: 2000,
 		render: function()
 		{
-			return '<e-status-panel :tab="tab"></e-status-panel>';
+			return '<e-admin-status-panel :tab="tab"></e-admin-status-panel>';
 		}
 	});
 });

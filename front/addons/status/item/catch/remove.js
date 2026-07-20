@@ -1,7 +1,7 @@
-$ot.ui.status.ItemOn('removed', (item) =>
+admin.status.ItemOn('removed', (item) =>
 {
 	if(item.Get('render'))
 	{
-		$ot.ui.status.RenderRemove(item.Get('id'));
+		admin.status.RenderRemove(item.Get('id'));
 	}
 });

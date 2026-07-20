@@ -1,6 +1,6 @@
-$ot.ui.modes.ItemOn('modified', (item) =>
+admin.modes.ItemOn('modified', (item) =>
 {
-	$ot.ui.explorer.Item({
+	admin.explorer.Item({
 		id: 'mode-' + item.Get('id'),
 		order: 20,
 		group: 'Modes',
@@ -10,6 +10,6 @@ $ot.ui.modes.ItemOn('modified', (item) =>
 		hint: 'Switch mode',
 		keywords: [item.Get('id')],
 		condition: { app: item.Get('condition').app },
-		callback: () => $ot.ui.modes.switch(item.Get('id'))
+		callback: () => admin.modes.Command('switch', { id: item.Get('id') })
 	});
 });

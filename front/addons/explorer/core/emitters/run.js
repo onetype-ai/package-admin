@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.explorer.run', {
+onetype.EmitRegister('admin.explorer.run', {
 	description: 'Fired after an explorer entry is selected and its callback executes.',
-	metadata: { addon: 'ui.explorer' },
+	metadata: { addon: 'admin.explorer' },
 	config: {
 		id: {
 			type: 'string',

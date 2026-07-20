@@ -1,4 +1,4 @@
-onetype.MiddlewareRegister('ui.layouts.open', {
+onetype.MiddlewareRegister('admin.layouts.open', {
 	description: 'Runs before a layout item opens, so addons can inspect, rewrite or cancel the request. Each interceptor receives a context whose value holds the open properties and a cancel flag, and must call await context.next(). Set value.cancel to true to stop the open, or mutate value.properties to change what opens and with which data.',
 	config: {
 		properties: {

@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:apps:close',
+admin.apps.CommandAdd({
+	id: 'close',
 	exposed: true,
-	description: 'Close the active app so none is selected. Runs the deactivate hook, persists the empty state and emits $ot.ui.apps.close. Does nothing when no app is active.',
-	metadata: { addon: 'ui.apps' },
+	description: 'Close the active app so none is selected. Runs the deactivate hook, persists the empty state and emits admin.apps.close. Does nothing when no app is active.',
 	out: {
 		id: {
 			type: 'string',
@@ -11,14 +10,14 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const active = $ot.ui.apps.active();
+		const active = admin.apps.active();
 
 		if(!active)
 		{
 			return resolve({ id: '' }, 'No app is active.');
 		}
 
-		$ot.ui.apps.Fn('close');
+		admin.apps.close();
 
 		resolve({ id: active.Get('id') }, 'App ' + active.Get('id') + ' closed.');
 	}

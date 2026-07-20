@@ -1,6 +1,6 @@
-$ot.ui.layouts.Fn('restore', function()
+admin.layouts.Fn('restore', function()
 {
-	const active = $ot.modules.settings.get('ui.layouts.active', {});
+	const active = config.get('admin.layouts.active');
 	const opened = [];
 
 	Object.entries(active).forEach(([id, open]) =>
@@ -20,7 +20,7 @@ $ot.ui.layouts.Fn('restore', function()
 		}
 	});
 
-	onetype.Emit('ui.layouts.open', { ids: opened });
+	onetype.Emit('admin.layouts.open', { ids: opened });
 
 	return active;
 });

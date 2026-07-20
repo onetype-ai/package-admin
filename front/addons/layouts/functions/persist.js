@@ -1,4 +1,4 @@
-$ot.ui.layouts.Fn('persist', function()
+admin.layouts.Fn('persist', function()
 {
 	const active = {};
 
@@ -7,7 +7,7 @@ $ot.ui.layouts.Fn('persist', function()
 		active[item.Get('id')] = item.Get('isActive');
 	});
 
-	$ot.modules.settings.set('ui.layouts.active', active);
+	config.set('admin.layouts.active', active);
 
 	return active;
 });

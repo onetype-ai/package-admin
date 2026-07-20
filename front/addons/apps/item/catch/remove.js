@@ -1,6 +1,6 @@
-$ot.ui.apps.ItemOn('remove', (item) =>
+admin.apps.ItemOn('remove', (item) =>
 {
-	$ot.ui.dock.ItemRemove(item.Get('id'));
+	admin.dock.ItemRemove(item.Get('id'));
 
-	$ot.ui.explorer.ItemRemove('app-' + item.Get('id'));
+	admin.explorer.ItemRemove('app-' + item.Get('id'));
 });

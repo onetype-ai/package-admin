@@ -1,10 +1,10 @@
-$ot.ui.status.ItemOn('add', (item) =>
+admin.status.ItemOn('add', (item) =>
 {
 	const render = item.Get('render');
 
 	if(render)
 	{
-		$ot.ui.status.RenderAdd(item.Get('id'), function()
+		admin.status.RenderAdd(item.Get('id'), function()
 		{
 			this.Define(item.Get('config'));
 

@@ -1,10 +1,10 @@
-$ot.ui.dock.ItemOn('add', (item) =>
+admin.dock.ItemOn('add', (item) =>
 {
 	const render = item.Get('render');
 
 	if(render)
 	{
-		$ot.ui.dock.RenderAdd(item.Get('id'), function()
+		admin.dock.RenderAdd(item.Get('id'), function()
 		{
 			if(typeof render === 'function')
 			{

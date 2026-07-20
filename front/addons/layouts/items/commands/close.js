@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:layouts:close',
+admin.layouts.CommandAdd({
+	id: 'close',
 	exposed: true,
-	description: 'Close a layout item by id. Persists the state and emits $ot.ui.layouts.close. An item that is already closed is left alone.',
-	metadata: { addon: 'ui.layouts' },
+	description: 'Close a layout item by id. Persists the state and emits admin.layouts.close. An item that is already closed is left alone.',
 	in: {
 		id: {
 			type: 'string',
@@ -18,7 +17,7 @@ commands.Item({
 	},
 	callback: async function(properties, resolve)
 	{
-		const context = await onetype.Middleware('ui.layouts.close', { properties, cancel: false });
+		const context = await onetype.Middleware('admin.layouts.close', { properties, cancel: false });
 
 		if(context.value.cancel)
 		{
@@ -27,12 +26,12 @@ commands.Item({
 
 		properties = context.value.properties;
 
-		if(!$ot.ui.layouts.ItemGet(properties.id))
+		if(!admin.layouts.ItemGet(properties.id))
 		{
 			return resolve(null, 'Layout item ' + properties.id + ' not found.', 404);
 		}
 
-		const changed = $ot.ui.layouts.Fn('close', properties.id);
+		const changed = admin.layouts.close(properties.id);
 
 		if(!changed)
 		{

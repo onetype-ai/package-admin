@@ -1,4 +1,4 @@
-$ot.ui.navbar.Fn('item.open', function(item)
+admin.navbar.Fn('item.open', function(item)
 {
 	const popup = item.Get('popup');
 
@@ -15,13 +15,13 @@ $ot.ui.navbar.Fn('item.open', function(item)
 		delete options.type;
 		delete options.render;
 
-		options.id = 'ui-navbar-' + item.Get('id');
+		options.id = 'admin-navbar-' + item.Get('id');
 
 		options.onClose = () =>
 		{
-			$ot.modules.settings.set('ui.navbar.open', null);
+			admin.navbar.StoreSet('open', null);
 
-			onetype.Emit('ui.navbar.close', {});
+			onetype.Emit('admin.navbar.close', {});
 
 			finish && finish();
 		};

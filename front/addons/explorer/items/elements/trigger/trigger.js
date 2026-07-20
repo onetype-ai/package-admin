@@ -1,10 +1,9 @@
-elements.ItemAdd({
-	id: 'explorer-trigger',
+admin.explorer.ElementAdd({
+	id: 'trigger',
 	icon: 'search',
 	name: 'Explorer Trigger',
 	description: 'Search pill in the navbar that opens the explorer.',
 	category: 'Explorer',
-	metadata: { addon: 'ui.explorer' },
 	config: {
 		background: {
 			type: 'number',
@@ -17,7 +16,7 @@ elements.ItemAdd({
 	{
 		this.open = () =>
 		{
-			$ot.ui.explorer.open();
+			admin.explorer.Command('open');
 		};
 
 		return `

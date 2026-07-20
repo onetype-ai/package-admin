@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:apps:open',
+admin.apps.CommandAdd({
+	id: 'open',
 	exposed: true,
-	description: 'Open an app by id. Deactivates the current app, persists the new one as active, runs its activate hook and emits $ot.ui.apps.open. Does nothing when the app is already active.',
-	metadata: { addon: 'ui.apps' },
+	description: 'Open an app by id. Deactivates the current app, persists the new one as active, runs its activate hook and emits admin.apps.open. Does nothing when the app is already active.',
 	in: {
 		id: {
 			type: 'string',
@@ -18,7 +17,7 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const item = $ot.ui.apps.ItemGet(properties.id);
+		const item = admin.apps.ItemGet(properties.id);
 
 		if(!item)
 		{
@@ -30,7 +29,7 @@ commands.Item({
 			return resolve(null, 'App ' + properties.id + ' is not visible right now.', 400);
 		}
 
-		const changed = $ot.ui.apps.Fn('open', properties.id);
+		const changed = admin.apps.open(properties.id);
 
 		if(!changed)
 		{

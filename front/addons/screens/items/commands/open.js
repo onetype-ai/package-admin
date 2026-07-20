@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:screens:open',
+admin.screens.CommandAdd({
+	id: 'open',
 	exposed: true,
-	description: 'Open a screen. Replaces the active screen, writes the screen route into the address bar and emits $ot.ui.screens.open. Only layouts assigned to the screen stay visible while it is open.',
-	metadata: { addon: 'ui.screens' },
+	description: 'Open a screen. Replaces the active screen, writes the screen route into the address bar and emits admin.screens.open. Only layouts assigned to the screen stay visible while it is open.',
 	in: {
 		id: {
 			type: 'string',
@@ -23,14 +22,14 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const item = $ot.ui.screens.ItemGet(properties.id);
+		const item = admin.screens.ItemGet(properties.id);
 
 		if(!item)
 		{
 			return resolve(null, 'Screen ' + properties.id + ' not found.', 404);
 		}
 
-		const changed = $ot.ui.screens.Fn('open', properties.id, properties.parameters);
+		const changed = admin.screens.open(properties.id, properties.parameters);
 
 		if(!changed)
 		{

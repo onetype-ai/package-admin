@@ -1,4 +1,4 @@
-$ot.ui.apps.Fn('item.visible', function(item)
+admin.apps.Fn('item.visible', function(item)
 {
 	if(item.Get('isHidden'))
 	{
@@ -7,7 +7,7 @@ $ot.ui.apps.Fn('item.visible', function(item)
 
 	const condition = item.Get('condition');
 
-	const mode = $ot.ui.modes.active()?.Get('id');
+	const mode = admin.modes.active()?.Get('id');
 
 	if(condition.mode === true && !mode)
 	{

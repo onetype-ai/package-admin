@@ -1,15 +1,14 @@
-elements.ItemAdd({
-	id: 'modes-bar',
+admin.modes.ElementAdd({
+	id: 'bar',
 	icon: 'layout',
 	name: 'Modes Bar',
 	description: 'Floating bar to switch modes.',
 	category: 'Modes',
-	metadata: { addon: 'ui.modes' },
 	render: function()
 	{
 		const refresh = () =>
 		{
-			const list = $ot.ui.modes.Fn('list');
+			const list = admin.modes.list();
 
 			this.options = list.map((mode) => ({ value: mode.id, icon: mode.icon, tooltip: mode.label }));
 			this.value = list.find((mode) => mode.isActive)?.id || null;
@@ -17,17 +16,17 @@ elements.ItemAdd({
 
 		refresh();
 
-		this.On('@addon.item.added', (item) => item.addon.GetName() === 'ui.modes' && refresh());
-		this.On('@addon.item.modified', (item) => item.addon.GetName() === 'ui.modes' && refresh());
-		this.On('@addon.item.removed', (item) => item.addon.GetName() === 'ui.modes' && refresh());
+		this.On('@addon.item.added', (item) => item.addon.GetName() === 'admin.modes' && refresh());
+		this.On('@addon.item.modified', (item) => item.addon.GetName() === 'admin.modes' && refresh());
+		this.On('@addon.item.removed', (item) => item.addon.GetName() === 'admin.modes' && refresh());
 
-		this.On('ui.modes.switch', refresh);
-		this.On('ui.apps.open', refresh);
-		this.On('ui.apps.close', refresh);
+		this.On('admin.modes.switch', refresh);
+		this.On('admin.apps.open', refresh);
+		this.On('admin.apps.close', refresh);
 
 		this.change = ({ value }) =>
 		{
-			$ot.ui.modes.switch(value);
+			admin.modes.Command('switch', { id: value });
 		};
 
 		return `

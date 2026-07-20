@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.screens.close', {
+onetype.EmitRegister('admin.screens.close', {
 	description: 'Fired after the active screen closes and the normal shell takes over.',
-	metadata: { addon: 'ui.screens' },
+	metadata: { addon: 'admin.screens' },
 	config: {
 		id: {
 			type: 'string',

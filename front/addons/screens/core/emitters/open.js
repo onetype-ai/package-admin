@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.screens.open', {
+onetype.EmitRegister('admin.screens.open', {
 	description: 'Fired after a screen opens. Not fired when opening the screen that is already open.',
-	metadata: { addon: 'ui.screens' },
+	metadata: { addon: 'admin.screens' },
 	config: {
 		id: {
 			type: 'string',

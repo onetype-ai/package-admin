@@ -1,12 +1,12 @@
-$ot.ui.apps.ItemOn('modified', (item) =>
+admin.apps.ItemOn('modified', (item) =>
 {
 	if(!item.Get('isVisible') || item.Get('isHidden'))
 	{
-		$ot.ui.dock.ItemRemove(item.Get('id'));
+		admin.dock.ItemRemove(item.Get('id'));
 	}
 	else
 	{
-		$ot.ui.dock.Item({
+		admin.dock.Item({
 			id: item.Get('id'),
 			name: item.Get('name'),
 			icon: item.Get('icon'),
@@ -16,17 +16,17 @@ $ot.ui.apps.ItemOn('modified', (item) =>
 			isActive: () => item.Get('isActive'),
 			render: item.Get('render'),
 			badge: item.Get('badge'),
-			onClick: () => item.Get('isActive') ? $ot.ui.apps.close() : $ot.ui.apps.open(item.Get('id'))
+			onClick: () => item.Get('isActive') ? admin.apps.Command('close') : admin.apps.Command('open', { id: item.Get('id') })
 		});
 	}
 
 	if(item.Get('isHidden'))
 	{
-		$ot.ui.explorer.ItemRemove('app-' + item.Get('id'));
+		admin.explorer.ItemRemove('app-' + item.Get('id'));
 	}
 	else
 	{
-		$ot.ui.explorer.Item({
+		admin.explorer.Item({
 			id: 'app-' + item.Get('id'),
 			order: 10,
 			group: 'Applications',
@@ -35,7 +35,7 @@ $ot.ui.apps.ItemOn('modified', (item) =>
 			label: item.Get('name'),
 			hint: 'Open application',
 			keywords: [item.Get('id')],
-			callback: () => $ot.ui.apps.open(item.Get('id'))
+			callback: () => admin.apps.Command('open', { id: item.Get('id') })
 		});
 	}
 });

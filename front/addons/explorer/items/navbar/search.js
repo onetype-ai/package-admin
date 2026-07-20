@@ -1,16 +1,16 @@
-onetype.AddonReady('ui.navbar', (navbar) =>
+onetype.AddonReady('admin.navbar', (navbar) =>
 {
 	navbar.Item({
 		id: 'explorer',
 		order: 4,
 		position: 'right',
-		render: '<e-explorer-trigger :background="background"></e-explorer-trigger>',
+		render: '<e-admin-explorer-trigger :background="background"></e-admin-explorer-trigger>',
 		popup: {
 			type: 'default',
 			width: 'l',
 			padding: 'none',
-			render: '<e-explorer></e-explorer>',
-			onClose: () => onetype.Emit('ui.explorer.close', {})
+			render: '<e-admin-explorer-panel></e-admin-explorer-panel>',
+			onClose: () => onetype.Emit('admin.explorer.close', {})
 		}
 	});
 });

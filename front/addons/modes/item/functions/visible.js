@@ -1,15 +1,15 @@
-$ot.ui.modes.Fn('item.visible', function(item)
+admin.modes.Fn('item.visible', function(item)
 {
 	const condition = item.Get('condition');
 
-	const screen = $ot.ui.screens.active()?.Get('id');
+	const screen = admin.screens.active()?.Get('id');
 
 	if(Array.isArray(condition.screen) && condition.screen.length && !condition.screen.includes(screen))
 	{
 		return false;
 	}
 
-	const app = $ot.ui.apps.active()?.Get('id');
+	const app = admin.apps.active()?.Get('id');
 
 	if(condition.app === true && !app)
 	{

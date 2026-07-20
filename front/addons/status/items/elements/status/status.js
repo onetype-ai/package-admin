@@ -1,15 +1,14 @@
-elements.ItemAdd({
-	id: 'status',
+admin.status.ElementAdd({
+	id: 'bar',
 	icon: 'bottom_panel_open',
 	name: 'Status',
-	description: 'Bottom status bar. Plain segments show state, tabs open their panel through $ot.ui.layouts.',
+	description: 'Bottom status bar. Plain segments show state, tabs open their panel through admin.layouts.',
 	category: 'Status',
-	metadata: { addon: 'ui.status' },
 	render: function()
 	{
 		const refresh = () =>
 		{
-			const list = $ot.ui.status.Fn('list');
+			const list = admin.status.Fn('list');
 
 			this.left = list.filter((item) => item.align === 'left');
 			this.right = list.filter((item) => item.align === 'right');
@@ -17,15 +16,15 @@ elements.ItemAdd({
 
 		refresh();
 
-		this.On('@addon.item.added', (item) => item.addon.GetName() === 'ui.status' && refresh());
-		this.On('@addon.item.modified', (item) => item.addon.GetName() === 'ui.status' && refresh());
-		this.On('@addon.item.removed', (item) => item.addon.GetName() === 'ui.status' && refresh());
+		this.On('@addon.item.added', (item) => item.addon.GetName() === 'admin.status' && refresh());
+		this.On('@addon.item.modified', (item) => item.addon.GetName() === 'admin.status' && refresh());
+		this.On('@addon.item.removed', (item) => item.addon.GetName() === 'admin.status' && refresh());
 
-		this.On('ui.apps.open', refresh);
-		this.On('ui.apps.close', refresh);
-		this.On('ui.modes.switch', refresh);
-		this.On('ui.layouts.open', refresh);
-		this.On('ui.layouts.close', refresh);
+		this.On('admin.apps.open', refresh);
+		this.On('admin.apps.close', refresh);
+		this.On('admin.modes.switch', refresh);
+		this.On('admin.layouts.open', refresh);
+		this.On('admin.layouts.close', refresh);
 
 		this.classes = (item) =>
 		{
@@ -53,11 +52,11 @@ elements.ItemAdd({
 
 			if(item.open)
 			{
-				$ot.ui.layouts.close('status-panel');
+				admin.layouts.Command('close', { id: 'status-panel' });
 			}
 			else
 			{
-				$ot.ui.layouts.open('status-panel', { tab: item.id });
+				admin.layouts.Command('open', { id: 'status-panel', data: { tab: item.id } });
 			}
 		};
 

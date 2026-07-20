@@ -1,4 +1,4 @@
-$ot.ui.navbar.Fn('item.close', function(item)
+admin.navbar.Fn('item.close', function(item)
 {
-	$ot.float.close('ui-navbar-' + item.Get('id'));
+	$ot.float.close('admin-navbar-' + item.Get('id'));
 });

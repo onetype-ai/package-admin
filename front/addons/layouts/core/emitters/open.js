@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.layouts.open', {
+onetype.EmitRegister('admin.layouts.open', {
 	description: 'Fired after layout items open or receive new data. Carries only the ids that actually changed.',
-	metadata: { addon: 'ui.layouts' },
+	metadata: { addon: 'admin.layouts' },
 	config: {
 		ids: {
 			type: 'array',

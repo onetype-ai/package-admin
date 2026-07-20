@@ -1,15 +1,14 @@
-elements.ItemAdd({
-	id: 'apps-list',
+admin.apps.ElementAdd({
+	id: 'list',
 	icon: 'apps',
 	name: 'Apps List',
 	description: 'Launcher with application cards and their quick links.',
 	category: 'Apps',
-	metadata: { addon: 'ui.apps' },
 	render: function()
 	{
 		const refresh = () =>
 		{
-			this.apps = Object.values($ot.ui.apps.Items()).filter((item) => !item.Get('isVisible') && item.Fn('visible')).sort((a, b) => a.Get('order') - b.Get('order')).map((item) =>
+			this.apps = Object.values(admin.apps.Items()).filter((item) => !item.Get('isVisible') && item.Fn('visible')).sort((a, b) => a.Get('order') - b.Get('order')).map((item) =>
 			{
 				return {
 					id: item.Get('id'),
@@ -25,23 +24,23 @@ elements.ItemAdd({
 
 		refresh();
 
-		this.On('@addon.item.added', (item) => item.addon.GetName() === 'ui.apps' && refresh());
-		this.On('@addon.item.modified', (item) => item.addon.GetName() === 'ui.apps' && refresh());
-		this.On('@addon.item.removed', (item) => item.addon.GetName() === 'ui.apps' && refresh());
+		this.On('@addon.item.added', (item) => item.addon.GetName() === 'admin.apps' && refresh());
+		this.On('@addon.item.modified', (item) => item.addon.GetName() === 'admin.apps' && refresh());
+		this.On('@addon.item.removed', (item) => item.addon.GetName() === 'admin.apps' && refresh());
 
-		this.On('ui.apps.open', refresh);
-		this.On('ui.apps.close', refresh);
+		this.On('admin.apps.open', refresh);
+		this.On('admin.apps.close', refresh);
 
 		this.open = (app) =>
 		{
-			$ot.ui.apps.open(app.id);
-			$ot.ui.dock.close();
+			admin.apps.Command('open', { id: app.id });
+			admin.dock.Command('close');
 		};
 
 		this.jump = (link) =>
 		{
 			link.onClick && link.onClick(link);
-			$ot.ui.dock.close();
+			admin.dock.Command('close');
 		};
 
 		return `

@@ -1,8 +1,7 @@
-commands.Item({
-	id: 'ui:modes:switch',
+admin.modes.CommandAdd({
+	id: 'switch',
 	exposed: true,
-	description: 'Switch the current mode. Deactivates the visible active modes, activates the given one, persists the change, runs the activate hook and emits $ot.ui.modes.switch. Does nothing when the mode is already the current one. Active modes that are not visible stay active, they take over again once visible.',
-	metadata: { addon: 'ui.modes' },
+	description: 'Switch the current mode. Deactivates the visible active modes, activates the given one, persists the change, runs the activate hook and emits admin.modes.switch. Does nothing when the mode is already the current one. Active modes that are not visible stay active, they take over again once visible.',
 	in: {
 		id: {
 			type: 'string',
@@ -18,7 +17,7 @@ commands.Item({
 	},
 	callback: function(properties, resolve)
 	{
-		const item = $ot.ui.modes.ItemGet(properties.id);
+		const item = admin.modes.ItemGet(properties.id);
 
 		if(!item)
 		{
@@ -30,7 +29,7 @@ commands.Item({
 			return resolve(null, 'Mode ' + properties.id + ' is not visible right now.', 400);
 		}
 
-		const changed = $ot.ui.modes.Fn('switch', properties.id);
+		const changed = admin.modes.switch(properties.id);
 
 		if(!changed)
 		{

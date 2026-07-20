@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.apps.open', {
+onetype.EmitRegister('admin.apps.open', {
 	description: 'Fired after an app becomes active. Not fired when opening the app that is already active.',
-	metadata: { addon: 'ui.apps' },
+	metadata: { addon: 'admin.apps' },
 	config: {
 		id: {
 			type: 'string',

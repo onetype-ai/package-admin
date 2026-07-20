@@ -1,4 +1,4 @@
-.e-49430f40
+.e-569986c4
 {
 	display: block;
 	width: 100%;
@@ -7,7 +7,7 @@
 
 /* Light scheme — the workspace well overrides the framework variables */
 
-body.ot-layout-light .e-49430f40 > .box
+body.ot-layout-light .e-569986c4 > .box
 {
 	--ot-bg-1: rgba(255, 255, 255, 1);
 	--ot-bg-1-border: rgba(242, 242, 242, 1);
@@ -31,7 +31,7 @@ body.ot-layout-light .e-49430f40 > .box
 
 /* Dark scheme — the same pattern mirrored, depths +5, hovers +10, borders +13 */
 
-body.ot-layout-dark .e-49430f40 > .box
+body.ot-layout-dark .e-569986c4 > .box
 {
 	--ot-bg-1: rgba(30, 30, 30, 1);
 	--ot-bg-1-border: rgba(43, 43, 43, 1);
@@ -53,7 +53,7 @@ body.ot-layout-dark .e-49430f40 > .box
 	--ot-text-3: rgb(165, 165, 165);
 }
 
-.e-49430f40 > .box
+.e-569986c4 > .box
 {
 	display: flex;
 	width: 100%;
@@ -66,7 +66,7 @@ body.ot-layout-dark .e-49430f40 > .box
 	overflow: hidden;
 }
 
-.e-49430f40 > .box > .middle
+.e-569986c4 > .box > .middle
 {
 	position: relative;
 	display: flex;
@@ -75,29 +75,29 @@ body.ot-layout-dark .e-49430f40 > .box
 	min-width: 0;
 }
 
-.e-49430f40 > .box > .slot.left,
-.e-49430f40 > .box > .slot.right
+.e-569986c4 > .box > .slot.left,
+.e-569986c4 > .box > .slot.right
 {
 	position: relative;
 	display: flex;
 	flex-shrink: 0;
 }
 
-.e-49430f40 > .box > .middle > .slot.top
+.e-569986c4 > .box > .middle > .slot.top
 {
 	display: flex;
 	justify-content: center;
 	flex-shrink: 0;
 }
 
-.e-49430f40 > .box > .middle > .slot.bottom
+.e-569986c4 > .box > .middle > .slot.bottom
 {
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
 }
 
-.e-49430f40 > .box > .middle > .slot.center
+.e-569986c4 > .box > .middle > .slot.center
 {
 	position: relative;
 	flex: 1;
@@ -105,13 +105,13 @@ body.ot-layout-dark .e-49430f40 > .box
 	overflow: auto;
 }
 
-.e-49430f40 > .box > .middle > .slot > div
+.e-569986c4 > .box > .middle > .slot > div
 {
 	display: contents;
 }
 
-.e-49430f40 > .box > .slot,
-.e-49430f40 > .box > div > .slot
+.e-569986c4 > .box > .slot,
+.e-569986c4 > .box > div > .slot
 {
 	z-index: 5;
 }

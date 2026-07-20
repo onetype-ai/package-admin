@@ -1,15 +1,15 @@
-$ot.ui.navbar.Fn('item.visible', function(item)
+admin.navbar.Fn('item.visible', function(item)
 {
 	const condition = item.Get('condition');
 
-	const screen = $ot.ui.screens.active()?.Get('id');
+	const screen = admin.screens.active()?.Get('id');
 
 	if(Array.isArray(condition.screen) && condition.screen.length && !condition.screen.includes(screen))
 	{
 		return false;
 	}
 
-	const app = $ot.ui.apps.active()?.Get('id');
+	const app = admin.apps.active()?.Get('id');
 
 	if(condition.app === true && !app)
 	{
@@ -26,7 +26,7 @@ $ot.ui.navbar.Fn('item.visible', function(item)
 		return false;
 	}
 
-	const mode = $ot.ui.modes.active()?.Get('id');
+	const mode = admin.modes.active()?.Get('id');
 
 	if(condition.mode === true && !mode)
 	{

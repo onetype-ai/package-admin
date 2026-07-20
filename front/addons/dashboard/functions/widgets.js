@@ -1,4 +1,4 @@
-$ot.ui.dashboard.Fn('widgets', function(section = null)
+admin.dashboard.Fn('widgets', function(section = null)
 {
 	return Object.values(this.widgets.Items())
 		.filter((widget) => (widget.Get('section') || null) === section)

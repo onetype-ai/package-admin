@@ -1,4 +1,4 @@
-$ot.ui.dashboard.types.Item({
+admin.dashboard.types.Item({
 	id: 'actions',
 	config: {
 		color: { type: 'string', value: '', description: 'Accent color name inherited from the widget.' },

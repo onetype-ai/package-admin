@@ -1,11 +1,11 @@
-$ot.ui.layouts.Fn('item.visible', function(item)
+admin.layouts.Fn('item.visible', function(item)
 {
 	if(!item.Get('isActive'))
 	{
 		return false;
 	}
 
-	const screen = $ot.ui.screens.active()?.Get('id');
+	const screen = admin.screens.active()?.Get('id');
 	const screens = item.Get('screen');
 
 	if(Array.isArray(screens) && screens.length && !screens.includes(screen))
@@ -15,12 +15,12 @@ $ot.ui.layouts.Fn('item.visible', function(item)
 
 	const condition = item.Get('condition');
 
-	if(condition.app.length && !condition.app.includes($ot.ui.apps.active()?.Get('id')))
+	if(condition.app.length && !condition.app.includes(admin.apps.active()?.Get('id')))
 	{
 		return false;
 	}
 
-	if(condition.mode.length && !condition.mode.includes($ot.ui.modes.active()?.Get('id')))
+	if(condition.mode.length && !condition.mode.includes(admin.modes.active()?.Get('id')))
 	{
 		return false;
 	}
@@ -32,7 +32,7 @@ $ot.ui.layouts.Fn('item.visible', function(item)
 
 	/* @todo permission check — wire once permissions has/grant API exists */
 
-	if(condition.callback && condition.callback.call($ot.ui.layouts.Fn('data'), item) === false)
+	if(condition.callback && condition.callback.call(admin.layouts.Fn('data'), item) === false)
 	{
 		return false;
 	}

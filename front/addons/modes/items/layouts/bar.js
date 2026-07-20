@@ -1,4 +1,4 @@
-onetype.AddonReady('ui.layouts', (layouts) =>
+onetype.AddonReady('admin.layouts', (layouts) =>
 {
 	layouts.Item({
 		id: 'modes-bar',
@@ -6,6 +6,6 @@ onetype.AddonReady('ui.layouts', (layouts) =>
 		zone: 'root',
 		slot: 'bottom',
 		order: 1000,
-		render: `<e-modes-bar></e-modes-bar>`
+		render: `<e-admin-modes-bar></e-admin-modes-bar>`
 	});
 });

@@ -1,9 +1,8 @@
-commands.Item({
-	id: 'ui:layouts:toggle',
+admin.layouts.CommandAdd({
+	id: 'toggle',
 	exposed: true,
 	silent: true,
 	description: 'Toggle a layout item by id. Flips the current state through ui:layouts:open or ui:layouts:close, including persistence and events.',
-	metadata: { addon: 'ui.layouts' },
 	in: {
 		id: {
 			type: 'string',
@@ -23,7 +22,7 @@ commands.Item({
 	},
 	callback: async function(properties, resolve)
 	{
-		const item = $ot.ui.layouts.ItemGet(properties.id);
+		const item = admin.layouts.ItemGet(properties.id);
 
 		if(!item)
 		{
@@ -34,11 +33,11 @@ commands.Item({
 
 		if(open)
 		{
-			await $ot.command('ui:layouts:open', properties.data ? { id: properties.id, data: properties.data } : { id: properties.id });
+			await admin.layouts.Command('open', properties.data ? { id: properties.id, data: properties.data } : { id: properties.id });
 		}
 		else
 		{
-			await $ot.command('ui:layouts:close', { id: properties.id });
+			await admin.layouts.Command('close', { id: properties.id });
 		}
 
 		resolve({ open }, 'Layout ' + properties.id + ' is now ' + (open ? 'open' : 'closed') + '.');

@@ -1,14 +1,14 @@
-onetype.EmitOn('ui.apps.open', () =>
+onetype.EmitOn('admin.apps.open', () =>
 {
-	$ot.ui.apps.Fn('theme');
+	admin.apps.theme();
 });
 
-onetype.EmitOn('ui.apps.close', () =>
+onetype.EmitOn('admin.apps.close', () =>
 {
-	$ot.ui.apps.Fn('theme');
+	admin.apps.theme();
 });
 
-$ot.boot.then(() =>
+$ot.platform.boot.then(() =>
 {
-	$ot.ui.apps.Fn('theme');
+	admin.apps.theme();
 });

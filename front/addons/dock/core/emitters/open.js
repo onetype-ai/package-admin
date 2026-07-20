@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.dock.open', {
+onetype.EmitRegister('admin.dock.open', {
 	description: 'Fired after a dock item opens.',
-	metadata: { addon: 'ui.dock' },
+	metadata: { addon: 'admin.dock' },
 	config: {
 		id: {
 			type: 'string',

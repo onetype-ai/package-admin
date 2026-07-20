@@ -1,6 +1,6 @@
-$ot.ui.modes.ItemOn('add', (item) =>
+admin.modes.ItemOn('add', (item) =>
 {
-	onetype.AddonReady('ui.explorer', (explorer) =>
+	onetype.AddonReady('admin.explorer', (explorer) =>
 	{
 		explorer.Item({
 			id: 'mode-' + item.Get('id'),
@@ -12,7 +12,7 @@ $ot.ui.modes.ItemOn('add', (item) =>
 			hint: 'Switch mode',
 			keywords: [item.Get('id')],
 			condition: { app: item.Get('condition').app },
-			callback: () => $ot.ui.modes.switch(item.Get('id'))
+			callback: () => admin.modes.Command('switch', { id: item.Get('id') })
 		});
 	});
 });

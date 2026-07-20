@@ -1,12 +1,12 @@
 /* ===== EXPLORER TRIGGER ===== */
 
-.e-32dcabc0
+.e-c10167e
 {
 	display: block;
 	margin-block: auto;
 }
 
-.e-32dcabc0 > .box
+.e-c10167e > .box
 {
 	display: flex;
 	align-items: center;
@@ -20,22 +20,22 @@
 	transition: border-color var(--ot-transition-fast), background var(--ot-transition-fast);
 }
 
-.e-32dcabc0 > .box.bg-0 { background: transparent; border-color: transparent; }
-.e-32dcabc0 > .box.bg-1 { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
-.e-32dcabc0 > .box.bg-2 { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
-.e-32dcabc0 > .box.bg-3 { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+.e-c10167e > .box.bg-0 { background: transparent; border-color: transparent; }
+.e-c10167e > .box.bg-1 { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-c10167e > .box.bg-2 { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-c10167e > .box.bg-3 { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
 
-.e-32dcabc0 > .box.bg-1:hover { background: var(--ot-bg-1-hover); }
-.e-32dcabc0 > .box.bg-2:hover { background: var(--ot-bg-2-hover); }
-.e-32dcabc0 > .box.bg-3:hover { background: var(--ot-bg-3-hover); }
+.e-c10167e > .box.bg-1:hover { background: var(--ot-bg-1-hover); }
+.e-c10167e > .box.bg-2:hover { background: var(--ot-bg-2-hover); }
+.e-c10167e > .box.bg-3:hover { background: var(--ot-bg-3-hover); }
 
-.e-32dcabc0 > .box > i
+.e-c10167e > .box > i
 {
 	color: var(--ot-text-3);
 	font-size: 15px;
 }
 
-.e-32dcabc0 > .box > span
+.e-c10167e > .box > span
 {
 	color: var(--ot-text-3);
 	font-size: var(--ot-size-s);

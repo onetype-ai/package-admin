@@ -1,6 +1,6 @@
-onetype.EmitRegister('ui.navbar.click', {
+onetype.EmitRegister('admin.navbar.click', {
 	description: 'Fired when a navbar item is clicked, before its own click or type behavior runs.',
-	metadata: { addon: 'ui.navbar' },
+	metadata: { addon: 'admin.navbar' },
 	config: {
 		id: {
 			type: 'string',
