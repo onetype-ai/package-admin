@@ -4,7 +4,6 @@ import admin from './addon.js';
 import './items/runtimes/admin.js';
 
 /* Html */
-import './items/html/icons.js';
 import './items/html/fonts.js';
 
 export default admin;
