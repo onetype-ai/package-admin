@@ -43,8 +43,8 @@ admin.dashboard.types.Item({
 		};
 
 		return `
-			<div class="ot-flex-vertical ot-gap-s">
-				<div ot-if="!list.length" class="ot-text-muted">No actions</div>
+			<div class="ot-stack-s">
+				<div ot-if="!list.length" class="ot-faint">No actions</div>
 				<div ot-for="action in list" :ot-key="action.label">
 					<e-admin-cards-action
 						:icon="action.icon"
