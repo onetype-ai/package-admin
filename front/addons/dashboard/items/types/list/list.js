@@ -37,6 +37,6 @@ admin.dashboard.types.Item({
 			});
 		});
 
-		return `<e-data-list :background="0" :rows="list"></e-data-list>`;
+		return `<e-ui-data-list :background="0" :rows="list"></e-ui-data-list>`;
 	}
 });

@@ -31,7 +31,7 @@ admin.modes.ElementAdd({
 
 		return `
 			<div ot-if="options.length" class="holder">
-				<e-form-options :value="value" :options="options" :_change="change"></e-form-options>
+				<e-ui-form-options :value="value" :options="options" :_change="change"></e-ui-form-options>
 			</div>
 		`;
 	}

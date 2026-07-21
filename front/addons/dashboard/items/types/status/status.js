@@ -27,6 +27,6 @@ admin.dashboard.types.Item({
 	},
 	render: function()
 	{
-		return `<e-data-status :background="0" :items="payload.items" :banner="false"></e-data-status>`;
+		return `<e-ui-data-status :background="0" :items="payload.items" :banner="false"></e-ui-data-status>`;
 	}
 });

@@ -124,13 +124,13 @@ admin.dashboard.ElementAdd({
 		return `
 			<div :class="pattern ? 'box ' + pattern : 'box'">
 				<section ot-for="section in sections" :ot-key="section.id || 'loose'" :class="classes(section)">
-					<e-global-heading
+					<e-ui-global-heading
 						ot-if="section.title"
 						:icon="section.icon"
 						:title="section.title"
 						:description="section.description"
 						element="h3"
-					></e-global-heading>
+					></e-ui-global-heading>
 					<div class="grid">
 						<div ot-for="widget in section.widgets" :ot-key="widget.id" :class="card(widget)" :style="'grid-column: span ' + widget.span">
 							<header ot-if="widget.title || widget.icon">
@@ -141,8 +141,8 @@ admin.dashboard.ElementAdd({
 								</div>
 							</header>
 							<div class="body" :style="widget.height ? 'height: ' + widget.height + 'px' : ''">
-								<e-status-loading ot-if="widget.state === 'loading'"></e-status-loading>
-								<e-status-error ot-if="widget.state === 'error'" icon="error" title="Failed to load" :description="widget.error" :_click="() => retry(widget)"></e-status-error>
+								<e-ui-status-loading ot-if="widget.state === 'loading'"></e-ui-status-loading>
+								<e-ui-status-error ot-if="widget.state === 'error'" icon="error" title="Failed to load" :description="widget.error" :_click="() => retry(widget)"></e-ui-status-error>
 								<div ot-if="widget.state === 'ready'" class="mount" ot-node="body(widget)"></div>
 							</div>
 						</div>

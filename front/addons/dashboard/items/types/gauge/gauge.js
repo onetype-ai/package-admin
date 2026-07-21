@@ -18,6 +18,6 @@ admin.dashboard.types.Item({
 	},
 	render: function()
 	{
-		return `<e-charts-gauge :background="0" :value="payload.value" :min="payload.min" :max="payload.max" :display="payload.display" :caption="payload.caption" :color="payload.color ? payload.color : (color ? color : 'brand')"></e-charts-gauge>`;
+		return `<e-ui-charts-gauge :background="0" :value="payload.value" :min="payload.min" :max="payload.max" :display="payload.display" :caption="payload.caption" :color="payload.color ? payload.color : (color ? color : 'brand')"></e-ui-charts-gauge>`;
 	}
 });

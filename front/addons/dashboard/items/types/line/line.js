@@ -31,6 +31,6 @@ admin.dashboard.types.Item({
 	},
 	render: function()
 	{
-		return `<e-charts-line :background="0" :labels="payload.labels" :series="payload.series"></e-charts-line>`;
+		return `<e-ui-charts-line :background="0" :labels="payload.labels" :series="payload.series"></e-ui-charts-line>`;
 	}
 });
