@@ -9,7 +9,7 @@
 	"status": "disabled",
 	"depends": [],
 	"bundle": [
-		"onetype/styles"
+		"onetype/ui"
 	],
 	"runtimes": [
 		"admin"
