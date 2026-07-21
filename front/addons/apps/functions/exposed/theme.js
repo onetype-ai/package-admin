@@ -3,9 +3,9 @@ admin.apps.FnExpose('theme', function()
 	const root = document.documentElement;
 	const active = admin.apps.active();
 	const color = active?.Get('color');
-	const scheme = active ? active.Get('scheme') : 'dark';
+	const scheme = active ? active.Get('scheme') : 'light';
 
-	document.body.classList.toggle('ot-light', scheme === 'light');
+	document.body.classList.toggle('ot-dark', scheme === 'dark');
 
 	if(!color || color.includes('var('))
 	{

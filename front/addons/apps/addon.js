@@ -32,7 +32,7 @@ onetype.AddonReady('admin', (admin) =>
 
 		addon.Field('scheme', {
 			type: 'string',
-			value: 'dark',
+			value: 'light',
 			options: ['dark', 'light'],
 			description: 'Color scheme while the app is active.'
 		});
