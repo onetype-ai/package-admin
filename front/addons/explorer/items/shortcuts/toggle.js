@@ -1,4 +1,4 @@
-onetype.AddonReady('modules.shortcuts', (shortcuts) =>
+onetype.AddonReady('shortcuts', (shortcuts) =>
 {
 	shortcuts.Item({
 		id: 'explorer-toggle',
