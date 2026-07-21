@@ -1,0 +1,241 @@
+/* ===== VIEWS BOARD ===== */
+
+.e-22179f3
+{
+	display: block;
+	width: 100%;
+}
+
+/* Colors */
+
+.e-22179f3 .brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-22179f3 .blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-22179f3 .red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-22179f3 .orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-22179f3 .green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+/* Box */
+
+.e-22179f3 > .box
+{
+	display: flex;
+	align-items: flex-start;
+	gap: var(--ot-spacing-m);
+	width: 100%;
+	overflow-x: auto;
+	padding-bottom: var(--ot-spacing-s);
+}
+
+/* Depth — the box carries the surface, everything inside sits one step above */
+
+.e-22179f3 > .box.bg-0 { --fill: transparent; --line: transparent; --above: var(--ot-bg-1); --edge: var(--ot-bg-1-border); --hover: var(--ot-bg-1-hover); }
+.e-22179f3 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); --hover: var(--ot-bg-2-hover); }
+.e-22179f3 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); --hover: var(--ot-bg-3-hover); }
+.e-22179f3 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); --hover: var(--ot-bg-3-hover); }
+
+/* Lane */
+
+.e-22179f3 > .box > .lane
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	width: 280px;
+	flex-shrink: 0;
+}
+
+/* Head */
+
+.e-22179f3 > .box > .lane > .head
+{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 0 var(--ot-spacing-x);
+	height: 32px;
+}
+
+.e-22179f3 > .box > .lane > .head > .dot
+{
+	width: 8px;
+	height: 8px;
+	border-radius: 99px;
+	background: var(--accent);
+}
+
+.e-22179f3 > .box > .lane > .head > .label
+{
+	font-size: var(--ot-size-s);
+	font-weight: 600;
+	color: var(--ot-text-1);
+}
+
+.e-22179f3 > .box > .lane > .head > .count
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 20px;
+	height: 20px;
+	padding: 0 6px;
+	border-radius: 99px;
+	background: var(--tint);
+	font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--accent);
+}
+
+/* Cards */
+
+.e-22179f3 > .box > .lane > .cards
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	min-height: 120px;
+}
+
+.e-22179f3 > .box > .lane > .cards > .card
+{
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: var(--ot-spacing-s);
+	border: 1px solid var(--edge);
+	border-radius: var(--ot-radius-m);
+	background: var(--above);
+	transition: background var(--ot-transition-fast), transform var(--ot-transition-fast);
+}
+
+.e-22179f3 > .box.clickable > .lane > .cards > .card
+{
+	cursor: pointer;
+}
+
+.e-22179f3 > .box.clickable > .lane > .cards > .card:hover
+{
+	background: var(--hover);
+	transform: translateY(-1px);
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .cover
+{
+	width: 100%;
+	aspect-ratio: 16 / 7;
+	border-radius: var(--ot-radius-s);
+	object-fit: cover;
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .title
+{
+	font-size: var(--ot-size-s);
+	font-weight: 600;
+	line-height: 1.4;
+	color: var(--ot-text-1);
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .badges
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge
+{
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 8px;
+	border-radius: 99px;
+	background: var(--tint);
+	font-size: 10.5px;
+	font-weight: 600;
+	color: var(--accent);
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+.e-22179f3 > .box > .lane > .cards > .card > .badges > .badge > i
+{
+	font-size: 12px;
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .description
+{
+	font-size: 12px;
+	line-height: 1.5;
+	color: var(--ot-text-3);
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .footer
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--ot-spacing-s);
+	margin-top: 2px;
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .footer > .avatar
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 99px;
+	background: var(--tint);
+	font-size: 8px;
+	font-weight: 650;
+	letter-spacing: 0.02em;
+	color: var(--accent);
+}
+
+.e-22179f3 > .box > .lane > .cards > .card > .footer > .date
+{
+	font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+	font-size: 11px;
+	color: var(--ot-text-3);
+}
+
+/* Create */
+
+.e-22179f3 > .box > .lane > .cards > .create
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	height: 32px;
+	border: none;
+	border-radius: var(--ot-radius-m);
+	background: transparent;
+	font-family: inherit;
+	font-size: var(--ot-size-s);
+	font-weight: 500;
+	color: var(--ot-text-3);
+	cursor: pointer;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-22179f3 > .box > .lane > .cards > .create > i
+{
+	font-size: 16px;
+}
+
+.e-22179f3 > .box > .lane > .cards > .create:hover
+{
+	background: var(--above);
+	color: var(--ot-text-1);
+}
+

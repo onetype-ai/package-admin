@@ -1,0 +1,188 @@
+/* ===== CARDS ITEM ===== */
+
+.e-6a29216f
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-6a29216f > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-m);
+	width: 100%;
+	height: 100%;
+	padding: var(--ot-spacing-m);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+	overflow: hidden;
+	transition: border-color var(--ot-transition-fast), transform var(--ot-transition-fast), box-shadow var(--ot-transition-fast);
+}
+
+.e-6a29216f > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-6a29216f > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-6a29216f > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-6a29216f > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Accent */
+
+.e-6a29216f > .box.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-6a29216f > .box.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-6a29216f > .box.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-6a29216f > .box.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-6a29216f > .box.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+/* States */
+
+.e-6a29216f > .box.clickable
+{
+	cursor: pointer;
+}
+
+.e-6a29216f > .box.clickable:hover
+{
+	border-color: var(--edge);
+	transform: translateY(-2px);
+}
+
+.e-6a29216f > .box.clickable:active
+{
+	transform: translateY(0);
+}
+
+.e-6a29216f > .box.active
+{
+	border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+	box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.e-6a29216f > .box.disabled
+{
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/* Head */
+
+.e-6a29216f > .box > .head
+{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--ot-spacing-s);
+}
+
+.e-6a29216f > .box > .head > .tile
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 12px;
+	background: var(--tint);
+	color: var(--accent);
+}
+
+.e-6a29216f > .box > .head > .tile > i
+{
+	font-size: 21px;
+}
+
+.e-6a29216f > .box > .head > .badge
+{
+	padding: 3px 8px;
+	border-radius: 99px;
+	background: var(--tint);
+	color: var(--accent);
+	font-size: 10px;
+	font-weight: 650;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+/* Body */
+
+.e-6a29216f > .box > .body
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-x);
+}
+
+.e-6a29216f > .box > .body > .eyebrow
+{
+	color: var(--ot-text-3);
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.e-6a29216f > .box > .body > .title
+{
+	margin: 0;
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-secondary);
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	line-height: 1.3;
+}
+
+.e-6a29216f > .box > .body > .description
+{
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	margin: 0;
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-m);
+	line-height: 1.5;
+	overflow: hidden;
+}
+
+/* Meta */
+
+.e-6a29216f > .box > .meta
+{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--ot-spacing-x);
+	margin-top: auto;
+	padding-top: var(--ot-spacing-s);
+	border-top: 1px solid var(--line);
+}
+
+.e-6a29216f > .box > .meta > div > .entry
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	font-variant-numeric: tabular-nums;
+}
+
+.e-6a29216f > .box > .meta > div:not(:last-child) > .entry::after
+{
+	content: '·';
+	margin: 0 var(--ot-spacing-x) 0 var(--ot-spacing-s);
+	color: var(--ot-text-3);
+	opacity: 0.5;
+}
+
+/* Bottom slot */
+
+.e-6a29216f > .box > .bottom:empty
+{
+	display: none;
+}
+
+.e-6a29216f > .box > .bottom
+{
+	margin-top: var(--ot-spacing-s);
+}

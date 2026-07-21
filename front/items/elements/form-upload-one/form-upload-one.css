@@ -1,0 +1,201 @@
+/* ===== FORM UPLOAD ONE ===== */
+
+.e-18cb4991
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-18cb4991 > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.e-18cb4991 > .box.disabled
+{
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/* Field */
+
+.e-18cb4991 > .box > .field
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	height: var(--ot-height-m);
+	padding: 0 var(--ot-spacing-s) 0 5px;
+	border: 1px solid transparent;
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition), border-color var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+/* Surface */
+
+.e-18cb4991 > .box.bg-0 > .field { background: transparent; border-color: transparent; }
+.e-18cb4991 > .box.bg-1 > .field { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-18cb4991 > .box.bg-2 > .field { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-18cb4991 > .box.bg-3 > .field { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+
+.e-18cb4991 > .box.bg-1 > .field:hover:not(:focus-within) { background: var(--ot-bg-1-hover); }
+.e-18cb4991 > .box.bg-2 > .field:hover:not(:focus-within) { background: var(--ot-bg-2-hover); }
+.e-18cb4991 > .box.bg-3 > .field:hover:not(:focus-within) { background: var(--ot-bg-3-hover); }
+
+.e-18cb4991 > .box > .field:focus-within,
+.e-18cb4991 > .box.hovering > .field
+{
+	border-color: var(--ot-brand);
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+/* Thumb */
+
+.e-18cb4991 > .box > .field > .thumb
+{
+	flex-shrink: 0;
+	width: 26px;
+	height: 26px;
+	border-radius: 7px;
+	object-fit: cover;
+}
+
+/* Mark */
+
+.e-18cb4991 > .box > .field > .mark
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	height: 26px;
+	padding: 0 7px;
+	border-radius: 7px;
+	color: #fff;
+	font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.e-18cb4991 > .box > .field > .mark.brand { background: var(--ot-brand); }
+.e-18cb4991 > .box > .field > .mark.blue { background: var(--ot-blue); }
+.e-18cb4991 > .box > .field > .mark.red { background: var(--ot-red); }
+.e-18cb4991 > .box > .field > .mark.orange { background: var(--ot-orange); }
+.e-18cb4991 > .box > .field > .mark.green { background: var(--ot-green); }
+
+/* Icon */
+
+.e-18cb4991 > .box > .field > .icon
+{
+	flex-shrink: 0;
+	margin-left: 5px;
+	font-size: 18px;
+	color: var(--ot-text-3);
+}
+
+.e-18cb4991 > .box > .field > .icon.spin
+{
+	color: var(--ot-brand);
+	animation: e-18cb4991-spin 0.8s linear infinite;
+}
+
+@keyframes e-18cb4991-spin
+{
+	to { transform: rotate(360deg); }
+}
+
+/* Name */
+
+.e-18cb4991 > .box > .field > .name
+{
+	flex: 1;
+	min-width: 0;
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Input */
+
+.e-18cb4991 > .box > .field > .input
+{
+	flex: 1;
+	min-width: 0;
+	height: 100%;
+	padding: 0;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+}
+
+.e-18cb4991 > .box > .field > .input::placeholder
+{
+	color: var(--ot-text-3);
+	font-weight: 400;
+}
+
+/* Tools */
+
+.e-18cb4991 > .box > .field > .tools
+{
+	display: flex;
+	gap: 2px;
+	flex-shrink: 0;
+}
+
+.e-18cb4991 > .box > .field > .tools > .tool
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-3);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), color var(--ot-transition);
+}
+
+.e-18cb4991 > .box > .field > .tools > .tool:hover
+{
+	background: var(--ot-bg-3);
+	color: var(--ot-text-1);
+}
+
+.e-18cb4991 > .box > .field > .tools > .tool.danger:hover
+{
+	background: var(--ot-red-opacity);
+	color: var(--ot-red);
+}
+
+.e-18cb4991 > .box > .field > .tools > .tool > i
+{
+	font-size: 14px;
+}
+
+/* Picker */
+
+.e-18cb4991 > .box > .picker
+{
+	display: none;
+}

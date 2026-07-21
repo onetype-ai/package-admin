@@ -1,0 +1,180 @@
+/* ===== NAVIGATION NAVBAR ===== */
+
+.e-39d31415
+{
+	display: contents;
+}
+
+.e-39d31415 > .box
+{
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	width: 100%;
+	height: 100%;
+	background: var(--fill);
+}
+
+.e-39d31415 > .box.bg-0 { --fill: transparent; --line: transparent; --active: transparent; }
+.e-39d31415 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --active: var(--ot-bg-1-border); }
+.e-39d31415 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --active: var(--ot-bg-2-border); }
+.e-39d31415 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --active: var(--ot-bg-3-border); }
+
+/* Zones */
+
+.e-39d31415 > .box > .zone
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-x);
+	min-width: 0;
+	padding: 0 var(--ot-spacing-s);
+}
+
+.e-39d31415 > .box > .zone.center
+{
+	justify-content: center;
+}
+
+.e-39d31415 > .box > .zone.right
+{
+	justify-content: flex-end;
+}
+
+/* Logo */
+
+.e-39d31415 > .box > .zone > .logo
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 58px;
+	height: 100%;
+	margin-left: calc(var(--ot-spacing-s) * -1);
+	transition: transform var(--ot-transition-fast);
+}
+
+.e-39d31415 > .box > .zone > .logo:hover
+{
+	transform: scale(1.06);
+}
+
+.e-39d31415 > .box > .zone > .logo > img
+{
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
+
+/* Entry is invisible to layout — items sit directly in the zone flex. The mounted render wrapper unwraps too, so custom renders size themselves full height. */
+
+.e-39d31415 > .box > .zone > .entry
+{
+	display: contents;
+}
+
+.e-39d31415 > .box > .zone > .entry > div:not(.separator)
+{
+	display: contents;
+}
+
+.e-39d31415 > .box > .zone > .entry > div:not(.separator) > *
+{
+	align-self: stretch;
+}
+
+/* Separator */
+
+.e-39d31415 > .box > .zone > .entry > .separator
+{
+	width: 1px;
+	height: 16px;
+	margin: 0 var(--ot-spacing-x);
+	background: var(--line);
+}
+
+/* Item button (pill) */
+
+.e-39d31415 > .box > .zone .item
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	gap: var(--ot-spacing-x);
+	height: 27px;
+	min-width: 27px;
+	padding: 0 var(--ot-spacing-s);
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-39d31415 > .box > .zone .item:hover
+{
+	background: var(--active);
+	color: var(--ot-text-1);
+}
+
+.e-39d31415 > .box > .zone .item > i
+{
+	font-size: 18px;
+}
+
+/* Badge */
+
+.e-39d31415 > .box > .zone .item > .badge
+{
+	min-width: 6px;
+	height: 6px;
+	padding: 0;
+	border-radius: 100px;
+	background: var(--ot-red);
+	color: white;
+	font-size: 0;
+	line-height: 1;
+}
+
+.e-39d31415 > .box > .zone .item > .badge:not(:empty)
+{
+	min-width: 14px;
+	height: 14px;
+	padding: 0 4px;
+	font-size: 9px;
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Active — brand-opacity bg, accent color, top indicator growing in */
+
+.e-39d31415 > .box > .zone .item.active,
+.e-39d31415 > .box > .zone .item.active:hover
+{
+	position: relative;
+	background: color-mix(in srgb, var(--color) 12%, transparent);
+	color: var(--color);
+}
+
+.e-39d31415 > .box > .zone .item.active::before
+{
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: calc(var(--ot-spacing-s) * -1);
+	width: 20px;
+	height: 3px;
+	border-radius: 0 0 var(--ot-radius-s) var(--ot-radius-s);
+	background: var(--color);
+	transform: translateX(-50%);
+}
+
+.e-39d31415 > .box > .zone .item.active > i
+{
+	font-variation-settings: 'FILL' 1, 'wght' 400;
+}

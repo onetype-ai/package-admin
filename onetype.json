@@ -2,14 +2,14 @@
 	"slug": "onetype/admin",
 	"name": "Admin",
 	"version": "0.1.0",
-	"description": "The admin workspace of the platform. Dock, navbar, canvas, apps, dashboard, explorer, layouts, modes, screens and status \u2014 the shell a user starts from.",
+	"description": "The admin workspace of the platform. Dock, navbar, canvas, apps, dashboard, explorer, layouts, modes, screens and status — the shell a user starts from.",
 	"icon": "space_dashboard",
 	"color": "rgba(96, 165, 250, 1)",
 	"core": ">=0.1.0",
 	"status": "disabled",
 	"depends": [],
 	"bundle": [
-		"onetype/ui"
+		"onetype/styles"
 	],
 	"runtimes": [
 		"admin"

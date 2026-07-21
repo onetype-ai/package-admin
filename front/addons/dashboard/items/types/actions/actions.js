@@ -46,7 +46,7 @@ admin.dashboard.types.Item({
 			<div class="ot-flex-vertical ot-gap-s">
 				<div ot-if="!list.length" class="ot-text-muted">No actions</div>
 				<div ot-for="action in list" :ot-key="action.label">
-					<e-ui-cards-action
+					<e-admin-cards-action
 						:icon="action.icon"
 						:label="action.label"
 						:description="action.description"
@@ -54,7 +54,7 @@ admin.dashboard.types.Item({
 						:color="action.color"
 						:is-disabled="action.disabled"
 						:_click="run(action)"
-					></e-ui-cards-action>
+					></e-admin-cards-action>
 				</div>
 			</div>
 		`;

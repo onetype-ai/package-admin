@@ -64,7 +64,7 @@ admin.apps.ElementAdd({
 						</div>
 					</div>
 				</div>
-				<e-ui-status-empty ot-if="!apps.length" icon="apps" title="Nothing here" description="Every application is already on the rail."></e-ui-status-empty>
+				<e-admin-status-empty ot-if="!apps.length" icon="apps" title="Nothing here" description="Every application is already on the rail."></e-admin-status-empty>
 			</div>
 		`;
 	}

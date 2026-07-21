@@ -1,0 +1,199 @@
+/* ===== FORM RADIO ===== */
+
+.e-9216afa
+{
+	display: inline-block;
+}
+
+/* Box */
+
+.e-9216afa > .box
+{
+	position: relative;
+	display: inline-flex;
+	align-items: flex-start;
+	gap: var(--ot-spacing-s);
+	cursor: pointer;
+	font-family: var(--ot-font-primary);
+}
+
+/* Input — hidden but accessible */
+
+.e-9216afa > .box > input
+{
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	width: 0;
+	height: 0;
+	margin: 0;
+}
+
+/* Info */
+
+.e-9216afa > .box > .info
+{
+	display: inline-flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+	padding-top: 1px;
+}
+
+.e-9216afa > .box > .info > .label
+{
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	color: var(--ot-text-1);
+	line-height: 1.3;
+	user-select: none;
+	transition: color var(--ot-transition);
+}
+
+.e-9216afa > .box > .info > .description
+{
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+	line-height: 1.4;
+	user-select: none;
+	transition: color var(--ot-transition);
+}
+
+/* Mark */
+
+.e-9216afa > .box > .mark
+{
+	position: relative;
+	display: block;
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 1px solid var(--ot-bg-3-border);
+	background: var(--ot-bg-2);
+	transition: background var(--ot-transition), border-color var(--ot-transition), transform var(--ot-transition-fast), box-shadow var(--ot-transition);
+}
+
+.e-9216afa > .box:hover:not(.disabled) > input:not(:checked) ~ .mark
+{
+	background: var(--ot-bg-2-hover);
+	border-color: var(--ot-text-3);
+}
+
+/* Dot */
+
+.e-9216afa > .box > .mark::after
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+	transform: translate(-50%, -50%) scale(0);
+	opacity: 0;
+	transition: transform var(--ot-transition), opacity var(--ot-transition-fast);
+}
+
+.e-9216afa > .box > input:checked ~ .mark::after
+{
+	transform: translate(-50%, -50%) scale(1);
+	opacity: 1;
+}
+
+/* Focus */
+
+.e-9216afa > .box > input:focus-visible ~ .mark
+{
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+/* Active */
+
+.e-9216afa > .box:active > .mark
+{
+	transform: scale(0.92);
+}
+
+/* Disabled */
+
+.e-9216afa > .box.disabled
+{
+	cursor: not-allowed;
+}
+
+.e-9216afa > .box.disabled > .mark
+{
+	opacity: 0.45;
+}
+
+.e-9216afa > .box.disabled > .info > .label,
+.e-9216afa > .box.disabled > .info > .description
+{
+	color: var(--ot-text-3);
+	opacity: 0.6;
+}
+
+/* ===== COLOR (checked state) ===== */
+
+.e-9216afa > .box > input:checked ~ .mark
+{
+	background: var(--ot-brand);
+	border-color: var(--ot-brand);
+}
+
+.e-9216afa > .box.color-blue > input:checked ~ .mark
+{
+	background: var(--ot-blue);
+	border-color: var(--ot-blue);
+}
+
+.e-9216afa > .box.color-red > input:checked ~ .mark
+{
+	background: var(--ot-red);
+	border-color: var(--ot-red);
+}
+
+.e-9216afa > .box.color-orange > input:checked ~ .mark
+{
+	background: var(--ot-orange);
+	border-color: var(--ot-orange);
+}
+
+.e-9216afa > .box.color-green > input:checked ~ .mark
+{
+	background: var(--ot-green);
+	border-color: var(--ot-green);
+}
+
+/* Focus per color */
+
+.e-9216afa > .box.color-blue > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-blue-opacity); }
+.e-9216afa > .box.color-red > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-red-opacity); }
+.e-9216afa > .box.color-orange > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-orange-opacity); }
+.e-9216afa > .box.color-green > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-green-opacity); }
+
+/* Icon */
+
+.e-9216afa > .box > .icon
+{
+	font-size: 18px;
+	color: var(--ot-text-2);
+	flex-shrink: 0;
+	align-self: center;
+}
+
+/* Count */
+
+.e-9216afa > .box > .count
+{
+	margin-left: auto;
+	padding-left: var(--ot-spacing-s);
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--ot-text-3);
+	font-variant-numeric: tabular-nums;
+	align-self: center;
+}

@@ -1,0 +1,49 @@
+body
+{
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: var(--ot-font-secondary);
+	font-weight: 600;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	color: var(--ot-text-1);
+}
+
+h1 { font-size: 3rem; letter-spacing: -0.03em; }
+h2 { font-size: 2.25rem; letter-spacing: -0.03em; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+p
+{
+	line-height: 1.6;
+	color: var(--ot-text-2);
+}
+
+ul, ol
+{
+	list-style: none;
+}
+
+a
+{
+	transition: color var(--ot-transition);
+}
+
+@media screen and (max-width: 900px)
+{
+	html { font-size: 95%; }
+	h1 { line-height: 1.05; }
+	p { line-height: 1.5; }
+}
+
+@media screen and (max-width: 480px)
+{
+	html { font-size: 90%; }
+	p { line-height: 1.4; }
+}

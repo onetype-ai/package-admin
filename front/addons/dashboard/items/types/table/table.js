@@ -32,6 +32,6 @@ admin.dashboard.types.Item({
 	},
 	render: function()
 	{
-		return `<e-ui-data-table :background="0" :columns="payload.columns" :rows="payload.rows"></e-ui-data-table>`;
+		return `<e-admin-data-table :background="0" :columns="payload.columns" :rows="payload.rows"></e-admin-data-table>`;
 	}
 });

@@ -1,0 +1,199 @@
+/* ===== FORM INPUT ===== */
+
+.e-99a272b
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-99a272b > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border: 1px solid transparent;
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition), border-color var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+/* Surface */
+
+.e-99a272b > .box.bg-0 { background: transparent; border-color: transparent; }
+.e-99a272b > .box.bg-1 { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-99a272b > .box.bg-2 { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-99a272b > .box.bg-3 { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+
+.e-99a272b > .box.bg-1:hover:not(:focus-within):not(.disabled) { background: var(--ot-bg-1-hover); }
+.e-99a272b > .box.bg-2:hover:not(:focus-within):not(.disabled) { background: var(--ot-bg-2-hover); }
+.e-99a272b > .box.bg-3:hover:not(:focus-within):not(.disabled) { background: var(--ot-bg-3-hover); }
+
+.e-99a272b > .box:focus-within
+{
+	border-color: var(--ot-brand);
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+.e-99a272b > .box.disabled
+{
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+/* Field */
+
+.e-99a272b > .box > .field
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	height: var(--ot-height-m);
+	padding: 0 var(--ot-spacing-m);
+}
+
+/* Icon */
+
+.e-99a272b > .box > .field > .icon
+{
+	flex-shrink: 0;
+	font-size: 18px;
+	color: var(--ot-text-3);
+	transition: color var(--ot-transition);
+}
+
+.e-99a272b > .box:focus-within > .field > .icon
+{
+	color: var(--ot-text-1);
+}
+
+/* Affix */
+
+.e-99a272b > .box > .field > .affix
+{
+	flex-shrink: 0;
+	color: var(--ot-text-3);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	user-select: none;
+}
+
+/* Input */
+
+.e-99a272b > .box > .field > .input
+{
+	flex: 1;
+	min-width: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+}
+
+.e-99a272b > .box > .field > .input::placeholder
+{
+	color: var(--ot-text-3);
+	font-weight: 400;
+}
+
+.e-99a272b > .box > .field > .input:disabled
+{
+	cursor: not-allowed;
+}
+
+/* Action */
+
+.e-99a272b > .box > .field > .action
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 22px;
+	height: 22px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-3);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), color var(--ot-transition);
+}
+
+.e-99a272b > .box > .field > .action:hover
+{
+	background: var(--ot-bg-3);
+	color: var(--ot-text-1);
+}
+
+.e-99a272b > .box > .field > .action > i
+{
+	font-size: 14px;
+}
+
+/* Dropdown */
+
+.e-99a272b > .box > .dropdown
+{
+	position: absolute;
+	top: calc(100% + var(--ot-spacing-x));
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	padding: var(--ot-spacing-x);
+	background: var(--ot-bg-1);
+	border: 1px solid var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-m);
+	z-index: 10;
+	max-height: 240px;
+	overflow-y: auto;
+	animation: e-99a272b-drop var(--ot-transition);
+}
+
+@keyframes e-99a272b-drop
+{
+	from { opacity: 0; transform: translateY(-4px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.e-99a272b > .box > .dropdown > div
+{
+	display: contents;
+}
+
+.e-99a272b > .box > .dropdown > div > .option
+{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: var(--ot-spacing-s) var(--ot-spacing-m);
+	background: transparent;
+	border: none;
+	border-radius: var(--ot-radius-s);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	color: var(--ot-text-1);
+	text-align: left;
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-99a272b > .box > .dropdown > div > .option:hover,
+.e-99a272b > .box > .dropdown > div > .option.active
+{
+	background: var(--ot-brand-opacity);
+	color: var(--ot-brand);
+}

@@ -1,0 +1,114 @@
+/* ===== GLOBAL TAGS ===== */
+
+.e-1b33872f
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-1b33872f > .box
+{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+}
+
+/* Surface — depth set through the background prop */
+
+.e-1b33872f > .box.bg-0 { --fill: transparent; --above: transparent; --edge: transparent; }
+.e-1b33872f > .box.bg-1 { --fill: var(--ot-bg-1); --above: var(--ot-bg-2); --edge: var(--ot-bg-1-border); }
+.e-1b33872f > .box.bg-2 { --fill: var(--ot-bg-2); --above: var(--ot-bg-3); --edge: var(--ot-bg-2-border); }
+.e-1b33872f > .box.bg-3 { --fill: var(--ot-bg-3); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Tag */
+
+.e-1b33872f > .box > div > .tag
+{
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	height: var(--ot-height-s);
+	padding: 0 var(--ot-spacing-m);
+	border: 1px solid var(--edge);
+	border-radius: 99px;
+	background: var(--fill);
+	color: var(--ot-text-2);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 550;
+	cursor: pointer;
+	transition: background var(--ot-transition-fast), border-color var(--ot-transition-fast), color var(--ot-transition-fast), transform var(--ot-transition-fast);
+}
+
+.e-1b33872f > .box > div > .tag.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); --line: var(--ot-brand-border); }
+.e-1b33872f > .box > div > .tag.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); --line: var(--ot-blue-border); }
+.e-1b33872f > .box > div > .tag.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); --line: var(--ot-red-border); }
+.e-1b33872f > .box > div > .tag.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); --line: var(--ot-orange-border); }
+.e-1b33872f > .box > div > .tag.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); --line: var(--ot-green-border); }
+
+.e-1b33872f > .box > div > .tag:hover
+{
+	border-color: var(--edge);
+	color: var(--ot-text-1);
+}
+
+.e-1b33872f > .box > div > .tag:active
+{
+	transform: scale(0.97);
+}
+
+.e-1b33872f > .box > div > .tag.active
+{
+	background: var(--tint);
+	border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+	color: var(--accent);
+}
+
+.e-1b33872f > .box > div > .tag.disabled
+{
+	opacity: 0.45;
+	pointer-events: none;
+}
+
+/* Dot */
+
+.e-1b33872f > .box > div > .tag > .dot
+{
+	width: 7px;
+	height: 7px;
+	border-radius: 99px;
+	background: var(--accent);
+	flex-shrink: 0;
+}
+
+/* Icon */
+
+.e-1b33872f > .box > div > .tag > i
+{
+	font-size: 15px;
+}
+
+/* Count */
+
+.e-1b33872f > .box > div > .tag > .count
+{
+	padding: 1px 7px;
+	border-radius: 99px;
+	background: var(--above);
+	color: var(--ot-text-3);
+	font-size: 10px;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
+	line-height: 1.4;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-1b33872f > .box > div > .tag.active > .count
+{
+	background: color-mix(in srgb, var(--accent) 22%, transparent);
+	color: var(--accent);
+}

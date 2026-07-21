@@ -1,0 +1,184 @@
+/* ===== VIEWS TIMELINE ===== */
+
+.e-19e65214
+{
+	display: block;
+	width: 100%;
+}
+
+/* Colors */
+
+.e-19e65214 .brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-19e65214 .blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-19e65214 .red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-19e65214 .orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-19e65214 .green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+/* Box */
+
+.e-19e65214 > .box
+{
+	display: flex;
+	width: 100%;
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+	overflow: hidden;
+}
+
+.e-19e65214 > .box.bg-0 { --fill: transparent; --line: transparent; }
+.e-19e65214 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); }
+.e-19e65214 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); }
+.e-19e65214 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); }
+
+/* Names */
+
+.e-19e65214 > .box > .names
+{
+	display: flex;
+	flex-direction: column;
+	width: 220px;
+	flex-shrink: 0;
+	border-right: 1px solid var(--ot-bg-2-border);
+}
+
+.e-19e65214 > .box > .names > .axis
+{
+	height: 36px;
+	border-bottom: 1px solid var(--ot-bg-2-border);
+}
+
+.e-19e65214 > .box > .names > .name
+{
+	display: flex;
+	align-items: center;
+	height: 44px;
+	padding: 0 var(--ot-spacing-m);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: var(--ot-size-s);
+	font-weight: 550;
+	color: var(--ot-text-1);
+}
+
+/* Field */
+
+.e-19e65214 > .box > .field
+{
+	position: relative;
+	flex: 1;
+	min-width: 0;
+}
+
+.e-19e65214 > .box > .field > .line
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: var(--ot-bg-2-border);
+}
+
+.e-19e65214 > .box > .field > .today
+{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	background: var(--ot-brand);
+	opacity: 0.65;
+	z-index: 1;
+}
+
+.e-19e65214 > .box > .field > .today::before
+{
+	content: '';
+	position: absolute;
+	top: 15px;
+	left: -3px;
+	width: 7px;
+	height: 7px;
+	border-radius: 99px;
+	background: var(--ot-brand);
+}
+
+/* Axis */
+
+.e-19e65214 > .box > .field > .axis
+{
+	position: relative;
+	height: 36px;
+	border-bottom: 1px solid var(--ot-bg-2-border);
+}
+
+.e-19e65214 > .box > .field > .axis > .tick
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	padding-left: 6px;
+	font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--ot-text-3);
+}
+
+/* Rows */
+
+.e-19e65214 > .box > .field > .row
+{
+	position: relative;
+	height: 44px;
+}
+
+.e-19e65214 > .box > .field > .row > .bar
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	height: 26px;
+	min-width: 10px;
+	padding: 0 8px;
+	border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+	border-radius: 99px;
+	background: var(--tint);
+	overflow: hidden;
+	transition: border-color var(--ot-transition-fast), filter var(--ot-transition-fast);
+}
+
+.e-19e65214 > .box.clickable > .field > .row > .bar
+{
+	cursor: pointer;
+}
+
+.e-19e65214 > .box.clickable > .field > .row > .bar:hover
+{
+	border-color: var(--accent);
+	filter: brightness(1.1);
+}
+
+.e-19e65214 > .box > .field > .row > .bar > .text
+{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 11px;
+	font-weight: 550;
+	color: var(--ot-text-1);
+}
+
+/* Empty */
+
+.e-19e65214 > .box > .empty
+{
+	flex: 1;
+	padding: var(--ot-spacing-l);
+	text-align: center;
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+}

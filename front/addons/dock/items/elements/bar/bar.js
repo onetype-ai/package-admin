@@ -55,6 +55,6 @@ admin.dock.ElementAdd({
 		this.On('admin.apps.close', refresh);
 		this.On('admin.modes.switch', refresh);
 
-		return `<e-ui-navigation-dock :items="items" :panel="panel"></e-ui-navigation-dock>`;
+		return `<e-admin-navigation-dock :items="items" :panel="panel"></e-admin-navigation-dock>`;
 	}
 });

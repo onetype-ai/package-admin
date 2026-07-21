@@ -1,0 +1,163 @@
+/* ===== DATA ATTACHMENTS ===== */
+
+.e-7f11d261
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-7f11d261 > .box
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+}
+
+/* Surface — depth set through the background prop */
+
+.e-7f11d261 > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-7f11d261 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-7f11d261 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-7f11d261 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Chip */
+
+.e-7f11d261 > .box > div > .chip
+{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	max-width: 280px;
+	height: 36px;
+	padding: 0 var(--ot-spacing-s) 0 5px;
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	background: var(--fill);
+	overflow: hidden;
+	transition: border-color var(--ot-transition-fast), background var(--ot-transition-fast);
+}
+
+.e-7f11d261 > .box > div > .chip.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-7f11d261 > .box > div > .chip.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-7f11d261 > .box > div > .chip.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-7f11d261 > .box > div > .chip.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-7f11d261 > .box > div > .chip.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+.e-7f11d261 > .box > div > .chip:hover
+{
+	border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+}
+
+/* Thumb — image preview block */
+
+.e-7f11d261 > .box > div > .chip > .thumb
+{
+	flex-shrink: 0;
+	width: 26px;
+	height: 26px;
+	border-radius: 7px;
+	object-fit: cover;
+}
+
+/* Mark — colored extension block */
+
+.e-7f11d261 > .box > div > .chip > .mark
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	height: 26px;
+	padding: 0 7px;
+	border-radius: 7px;
+	background: var(--accent);
+	color: #fff;
+	font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+/* Name */
+
+.e-7f11d261 > .box > div > .chip > .name
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-s);
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: 0;
+}
+
+/* Size */
+
+.e-7f11d261 > .box > div > .chip > .size
+{
+	flex-shrink: 0;
+	color: var(--ot-text-3);
+	font-size: 10px;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Tools — slide over the size on hover */
+
+.e-7f11d261 > .box > div > .chip > .tools
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	gap: 1px;
+	padding: 0 4px 0 10px;
+	background: linear-gradient(90deg, transparent 0%, var(--fill) 30%);
+	opacity: 0;
+	transform: translateX(6px);
+	transition: opacity var(--ot-transition-fast), transform var(--ot-transition-fast);
+}
+
+.e-7f11d261 > .box > div > .chip:hover > .tools
+{
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.e-7f11d261 > .box > div > .chip > .tools > .tool
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	color: var(--ot-text-2);
+	cursor: pointer;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-7f11d261 > .box > div > .chip > .tools > .tool:hover
+{
+	background: var(--above);
+	color: var(--ot-text-1);
+}
+
+.e-7f11d261 > .box > div > .chip > .tools > .tool.danger:hover
+{
+	background: var(--ot-red-opacity);
+	color: var(--ot-red);
+}
+
+.e-7f11d261 > .box > div > .chip > .tools > .tool > i
+{
+	font-size: 14px;
+}

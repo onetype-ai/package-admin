@@ -1,0 +1,101 @@
+/* ===== FORM TEXTAREA ===== */
+
+.e-3e32964f
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-3e32964f > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: var(--ot-spacing-s) var(--ot-spacing-m);
+	border: 1px solid transparent;
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition), border-color var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+/* Surface */
+
+.e-3e32964f > .box.bg-0 { background: transparent; border-color: transparent; }
+.e-3e32964f > .box.bg-1 { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-3e32964f > .box.bg-2 { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-3e32964f > .box.bg-3 { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+
+.e-3e32964f > .box.bg-1:hover:not(:focus-within):not(.disabled) { background: var(--ot-bg-1-hover); }
+.e-3e32964f > .box.bg-2:hover:not(:focus-within):not(.disabled) { background: var(--ot-bg-2-hover); }
+.e-3e32964f > .box.bg-3:hover:not(:focus-within):not(.disabled) { background: var(--ot-bg-3-hover); }
+
+.e-3e32964f > .box:focus-within
+{
+	border-color: var(--ot-brand);
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+.e-3e32964f > .box.disabled
+{
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+/* Textarea */
+
+.e-3e32964f > .box > textarea
+{
+	width: 100%;
+	padding: 0;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	line-height: 1.6;
+}
+
+.e-3e32964f > .box > textarea::placeholder
+{
+	color: var(--ot-text-3);
+	font-weight: 400;
+}
+
+.e-3e32964f > .box > textarea:disabled
+{
+	cursor: not-allowed;
+}
+
+/* Counter */
+
+.e-3e32964f > .box > .counter
+{
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	align-self: flex-end;
+	margin-top: var(--ot-spacing-x);
+	padding-top: var(--ot-spacing-x);
+	font-family: var(--ot-font-primary);
+	font-size: 10.5px;
+	font-weight: 500;
+	color: var(--ot-text-3);
+	font-variant-numeric: tabular-nums;
+	transition: color var(--ot-transition);
+	pointer-events: none;
+}
+
+.e-3e32964f > .box > .counter > .slash
+{
+	opacity: 0.5;
+}
+
+.e-3e32964f > .box > .counter > .full
+{
+	color: var(--ot-red);
+	font-weight: 600;
+}

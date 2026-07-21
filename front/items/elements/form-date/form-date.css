@@ -1,0 +1,192 @@
+/* ===== FORM DATE ===== */
+
+.e-313aa143
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-313aa143 > .box
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+}
+
+/* Field */
+
+.e-313aa143 > .box > .field
+{
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	height: var(--ot-height-m);
+	padding: 0 var(--ot-spacing-m);
+	border: 1px solid transparent;
+	border-radius: var(--ot-radius-m);
+	cursor: pointer;
+	transition: background var(--ot-transition), border-color var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+.e-313aa143 > .box > .field:focus-within
+{
+	border-color: var(--ot-brand);
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+/* Icon */
+
+.e-313aa143 > .box > .field > .icon
+{
+	flex-shrink: 0;
+	font-size: 18px;
+	color: var(--ot-text-3);
+	transition: color var(--ot-transition);
+}
+
+.e-313aa143 > .box.today > .field > .icon
+{
+	color: var(--ot-brand);
+}
+
+/* Input */
+
+.e-313aa143 > .box > .field > .input
+{
+	flex: 1;
+	min-width: 0;
+	padding: 0;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.e-313aa143 > .box > .field > .input::placeholder
+{
+	color: var(--ot-text-3);
+	font-weight: 400;
+}
+
+/* Hide native indicator — the whole field opens the picker now. */
+.e-313aa143 > .box > .field > .input::-webkit-calendar-picker-indicator
+{
+	display: none;
+}
+
+.e-313aa143 > .box > .field > .input:disabled
+{
+	cursor: not-allowed;
+}
+
+/* Action */
+
+.e-313aa143 > .box > .field > .action
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 22px;
+	height: 22px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-3);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), color var(--ot-transition);
+}
+
+.e-313aa143 > .box > .field > .action:hover
+{
+	background: var(--ot-bg-2-hover);
+	color: var(--ot-text-1);
+}
+
+.e-313aa143 > .box > .field > .action > i
+{
+	font-size: 14px;
+}
+
+/* Presets */
+
+.e-313aa143 > .box > .presets
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--ot-spacing-x);
+}
+
+.e-313aa143 > .box > .presets > .preset
+{
+	display: inline-flex;
+	align-items: center;
+	padding: var(--ot-spacing-x) 10px;
+	background: var(--ot-bg-2);
+	border: 1px solid var(--ot-bg-2-border);
+	border-radius: 100px;
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-s);
+	font-weight: 500;
+	color: var(--ot-text-2);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), border-color var(--ot-transition), color var(--ot-transition), transform var(--ot-transition);
+}
+
+.e-313aa143 > .box > .presets > .preset:hover:not(.disabled):not(.active)
+{
+	background: var(--ot-bg-2-hover);
+	color: var(--ot-text-1);
+	transform: translateY(-1px);
+}
+
+.e-313aa143 > .box > .presets > .preset.active
+{
+	background: var(--ot-brand-opacity);
+	border-color: var(--ot-brand);
+	color: var(--ot-brand);
+}
+
+.e-313aa143 > .box > .presets > .preset.disabled
+{
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+/* Disabled */
+
+.e-313aa143 > .box.disabled > .field
+{
+	cursor: not-allowed;
+	opacity: 0.55;
+}
+
+/* ===== SURFACE ===== */
+
+.e-313aa143 > .box.bg-0 > .field { background: transparent; border-color: transparent; }
+.e-313aa143 > .box.bg-1 > .field { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-313aa143 > .box.bg-2 > .field { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-313aa143 > .box.bg-3 > .field { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+
+.e-313aa143 > .box.bg-1 > .field:hover:not(:focus-within) { background: var(--ot-bg-1-hover); }
+.e-313aa143 > .box.bg-2 > .field:hover:not(:focus-within) { background: var(--ot-bg-2-hover); }
+.e-313aa143 > .box.bg-3 > .field:hover:not(:focus-within) { background: var(--ot-bg-3-hover); }
+
+/* Today */
+
+.e-313aa143 > .box.today > .field
+{
+	border-color: var(--ot-brand);
+}

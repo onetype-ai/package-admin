@@ -1,0 +1,266 @@
+/* ===== DATA FILES ===== */
+
+.e-46dfd9e8
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-46dfd9e8 > .box
+{
+	display: grid;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+}
+
+/* Surface — depth set through the background prop */
+
+.e-46dfd9e8 > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-46dfd9e8 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-46dfd9e8 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-46dfd9e8 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Bar */
+
+.e-46dfd9e8 > .box > .bar
+{
+	grid-column: 1 / -1;
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	min-height: 30px;
+}
+
+.e-46dfd9e8 > .box > .bar > .return
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	background: var(--fill);
+	color: var(--ot-text-2);
+	cursor: pointer;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast), border-color var(--ot-transition-fast);
+}
+
+.e-46dfd9e8 > .box > .bar > .return:hover
+{
+	background: var(--above);
+	border-color: var(--edge);
+	color: var(--ot-text-1);
+}
+
+.e-46dfd9e8 > .box > .bar > .return > i
+{
+	font-size: 15px;
+}
+
+.e-46dfd9e8 > .box > .bar > .label
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+}
+
+.e-46dfd9e8 > .box > .bar > .count
+{
+	margin-left: auto;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Tile */
+
+.e-46dfd9e8 > .box > div > .tile
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3px;
+	width: 100%;
+	padding: var(--ot-spacing-m) var(--ot-spacing-m) var(--ot-spacing-m);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+	cursor: pointer;
+	overflow: hidden;
+	transition: border-color var(--ot-transition-fast), transform var(--ot-transition-fast);
+}
+
+.e-46dfd9e8 > .box > div > .tile.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-46dfd9e8 > .box > div > .tile.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-46dfd9e8 > .box > div > .tile.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-46dfd9e8 > .box > div > .tile.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-46dfd9e8 > .box > div > .tile.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+.e-46dfd9e8 > .box > div > .tile:hover
+{
+	border-color: var(--edge);
+	transform: translateY(-2px);
+}
+
+/* Visual */
+
+.e-46dfd9e8 > .box > div > .tile > .visual
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 74px;
+	margin-bottom: var(--ot-spacing-x);
+}
+
+/* Wrap */
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .wrap
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	border-radius: 13px;
+	background: var(--tint);
+	color: var(--accent);
+	transition: transform var(--ot-transition-fast);
+}
+
+.e-46dfd9e8 > .box > div > .tile:hover > .visual > .wrap
+{
+	transform: scale(1.06);
+}
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .wrap > i
+{
+	font-size: 23px;
+}
+
+/* Thumb */
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .thumb
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 9px;
+	object-fit: cover;
+	transition: transform var(--ot-transition-fast);
+}
+
+.e-46dfd9e8 > .box > div > .tile:hover > .visual > .thumb
+{
+	transform: scale(1.03);
+}
+
+/* Stack */
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack
+{
+	display: grid;
+	grid-template-columns: repeat(2, 32px);
+	grid-auto-rows: 32px;
+	gap: 5px;
+	transition: transform var(--ot-transition-fast);
+}
+
+.e-46dfd9e8 > .box > div > .tile:hover > .visual > .stack
+{
+	transform: scale(1.05);
+}
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div
+{
+	display: contents;
+}
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini,
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > .mini
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 9px;
+	overflow: hidden;
+}
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini.brand { background: var(--ot-brand-opacity); color: var(--ot-brand); }
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini.blue { background: var(--ot-blue-opacity); color: var(--ot-blue); }
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini.red { background: var(--ot-red-opacity); color: var(--ot-red); }
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini.orange { background: var(--ot-orange-opacity); color: var(--ot-orange); }
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini.green { background: var(--ot-green-opacity); color: var(--ot-green); }
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini > img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > div > .mini > i
+{
+	font-size: 16px;
+}
+
+.e-46dfd9e8 > .box > div > .tile > .visual > .stack > .mini.more
+{
+	background: var(--above);
+	color: var(--ot-text-2);
+	font-size: 10px;
+	font-weight: 650;
+	letter-spacing: 0.02em;
+}
+
+/* Badge */
+
+.e-46dfd9e8 > .box > div > .tile > .badge
+{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 1px 7px;
+	border-radius: 6px;
+	background: var(--tint);
+	color: var(--accent);
+	font-size: 9px;
+	font-weight: 650;
+	letter-spacing: 0.05em;
+}
+
+.e-46dfd9e8 > .box > div > .tile.shot > .badge
+{
+	background: color-mix(in srgb, var(--ot-bg-1) 72%, transparent);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	color: var(--ot-text-1);
+}
+
+/* Name */
+
+.e-46dfd9e8 > .box > div > .tile > .name
+{
+	max-width: 100%;
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Meta */
+
+.e-46dfd9e8 > .box > div > .tile > .meta
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	font-variant-numeric: tabular-nums;
+}

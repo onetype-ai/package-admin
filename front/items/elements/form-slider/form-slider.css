@@ -1,0 +1,249 @@
+/* ===== FORM SLIDER ===== */
+
+.e-18b9e6ca
+{
+	display: contents;
+}
+
+/* Box */
+
+.e-18b9e6ca > .box
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	font-family: var(--ot-font-primary);
+}
+
+/* Head */
+
+.e-18b9e6ca > .box > .head
+{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: var(--ot-spacing-m);
+}
+
+.e-18b9e6ca > .box > .head > .info
+{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+	flex: 1;
+}
+
+.e-18b9e6ca > .box > .head > .info > .label
+{
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	color: var(--ot-text-1);
+	line-height: 1.3;
+}
+
+.e-18b9e6ca > .box > .head > .info > .description
+{
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+	line-height: 1.4;
+}
+
+.e-18b9e6ca > .box > .head > .value
+{
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+	color: var(--ot-text-1);
+	font-variant-numeric: tabular-nums;
+	padding: 2px var(--ot-spacing-s);
+	background: var(--ot-bg-2);
+	border: 1px solid var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-s);
+	flex-shrink: 0;
+}
+
+/* Control */
+
+.e-18b9e6ca > .box > .control
+{
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+/* Track */
+
+.e-18b9e6ca > .box > .control > .track
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 6px;
+	background: var(--ot-bg-3);
+	border-radius: var(--ot-radius-s);
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.e-18b9e6ca > .box > .control > .track > .fill
+{
+	height: 100%;
+	background: var(--ot-brand);
+	border-radius: var(--ot-radius-s);
+	transition: width 20ms linear;
+}
+
+/* Marks */
+
+.e-18b9e6ca > .box > .control > .track > .marks
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	pointer-events: none;
+}
+
+.e-18b9e6ca > .box > .control > .track > .marks > .mark
+{
+	position: absolute;
+	top: 50%;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	background: var(--ot-bg-1);
+	transform: translate(-50%, -50%);
+	transition: background var(--ot-transition);
+}
+
+.e-18b9e6ca > .box > .control > .track > .marks > .mark.active
+{
+	background: rgba(255, 255, 255, 0.5);
+}
+
+/* Native input */
+
+.e-18b9e6ca > .box > .control > input
+{
+	position: relative;
+	width: 100%;
+	height: 28px;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.e-18b9e6ca > .box > .control > input:focus
+{
+	outline: none;
+}
+
+/* Thumb — WebKit */
+
+.e-18b9e6ca > .box > .control > input::-webkit-slider-thumb
+{
+	-webkit-appearance: none;
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	background: white;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0 0 0 1px rgba(20, 20, 30, 0.08);
+	transition: transform var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+.e-18b9e6ca > .box > .control > input::-webkit-slider-thumb:hover
+{
+	transform: scale(1.1);
+}
+
+.e-18b9e6ca > .box > .control > input:active::-webkit-slider-thumb
+{
+	transform: scale(1.05);
+	box-shadow: 0 0 0 8px var(--ot-brand-opacity);
+}
+
+.e-18b9e6ca > .box > .control > input:focus-visible::-webkit-slider-thumb
+{
+	box-shadow: 0 0 0 4px var(--ot-brand-opacity);
+}
+
+/* Thumb — Firefox */
+
+.e-18b9e6ca > .box > .control > input::-moz-range-thumb
+{
+	width: 16px;
+	height: 16px;
+	background: white;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0 0 0 1px rgba(20, 20, 30, 0.08);
+	transition: transform var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+.e-18b9e6ca > .box > .control > input::-moz-range-thumb:hover
+{
+	transform: scale(1.1);
+}
+
+.e-18b9e6ca > .box > .control > input:active::-moz-range-thumb
+{
+	transform: scale(1.05);
+	box-shadow: 0 0 0 8px var(--ot-brand-opacity);
+}
+
+/* Range labels */
+
+.e-18b9e6ca > .box > .range
+{
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Disabled */
+
+.e-18b9e6ca > .box.disabled
+{
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/* ===== COLOR ===== */
+
+.e-18b9e6ca > .box.brand > .control > .track > .fill { background: var(--ot-brand); }
+.e-18b9e6ca > .box.brand > .control > input:active::-webkit-slider-thumb { box-shadow: 0 0 0 8px var(--ot-brand-opacity); }
+.e-18b9e6ca > .box.brand > .control > input:active::-moz-range-thumb { box-shadow: 0 0 0 8px var(--ot-brand-opacity); }
+.e-18b9e6ca > .box.brand > .control > input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--ot-brand-opacity); }
+
+.e-18b9e6ca > .box.blue > .control > .track > .fill { background: var(--ot-blue); }
+.e-18b9e6ca > .box.blue > .control > input:active::-webkit-slider-thumb { box-shadow: 0 0 0 8px var(--ot-blue-opacity); }
+.e-18b9e6ca > .box.blue > .control > input:active::-moz-range-thumb { box-shadow: 0 0 0 8px var(--ot-blue-opacity); }
+.e-18b9e6ca > .box.blue > .control > input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--ot-blue-opacity); }
+
+.e-18b9e6ca > .box.red > .control > .track > .fill { background: var(--ot-red); }
+.e-18b9e6ca > .box.red > .control > input:active::-webkit-slider-thumb { box-shadow: 0 0 0 8px var(--ot-red-opacity); }
+.e-18b9e6ca > .box.red > .control > input:active::-moz-range-thumb { box-shadow: 0 0 0 8px var(--ot-red-opacity); }
+.e-18b9e6ca > .box.red > .control > input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--ot-red-opacity); }
+
+.e-18b9e6ca > .box.orange > .control > .track > .fill { background: var(--ot-orange); }
+.e-18b9e6ca > .box.orange > .control > input:active::-webkit-slider-thumb { box-shadow: 0 0 0 8px var(--ot-orange-opacity); }
+.e-18b9e6ca > .box.orange > .control > input:active::-moz-range-thumb { box-shadow: 0 0 0 8px var(--ot-orange-opacity); }
+.e-18b9e6ca > .box.orange > .control > input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--ot-orange-opacity); }
+
+.e-18b9e6ca > .box.green > .control > .track > .fill { background: var(--ot-green); }
+.e-18b9e6ca > .box.green > .control > input:active::-webkit-slider-thumb { box-shadow: 0 0 0 8px var(--ot-green-opacity); }
+.e-18b9e6ca > .box.green > .control > input:active::-moz-range-thumb { box-shadow: 0 0 0 8px var(--ot-green-opacity); }
+.e-18b9e6ca > .box.green > .control > input:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--ot-green-opacity); }

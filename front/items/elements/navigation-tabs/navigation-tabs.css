@@ -1,0 +1,307 @@
+/* ===== NAVIGATION TABS ===== */
+
+.e-3601973d
+{
+	display: contents;
+}
+
+/* Box */
+
+.e-3601973d > .box
+{
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+}
+
+/* Tabs nav */
+
+.e-3601973d > .box > .tabs
+{
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+	scrollbar-width: none;
+	overflow: hidden;
+}
+
+.e-3601973d > .box > .tabs::-webkit-scrollbar
+{
+	display: none;
+}
+
+/* Tab base */
+
+.e-3601973d .tab
+{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--ot-spacing-s);
+	font-size: 13px;
+	white-space: nowrap;
+	cursor: pointer;
+	text-decoration: none;
+	font-family: var(--ot-font-primary);
+	font-weight: 500;
+	color: var(--ot-text-2);
+	user-select: none;
+	transition: background var(--ot-transition), border-color var(--ot-transition), color var(--ot-transition);
+}
+
+.e-3601973d .tab:hover:not(.disabled)
+{
+	color: var(--ot-text-1);
+}
+
+.e-3601973d .tab.active
+{
+	color: var(--ot-text-1);
+}
+
+.e-3601973d .tab.disabled
+{
+	cursor: not-allowed;
+	opacity: 0.45;
+}
+
+/* Count badge */
+
+.e-3601973d .tab > .count
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 18px;
+	padding: 0 6px;
+	background: var(--ot-bg-2);
+	border-radius: 100px;
+	font-size: 10.5px;
+	font-weight: 600;
+	color: var(--ot-text-3);
+	line-height: 18px;
+	font-family: var(--ot-font-primary);
+}
+
+.e-3601973d .tab.active > .count
+{
+	background: var(--ot-brand-opacity);
+	color: var(--ot-brand);
+}
+
+/* Content panels */
+
+.e-3601973d > .box > .body
+{
+	padding-top: var(--ot-spacing-l);
+}
+
+/* When a background is set, wrap the panel content in a card. */
+
+.e-3601973d > .box.bg-1 > .body,
+.e-3601973d > .box.bg-2 > .body,
+.e-3601973d > .box.bg-3 > .body{
+	margin-top: var(--ot-spacing-s);
+	padding: var(--ot-spacing-m) var(--ot-spacing-l);
+	border-radius: var(--ot-radius-l);
+}
+
+.e-3601973d > .box.bg-1 > .body { background: var(--ot-bg-1); border: 1px solid var(--ot-bg-1-border); }
+.e-3601973d > .box.bg-2 > .body { background: var(--ot-bg-2); border: 1px solid var(--ot-bg-2-border); }
+.e-3601973d > .box.bg-3 > .body { background: var(--ot-bg-3); border: 1px solid var(--ot-bg-3-border); }
+
+.e-3601973d > .box > .body .panel
+{
+	display: none;
+}
+
+.e-3601973d > .box > .body .panel.active
+{
+	display: block;
+	animation: e-3601973d-fade 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes e-3601973d-fade
+{
+	from { opacity: 0; transform: translateY(4px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TONE: UNDERLINE ===== */
+
+.e-3601973d > .box.underline > .tabs
+{
+	gap: var(--ot-spacing-l);
+}
+
+.e-3601973d > .box.underline > .tabs > .tab
+{
+	padding: 14px 0;
+}
+
+.e-3601973d > .box.underline > .tabs > .tab.active::after
+{
+	content: '';
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--ot-brand);
+	border-radius: 2px 2px 0 0;
+}
+
+/* ===== TONE: PILLS ===== */
+
+.e-3601973d > .box.pills > .tabs
+{
+	gap: var(--ot-spacing-s);
+}
+
+.e-3601973d > .box.pills > .tabs > .tab
+{
+	padding: 8px 16px;
+	border-radius: 100px;
+	background: transparent;
+	border: 1px solid transparent;
+}
+
+.e-3601973d > .box.pills > .tabs > .tab:hover:not(.disabled)
+{
+	background: var(--ot-bg-2);
+}
+
+.e-3601973d > .box.pills > .tabs > .tab.active
+{
+	background: var(--ot-brand-opacity);
+	color: var(--ot-brand);
+}
+
+.e-3601973d > .box.pills > .tabs > .tab.active > .count
+{
+	background: var(--ot-brand);
+	color: white;
+}
+
+/* ===== TONE: CONTAINED ===== */
+
+.e-3601973d > .box.contained > .tabs
+{
+	width: fit-content;
+	padding: var(--ot-spacing-x);
+	background: var(--ot-bg-2);
+	border: 1px solid var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-m);
+	gap: 2px;
+}
+
+.e-3601973d > .box.contained > .tabs > .tab
+{
+	padding: 8px 14px;
+	border-radius: calc(var(--ot-radius-m) - 2px);
+}
+
+.e-3601973d > .box.contained > .tabs > .tab:hover:not(.disabled)
+{
+	background: var(--ot-bg-2-hover);
+}
+
+.e-3601973d > .box.contained > .tabs > .tab.active
+{
+	background: var(--ot-brand-opacity);
+	color: var(--ot-brand);
+}
+
+.e-3601973d > .box.contained > .tabs > .tab.active > .count
+{
+	background: var(--ot-brand);
+	color: white;
+}
+
+/* ===== TONE: SEGMENTED ===== */
+
+.e-3601973d > .box.segmented > .tabs
+{
+	padding: 3px;
+	height: 34px;
+	background: var(--ot-bg-3);
+	border-radius: 100px;
+	gap: 0;
+	display: inline-flex;
+	align-self: flex-start;
+}
+
+.e-3601973d > .box.segmented > .tabs > .tab
+{
+	padding: 0 16px;
+	height: 28px;
+	border-radius: 100px;
+	flex: 1;
+}
+
+.e-3601973d > .box.segmented > .tabs > .tab:hover:not(.disabled)
+{
+	color: var(--ot-text-1);
+}
+
+.e-3601973d > .box.segmented > .tabs > .tab.active
+{
+	background: var(--ot-brand-opacity);
+	color: var(--ot-brand);
+}
+
+.e-3601973d > .box.segmented > .tabs > .tab.active > .count
+{
+	background: var(--ot-brand);
+	color: white;
+}
+
+/* ===== BACKGROUND ===== */
+
+/* underline / pills — bg on box */
+
+.e-3601973d > .box.bg-0.underline,
+.e-3601973d > .box.bg-0.pills { background: transparent; }
+
+.e-3601973d > .box.bg-1.underline,
+.e-3601973d > .box.bg-1.pills { background: var(--ot-bg-1); padding: 0 var(--ot-spacing-m); }
+
+.e-3601973d > .box.bg-2.underline,
+.e-3601973d > .box.bg-2.pills { background: var(--ot-bg-2); padding: 0 var(--ot-spacing-m); }
+
+.e-3601973d > .box.bg-3.underline,
+.e-3601973d > .box.bg-3.pills { background: var(--ot-bg-3); padding: 0 var(--ot-spacing-m); }
+
+/* contained — bg on track */
+
+.e-3601973d > .box.bg-0.contained > .tabs { background: transparent; border-color: transparent; }
+.e-3601973d > .box.bg-1.contained > .tabs { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-3601973d > .box.bg-2.contained > .tabs { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-3601973d > .box.bg-3.contained > .tabs { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+
+/* segmented — bg on track */
+
+.e-3601973d > .box.bg-0.segmented > .tabs { background: transparent; border: 1px solid transparent; }
+.e-3601973d > .box.bg-1.segmented > .tabs { background: var(--ot-bg-1); border: 1px solid var(--ot-bg-1-border); }
+.e-3601973d > .box.bg-2.segmented > .tabs { background: var(--ot-bg-2); border: 1px solid var(--ot-bg-2-border); }
+.e-3601973d > .box.bg-3.segmented > .tabs { background: var(--ot-bg-3); border: 1px solid var(--ot-bg-3-border); }
+
+/* pills hover per bg */
+
+.e-3601973d > .box.bg-1.pills > .tabs > .tab:hover:not(.disabled) { background: var(--ot-bg-1-hover); }
+.e-3601973d > .box.bg-2.pills > .tabs > .tab:hover:not(.disabled) { background: var(--ot-bg-2-hover); }
+.e-3601973d > .box.bg-3.pills > .tabs > .tab:hover:not(.disabled) { background: var(--ot-bg-3-hover); }
+
+/* contained hover per bg */
+
+.e-3601973d > .box.bg-1.contained > .tabs > .tab:hover:not(.disabled) { background: var(--ot-bg-1-hover); }
+.e-3601973d > .box.bg-2.contained > .tabs > .tab:hover:not(.disabled) { background: var(--ot-bg-2-hover); }
+.e-3601973d > .box.bg-3.contained > .tabs > .tab:hover:not(.disabled) { background: var(--ot-bg-3-hover); }
+
+/* count badge per bg */
+
+.e-3601973d > .box.bg-1 .tab > .count { background: var(--ot-bg-2); }
+.e-3601973d > .box.bg-2 .tab > .count { background: var(--ot-bg-3); }
+.e-3601973d > .box.bg-3 .tab > .count { background: var(--ot-bg-3); }
+

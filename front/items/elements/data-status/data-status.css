@@ -1,0 +1,204 @@
+/* ===== DATA STATUS ===== */
+
+.e-541f615f
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-541f615f > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.e-541f615f > .box.bg-0,
+.e-541f615f > .box.bg-1,
+.e-541f615f > .box.bg-2,
+.e-541f615f > .box.bg-3{
+	padding: var(--ot-spacing-m);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+}
+
+.e-541f615f > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-541f615f > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-541f615f > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-541f615f > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Banner */
+
+.e-541f615f > .box > .banner
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-s) var(--ot-spacing-m);
+	border-radius: var(--ot-radius-m);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+}
+
+.e-541f615f > .box > .banner > i
+{
+	font-size: 17px;
+	font-variation-settings: 'FILL' 1;
+}
+
+.e-541f615f > .box > .banner.up { background: var(--ot-green-opacity); color: var(--ot-green); }
+.e-541f615f > .box > .banner.warn { background: var(--ot-orange-opacity); color: var(--ot-orange); }
+.e-541f615f > .box > .banner.down { background: var(--ot-red-opacity); color: var(--ot-red); }
+
+/* Empty */
+
+.e-541f615f > .box > .empty
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	min-height: 120px;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+/* Row */
+
+.e-541f615f > .box > .row
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-s);
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition-fast);
+}
+
+.e-541f615f > .box > .row:hover
+{
+	background: var(--ot-bg-2-hover);
+}
+
+/* Dot */
+
+@keyframes e-541f615f-pulse
+{
+	0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--pulse) 45%, transparent); }
+	70% { box-shadow: 0 0 0 6px transparent; }
+	100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.e-541f615f > .box > .row > .dot
+{
+	width: 9px;
+	height: 9px;
+	border-radius: 99px;
+	flex-shrink: 0;
+}
+
+.e-541f615f > .box > .row > .dot.up
+{
+	--pulse: var(--ot-green);
+	background: var(--ot-green);
+	animation: e-541f615f-pulse 2.4s ease-out infinite;
+}
+
+.e-541f615f > .box > .row > .dot.warn
+{
+	--pulse: var(--ot-orange);
+	background: var(--ot-orange);
+	animation: e-541f615f-pulse 1.6s ease-out infinite;
+}
+
+.e-541f615f > .box > .row > .dot.down
+{
+	--pulse: var(--ot-red);
+	background: var(--ot-red);
+	animation: e-541f615f-pulse 1s ease-out infinite;
+}
+
+.e-541f615f > .box > .row > .dot.idle
+{
+	background: var(--ot-text-3);
+	opacity: 0.6;
+}
+
+/* Text */
+
+.e-541f615f > .box > .row > .text
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	flex: 1;
+	min-width: 0;
+}
+
+.e-541f615f > .box > .row > .text > .label
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.e-541f615f > .box > .row > .text > .sub
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Strip — uptime history ticks */
+
+.e-541f615f > .box > .row > .strip
+{
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	flex-shrink: 0;
+}
+
+.e-541f615f > .box > .row > .strip > div > .tick
+{
+	display: block;
+	width: 4px;
+	height: 16px;
+	border-radius: 2px;
+	transition: transform var(--ot-transition-fast);
+}
+
+.e-541f615f > .box > .row > .strip > div > .tick:hover
+{
+	transform: scaleY(1.2);
+}
+
+.e-541f615f > .box > .row > .strip > div > .tick.up { background: color-mix(in srgb, var(--ot-green) 55%, transparent); }
+.e-541f615f > .box > .row > .strip > div > .tick.warn { background: var(--ot-orange); }
+.e-541f615f > .box > .row > .strip > div > .tick.down { background: var(--ot-red); }
+
+/* Value */
+
+.e-541f615f > .box > .row > .value
+{
+	flex-shrink: 0;
+	min-width: 44px;
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+}

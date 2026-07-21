@@ -1,0 +1,155 @@
+.e-17b24e02
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Box */
+
+.e-17b24e02 > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	min-height: 160px;
+	overflow: hidden;
+}
+
+.e-17b24e02 > .box.bg-0 { background: transparent; border: 1px solid transparent; border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+.e-17b24e02 > .box.bg-1 { background: var(--ot-bg-1); border: 1px solid var(--ot-bg-1-border); border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+.e-17b24e02 > .box.bg-2 { background: var(--ot-bg-2); border: 1px solid var(--ot-bg-2-border); border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+.e-17b24e02 > .box.bg-3 { background: var(--ot-bg-3); border: 1px solid var(--ot-bg-3-border); border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+
+/* Empty */
+
+.e-17b24e02 > .box > .empty
+{
+	margin: auto;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+/* Chart */
+
+.e-17b24e02 > .box > .chart
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-l);
+	width: 100%;
+	flex: 1;
+	min-height: 0;
+}
+
+.e-17b24e02 > .box > .chart > .ring
+{
+	position: relative;
+	width: 116px;
+	height: 116px;
+	flex-shrink: 0;
+}
+
+.e-17b24e02 > .box > .chart > .ring > svg
+{
+	width: 100%;
+	height: 100%;
+	transform: rotate(-90deg);
+}
+
+.e-17b24e02 > .box > .chart > .ring > svg > .track
+{
+	fill: none;
+	stroke: var(--ot-bg-3);
+	stroke-width: 11;
+}
+
+.e-17b24e02 > .box > .chart > .ring > svg > .arc
+{
+	fill: none;
+	stroke-width: 11;
+	stroke-linecap: round;
+	transition: stroke-dasharray var(--ot-transition);
+}
+
+.e-17b24e02 > .box > .chart > .ring > .center
+{
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.e-17b24e02 > .box > .chart > .ring > .center > .total
+{
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-secondary);
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+}
+
+.e-17b24e02 > .box > .chart > .ring > .center > .caption
+{
+	margin-top: 3px;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}
+
+/* Legend */
+
+.e-17b24e02 > .box > .chart > .legend
+{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+	flex: 1;
+}
+
+.e-17b24e02 > .box > .chart > .legend > .key
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: 5px var(--ot-spacing-s);
+	border-radius: var(--ot-radius-s);
+}
+
+.e-17b24e02 > .box > .chart > .legend > .key > .dot
+{
+	width: 9px;
+	height: 9px;
+	border-radius: 3px;
+	flex-shrink: 0;
+}
+
+.e-17b24e02 > .box > .chart > .legend > .key > .name
+{
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-m);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	flex: 1;
+	min-width: 0;
+}
+
+.e-17b24e02 > .box > .chart > .legend > .key > .value
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+	flex-shrink: 0;
+}

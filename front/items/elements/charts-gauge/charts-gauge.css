@@ -1,0 +1,94 @@
+.e-178e4c2b
+{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Box */
+
+.e-178e4c2b > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	min-height: 160px;
+	overflow: hidden;
+}
+
+.e-178e4c2b > .box.bg-0 { background: transparent; border: 1px solid transparent; border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+.e-178e4c2b > .box.bg-1 { background: var(--ot-bg-1); border: 1px solid var(--ot-bg-1-border); border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+.e-178e4c2b > .box.bg-2 { background: var(--ot-bg-2); border: 1px solid var(--ot-bg-2-border); border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+.e-178e4c2b > .box.bg-3 { background: var(--ot-bg-3); border: 1px solid var(--ot-bg-3-border); border-radius: var(--ot-radius-l); padding: var(--ot-spacing-m); }
+
+/* Gauge */
+
+.e-178e4c2b > .box
+{
+	align-items: center;
+	justify-content: center;
+}
+
+.e-178e4c2b > .box > .gauge
+{
+	position: relative;
+	width: 100%;
+	max-width: 200px;
+}
+
+.e-178e4c2b > .box > .gauge > svg
+{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.e-178e4c2b > .box > .gauge > svg > .track
+{
+	fill: none;
+	stroke: var(--ot-bg-3);
+	stroke-width: 10;
+	stroke-linecap: round;
+}
+
+.e-178e4c2b > .box > .gauge > svg > .fill
+{
+	fill: none;
+	stroke-width: 10;
+	stroke-linecap: round;
+	transition: stroke-dasharray var(--ot-transition);
+}
+
+.e-178e4c2b > .box > .gauge > .center
+{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.e-178e4c2b > .box > .gauge > .center > .value
+{
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-secondary);
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+}
+
+.e-178e4c2b > .box > .gauge > .center > .caption
+{
+	margin-top: 4px;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+}

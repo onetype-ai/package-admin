@@ -1,0 +1,204 @@
+/* ===== DATA LIST ===== */
+
+.e-5048a0f3
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-5048a0f3 > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.e-5048a0f3 > .box.bg-0,
+.e-5048a0f3 > .box.bg-1,
+.e-5048a0f3 > .box.bg-2,
+.e-5048a0f3 > .box.bg-3{
+	padding: var(--ot-spacing-s);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+}
+
+.e-5048a0f3 > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-5048a0f3 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-5048a0f3 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-5048a0f3 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Search */
+
+.e-5048a0f3 > .box > .search
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	height: 34px;
+	padding: 0 var(--ot-spacing-s);
+	margin-bottom: var(--ot-spacing-s);
+	border: 1px solid var(--edge);
+	border-radius: var(--ot-radius-m);
+	background: var(--above);
+	transition: border-color var(--ot-transition-fast);
+}
+
+.e-5048a0f3 > .box > .search:focus-within
+{
+	border-color: var(--ot-brand);
+}
+
+.e-5048a0f3 > .box > .search > i
+{
+	font-size: 16px;
+	color: var(--ot-text-3);
+}
+
+.e-5048a0f3 > .box > .search > input
+{
+	flex: 1;
+	border: none;
+	background: transparent;
+	font-family: inherit;
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-1);
+	outline: none;
+}
+
+.e-5048a0f3 > .box > .search > input::placeholder
+{
+	color: var(--ot-text-3);
+}
+
+/* Empty */
+
+.e-5048a0f3 > .box > .empty
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	min-height: 120px;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+/* Row */
+
+.e-5048a0f3 > .box > .row
+{
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-s);
+	border-radius: var(--ot-radius-m);
+	overflow: hidden;
+	transition: background var(--ot-transition-fast);
+}
+
+.e-5048a0f3 > .box > .row.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-5048a0f3 > .box > .row.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-5048a0f3 > .box > .row.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-5048a0f3 > .box > .row.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-5048a0f3 > .box > .row.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+.e-5048a0f3 > .box > .row.clickable
+{
+	cursor: pointer;
+}
+
+.e-5048a0f3 > .box > .row.clickable:hover
+{
+	background: var(--ot-bg-2-hover);
+}
+
+/* Fill */
+
+.e-5048a0f3 > .box > .row > .fill
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	border-radius: var(--ot-radius-m);
+	background: var(--tint);
+	transition: width var(--ot-transition-slow);
+}
+
+/* Dot */
+
+.e-5048a0f3 > .box > .row > .dot
+{
+	position: relative;
+	width: 8px;
+	height: 8px;
+	border-radius: 99px;
+	flex-shrink: 0;
+}
+
+.e-5048a0f3 > .box > .row > .dot.up { background: var(--ot-green); box-shadow: 0 0 0 3px var(--ot-green-opacity); }
+.e-5048a0f3 > .box > .row > .dot.warn { background: var(--ot-orange); box-shadow: 0 0 0 3px var(--ot-orange-opacity); }
+.e-5048a0f3 > .box > .row > .dot.down { background: var(--ot-red); box-shadow: 0 0 0 3px var(--ot-red-opacity); }
+.e-5048a0f3 > .box > .row > .dot.idle { background: var(--ot-text-3); }
+
+/* Lead */
+
+.e-5048a0f3 > .box > .row > .lead
+{
+	position: relative;
+	color: var(--ot-text-2);
+	font-size: 17px;
+	flex-shrink: 0;
+}
+
+/* Text */
+
+.e-5048a0f3 > .box > .row > .text
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	flex: 1;
+	min-width: 0;
+}
+
+.e-5048a0f3 > .box > .row > .text > .label
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.e-5048a0f3 > .box > .row > .text > .sub
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Value */
+
+.e-5048a0f3 > .box > .row > .value
+{
+	position: relative;
+	flex-shrink: 0;
+	color: var(--accent);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+}

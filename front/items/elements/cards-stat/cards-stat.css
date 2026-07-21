@@ -1,0 +1,189 @@
+/* ===== CARDS STAT ===== */
+
+.e-6a24962e
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-6a24962e > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-m);
+	width: 100%;
+	height: 100%;
+	padding: var(--ot-spacing-m);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+	overflow: hidden;
+	transition: border-color var(--ot-transition-fast), transform var(--ot-transition-fast), box-shadow var(--ot-transition-fast);
+}
+
+.e-6a24962e > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-6a24962e > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-6a24962e > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-6a24962e > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Accent */
+
+.e-6a24962e > .box.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-6a24962e > .box.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-6a24962e > .box.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-6a24962e > .box.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-6a24962e > .box.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+/* States */
+
+.e-6a24962e > .box.clickable
+{
+	cursor: pointer;
+}
+
+.e-6a24962e > .box.clickable:hover
+{
+	border-color: var(--edge);
+	transform: translateY(-2px);
+}
+
+.e-6a24962e > .box.clickable:active
+{
+	transform: translateY(0);
+}
+
+.e-6a24962e > .box.active
+{
+	border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+	box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.e-6a24962e > .box.disabled
+{
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/* Head */
+
+.e-6a24962e > .box > .head
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--ot-spacing-s);
+}
+
+.e-6a24962e > .box > .head > .label
+{
+	color: var(--ot-text-3);
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.e-6a24962e > .box > .head > .tile
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 9px;
+	background: var(--tint);
+	color: var(--accent);
+}
+
+.e-6a24962e > .box > .head > .tile > i
+{
+	font-size: 16px;
+}
+
+/* Row */
+
+.e-6a24962e > .box > .row
+{
+	display: flex;
+	align-items: baseline;
+	gap: var(--ot-spacing-s);
+}
+
+.e-6a24962e > .box > .row > .value
+{
+	color: var(--ot-text-1);
+	font-family: var(--ot-font-secondary);
+	font-size: 30px;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	font-feature-settings: 'tnum';
+}
+
+.e-6a24962e > .box > .row > .delta
+{
+	display: inline-flex;
+	align-items: center;
+	gap: 1px;
+	padding: 2px 7px 2px 4px;
+	border-radius: 99px;
+	background: var(--ot-bg-3);
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-s);
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.e-6a24962e > .box > .row > .delta > i
+{
+	font-size: 14px;
+}
+
+.e-6a24962e > .box > .row > .delta.up { background: var(--ot-green-opacity); color: var(--ot-green); }
+.e-6a24962e > .box > .row > .delta.down { background: var(--ot-red-opacity); color: var(--ot-red); }
+
+/* Description */
+
+.e-6a24962e > .box > .description
+{
+	margin: 0;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+/* Spark */
+
+.e-6a24962e > .box > .spark
+{
+	margin-top: auto;
+	color: var(--accent);
+}
+
+.e-6a24962e > .box > .spark > svg
+{
+	display: block;
+	width: 100%;
+	height: 36px;
+	overflow: visible;
+}
+
+.e-6a24962e > .box > .spark > svg .line
+{
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	vector-effect: non-scaling-stroke;
+}
+
+.e-6a24962e > .box > .spark > svg .area
+{
+	stroke: none;
+	fill: url(#cards-stat-fade);
+}

@@ -1,0 +1,183 @@
+/* ===== DATA TIMELINE ===== */
+
+.e-6bd2b330
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-6bd2b330 > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.e-6bd2b330 > .box.bg-0,
+.e-6bd2b330 > .box.bg-1,
+.e-6bd2b330 > .box.bg-2,
+.e-6bd2b330 > .box.bg-3{
+	padding: var(--ot-spacing-m);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+}
+
+.e-6bd2b330 > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-6bd2b330 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-6bd2b330 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-6bd2b330 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+/* Empty */
+
+.e-6bd2b330 > .box > .empty
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	min-height: 120px;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+/* Feed */
+
+.e-6bd2b330 > .box > .feed
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.e-6bd2b330 > .box > .feed > .event
+{
+	position: relative;
+	display: flex;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-s);
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition-fast);
+}
+
+.e-6bd2b330 > .box > .feed > .event.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-6bd2b330 > .box > .feed > .event.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-6bd2b330 > .box > .feed > .event.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-6bd2b330 > .box > .feed > .event.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-6bd2b330 > .box > .feed > .event.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+.e-6bd2b330 > .box > .feed > .event.clickable
+{
+	cursor: pointer;
+}
+
+.e-6bd2b330 > .box > .feed > .event.clickable:hover
+{
+	background: var(--ot-bg-2-hover);
+}
+
+/* Node — connected icon dots */
+
+.e-6bd2b330 > .box > .feed > .event > .node
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 30px;
+}
+
+.e-6bd2b330 > .box > .feed > .event:not(:last-child) > .node::after
+{
+	content: '';
+	position: absolute;
+	top: 34px;
+	bottom: calc(-1 * var(--ot-spacing-s) - 4px);
+	width: 2px;
+	border-radius: 2px;
+	background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 35%, transparent) 0%, var(--ot-bg-3-border) 100%);
+}
+
+.e-6bd2b330 > .box > .feed > .event > .node > .dot
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 99px;
+	background: var(--tint);
+	color: var(--accent);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--tint) 40%, transparent);
+}
+
+.e-6bd2b330 > .box > .feed > .event > .node > .dot > i
+{
+	font-size: 15px;
+}
+
+/* Body */
+
+.e-6bd2b330 > .box > .feed > .event > .body
+{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	flex: 1;
+	min-width: 0;
+	padding-top: 4px;
+}
+
+.e-6bd2b330 > .box > .feed > .event > .body > .row
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	min-width: 0;
+}
+
+.e-6bd2b330 > .box > .feed > .event > .body > .row > .title
+{
+	color: var(--ot-text-1);
+	font-size: var(--ot-size-m);
+	font-weight: 550;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.e-6bd2b330 > .box > .feed > .event > .body > .row > .chip
+{
+	flex-shrink: 0;
+	padding: 1px 7px;
+	border-radius: 99px;
+	background: var(--tint);
+	color: var(--accent);
+	font-size: 10px;
+	font-weight: 650;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.e-6bd2b330 > .box > .feed > .event > .body > .row > .time
+{
+	flex-shrink: 0;
+	margin-left: auto;
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	font-variant-numeric: tabular-nums;
+}
+
+.e-6bd2b330 > .box > .feed > .event > .body > .detail
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+	line-height: 1.5;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

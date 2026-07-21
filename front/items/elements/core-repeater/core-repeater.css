@@ -1,0 +1,596 @@
+/* ===== CORE REPEATER ===== */
+
+.e-dde7dde
+{
+	display: flex;
+	width: 100%;
+}
+
+/* Box */
+
+.e-dde7dde > .box
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-m);
+	width: 100%;
+	border-radius: var(--ot-radius-m);
+	border: 1px solid transparent;
+}
+
+/* ===== ROWS ===== */
+
+.e-dde7dde > .box > .rows
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+}
+
+/* Row */
+
+.e-dde7dde > .box > .rows > .row
+{
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-s);
+	border: 1px solid transparent;
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition), border-color var(--ot-transition);
+}
+
+.e-dde7dde > .box > .rows > .row:hover
+{
+	border-color: var(--ot-bg-3-border);
+}
+
+/* Reorder */
+
+.e-dde7dde > .box > .rows > .row > .reorder
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	gap: 2px;
+	align-self: center;
+}
+
+.e-dde7dde > .box > .rows > .row > .reorder > .action
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 18px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-3);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), color var(--ot-transition);
+}
+
+.e-dde7dde > .box > .rows > .row > .reorder > .action:hover:not(:disabled)
+{
+	background: var(--ot-bg-2);
+	color: var(--ot-text-1);
+}
+
+.e-dde7dde > .box > .rows > .row > .reorder > .action:disabled
+{
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.e-dde7dde > .box > .rows > .row > .reorder > .action > i
+{
+	font-size: 18px;
+}
+
+/* Number */
+
+.e-dde7dde > .box > .rows > .row > .number
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	align-self: center;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	font-family: var(--ot-font-primary);
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--ot-text-2);
+}
+
+/* Fields */
+
+.e-dde7dde > .box > .rows > .row > .fields
+{
+	display: flex;
+	flex: 1;
+	gap: var(--ot-spacing-s);
+	min-width: 0;
+}
+
+.e-dde7dde > .box.vertical > .rows > .row > .fields
+{
+	flex-direction: column;
+}
+
+/* Field */
+
+.e-dde7dde > .box > .rows > .row > .fields > .field
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-x);
+	flex: 1;
+	min-width: 0;
+}
+
+.e-dde7dde > .box > .rows > .row > .fields > .field > .field-info
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+}
+
+.e-dde7dde > .box > .rows > .row > .fields > .field > .field-info > .field-label
+{
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-s);
+	font-weight: 600;
+	color: var(--ot-text-2);
+	line-height: 1.2;
+}
+
+.e-dde7dde > .box > .rows > .row > .fields > .field > .field-info > .field-description
+{
+	font-family: var(--ot-font-primary);
+	font-size: 10.5px;
+	color: var(--ot-text-3);
+	line-height: 1.3;
+}
+
+/* Hide labels on subsequent rows in horizontal mode */
+
+.e-dde7dde > .box.horizontal > .rows > .row:not(:first-child) .field > .field-info
+{
+	display: none;
+}
+
+/* Row actions */
+
+.e-dde7dde > .box > .rows > .row > .actions
+{
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	flex-shrink: 0;
+	align-self: center;
+}
+
+.e-dde7dde > .box > .rows > .row > .actions > .action
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-3);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), color var(--ot-transition);
+}
+
+.e-dde7dde > .box > .rows > .row > .actions > .action:hover
+{
+	background: var(--ot-bg-2);
+	color: var(--ot-text-1);
+}
+
+.e-dde7dde > .box > .rows > .row > .actions > .action.danger:hover
+{
+	background: var(--ot-red-opacity);
+	color: var(--ot-red);
+}
+
+.e-dde7dde > .box > .rows > .row > .actions > .action > i
+{
+	font-size: 16px;
+}
+
+/* ===== EMPTY ===== */
+
+.e-dde7dde > .box > .empty
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: var(--ot-spacing-m);
+	padding: var(--ot-spacing-l);
+	border: 1px dashed var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-m);
+}
+
+.e-dde7dde > .box > .empty > .empty-icon
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: var(--ot-bg-2);
+	color: var(--ot-text-3);
+}
+
+.e-dde7dde > .box > .empty > .empty-icon > i
+{
+	font-size: 24px;
+}
+
+.e-dde7dde > .box > .empty > .empty-text
+{
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	color: var(--ot-text-2);
+}
+
+/* ===== FOOTER ===== */
+
+.e-dde7dde > .box > .footer
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--ot-spacing-s);
+}
+
+.e-dde7dde > .box > .footer > .counter
+{
+	font-family: var(--ot-font-primary);
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--ot-text-3);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.e-dde7dde > .box > .footer > .footer-actions
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+}
+
+.e-dde7dde > .box > .empty > .empty-actions
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+}
+
+/* ===== ITERATION ===== */
+
+.e-dde7dde > .box > .iteration
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+}
+
+/* Iteration chip */
+
+.e-dde7dde > .box > .iteration > .iteration-chip
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-s) var(--ot-spacing-m);
+	background: var(--ot-brand-opacity);
+	border: 1px solid var(--ot-brand-opacity);
+	border-radius: var(--ot-radius-m);
+	transition: border-color var(--ot-transition);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip:hover
+{
+	border-color: var(--ot-brand);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-icon
+{
+	flex-shrink: 0;
+	font-size: 18px;
+	color: var(--ot-brand);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-text
+{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+	gap: 2px;
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-text > .iteration-label
+{
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ot-text-3);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-text > .iteration-expression
+{
+	font-family: var(--ot-font-mono, ui-monospace, Menlo, Consolas, monospace);
+	font-size: var(--ot-size-m);
+	font-weight: 600;
+	color: var(--ot-brand);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-count
+{
+	display: inline-flex;
+	align-items: center;
+	flex-shrink: 0;
+	padding: 2px var(--ot-spacing-s);
+	background: var(--ot-bg-1);
+	border-radius: 100px;
+	font-size: var(--ot-size-s);
+	font-weight: 600;
+	color: var(--ot-text-2);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-action
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 26px;
+	height: 26px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-brand);
+	cursor: pointer;
+	outline: none;
+	transition: background var(--ot-transition), color var(--ot-transition);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-action:hover
+{
+	background: var(--ot-bg-1);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-action.danger:hover
+{
+	background: rgba(244,63,94,0.18);
+	color: var(--ot-red);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-chip > .iteration-action > i
+{
+	font-size: 14px;
+}
+
+/* Iteration template editor */
+
+.e-dde7dde > .box > .iteration > .iteration-template
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-m);
+	background: var(--ot-bg-2);
+	border: 1px solid var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-m);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-template > .iteration-template-head
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding-bottom: var(--ot-spacing-s);
+	border-bottom: 1px solid var(--ot-bg-2-border);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-template > .iteration-template-head > i
+{
+	font-size: 16px;
+	color: var(--ot-brand);
+	flex-shrink: 0;
+}
+
+.e-dde7dde > .box > .iteration > .iteration-template > .iteration-template-head > .iteration-template-label
+{
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ot-text-2);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-template > .iteration-template-head > .iteration-template-hint
+{
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-template > .iteration-template-head > .iteration-template-hint > code
+{
+	padding: 1px 5px;
+	background: var(--ot-bg-1);
+	border-radius: var(--ot-radius-s);
+	font-family: var(--ot-font-mono, ui-monospace, Menlo, Consolas, monospace);
+	font-size: 11px;
+	color: var(--ot-text-2);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-template > .fields
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+}
+
+/* Iteration preview */
+
+.e-dde7dde > .box > .iteration > .iteration-preview
+{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding: var(--ot-spacing-s);
+	background: var(--ot-bg-2);
+	border: 1px solid var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-m);
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.e-dde7dde > .box > .iteration > .iteration-preview > .iteration-preview-head
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-x) var(--ot-spacing-s);
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ot-text-3);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-preview > .iteration-preview-head > i
+{
+	font-size: 13px;
+}
+
+.e-dde7dde > .box > .iteration > .iteration-preview > .iteration-row
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: 4px var(--ot-spacing-s);
+	border-radius: var(--ot-radius-s);
+	font-family: var(--ot-font-mono, ui-monospace, Menlo, Consolas, monospace);
+	font-size: var(--ot-size-s);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-preview > .iteration-row:nth-child(odd)
+{
+	background: var(--ot-bg-1);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-preview > .iteration-row > .iteration-row-index
+{
+	flex-shrink: 0;
+	width: 22px;
+	color: var(--ot-text-3);
+	font-weight: 700;
+	text-align: right;
+}
+
+.e-dde7dde > .box > .iteration > .iteration-preview > .iteration-row > .iteration-row-text
+{
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: var(--ot-text-2);
+}
+
+/* Iteration empty */
+
+.e-dde7dde > .box > .iteration > .iteration-empty
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: var(--ot-spacing-m);
+	background: var(--ot-bg-2);
+	border: 1px dashed var(--ot-bg-2-border);
+	border-radius: var(--ot-radius-m);
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+.e-dde7dde > .box > .iteration > .iteration-empty > i
+{
+	font-size: 16px;
+}
+
+/* ===== BACKGROUND ===== */
+
+.e-dde7dde > .box.bg-1 > .rows > .row { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-dde7dde > .box.bg-1 > .rows > .row:hover { background: var(--ot-bg-1-hover); }
+.e-dde7dde > .box.bg-1 > .empty { background: var(--ot-bg-1); border-color: var(--ot-bg-1-border); }
+.e-dde7dde > .box.bg-1 .number { background: var(--ot-bg-2); border-color: var(--ot-bg-1-border); }
+
+.e-dde7dde > .box.bg-2 > .rows > .row { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-dde7dde > .box.bg-2 > .rows > .row:hover { background: var(--ot-bg-2-hover); }
+.e-dde7dde > .box.bg-2 > .empty { background: var(--ot-bg-2); border-color: var(--ot-bg-2-border); }
+.e-dde7dde > .box.bg-2 .number { background: var(--ot-bg-3); border-color: var(--ot-bg-2-border); }
+.e-dde7dde > .box.bg-2 .action:hover { background: var(--ot-bg-1); }
+
+.e-dde7dde > .box.bg-3 > .rows > .row { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+.e-dde7dde > .box.bg-3 > .rows > .row:hover { background: var(--ot-bg-3-hover); }
+.e-dde7dde > .box.bg-3 > .empty { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+.e-dde7dde > .box.bg-3 .number { background: var(--ot-bg-3); border-color: var(--ot-bg-3-border); }
+.e-dde7dde > .box.bg-3 .action:hover { background: var(--ot-bg-2); }
+
+/* ===== BORDER ===== */
+
+.e-dde7dde > .box.border { border-color: var(--ot-bg-2-border); padding: var(--ot-spacing-m); }
+.e-dde7dde > .box.bg-1.border { border-color: var(--ot-bg-1-border); }
+.e-dde7dde > .box.bg-2.border { border-color: var(--ot-bg-2-border); }
+.e-dde7dde > .box.bg-3.border { border-color: var(--ot-bg-3-border); }
+
+/* ===== SIZE ===== */
+
+.e-dde7dde > .box.size-s > .rows > .row { padding: var(--ot-spacing-x); gap: var(--ot-spacing-x); }
+.e-dde7dde > .box.size-s > .rows > .row > .fields { gap: var(--ot-spacing-x); }
+.e-dde7dde > .box.size-s .action { width: 24px; height: 24px; }
+.e-dde7dde > .box.size-s .action > i { font-size: 14px; }
+
+.e-dde7dde > .box.size-m > .rows > .row { padding: var(--ot-spacing-s); gap: var(--ot-spacing-s); }
+.e-dde7dde > .box.size-m > .rows > .row > .fields { gap: var(--ot-spacing-s); }
+
+.e-dde7dde > .box.size-l > .rows > .row { padding: var(--ot-spacing-m); gap: var(--ot-spacing-m); }
+.e-dde7dde > .box.size-l > .rows > .row > .fields { gap: var(--ot-spacing-m); }
+.e-dde7dde > .box.size-l .action { width: 32px; height: 32px; }
+.e-dde7dde > .box.size-l .action > i { font-size: 18px; }
+
+/* ===== DISABLED ===== */
+
+.e-dde7dde > .box.disabled > .rows > .row
+{
+	opacity: 0.7;
+	cursor: not-allowed;
+}

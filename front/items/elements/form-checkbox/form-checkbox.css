@@ -1,0 +1,217 @@
+/* ===== FORM CHECKBOX ===== */
+
+.e-2a660528
+{
+	display: inline-block;
+}
+
+/* Box */
+
+.e-2a660528 > .box
+{
+	position: relative;
+	display: inline-flex;
+	align-items: flex-start;
+	gap: var(--ot-spacing-s);
+	cursor: pointer;
+	font-family: var(--ot-font-primary);
+}
+
+/* Input — hidden but accessible */
+
+.e-2a660528 > .box > input
+{
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	width: 0;
+	height: 0;
+	margin: 0;
+}
+
+/* Info */
+
+.e-2a660528 > .box > .info
+{
+	display: inline-flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+	padding-top: 1px;
+}
+
+.e-2a660528 > .box > .info > .label
+{
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	color: var(--ot-text-1);
+	line-height: 1.3;
+	user-select: none;
+	transition: color var(--ot-transition);
+}
+
+.e-2a660528 > .box > .info > .description
+{
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+	line-height: 1.4;
+	user-select: none;
+	transition: color var(--ot-transition);
+}
+
+/* Mark */
+
+.e-2a660528 > .box > .mark
+{
+	position: relative;
+	display: block;
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: var(--ot-radius-s);
+	border: 1px solid var(--ot-bg-3-border);
+	background: var(--ot-bg-2);
+	transition: background var(--ot-transition), border-color var(--ot-transition), transform var(--ot-transition-fast), box-shadow var(--ot-transition);
+}
+
+.e-2a660528 > .box:hover:not(.disabled):not(.indeterminate) > input:not(:checked) ~ .mark
+{
+	background: var(--ot-bg-2-hover);
+	border-color: var(--ot-text-3);
+}
+
+/* Checkmark */
+
+.e-2a660528 > .box > .mark::after
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 4px;
+	height: 8px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: translate(-50%, -60%) rotate(45deg) scale(0);
+	opacity: 0;
+	transition: transform var(--ot-transition), opacity var(--ot-transition-fast);
+}
+
+.e-2a660528 > .box > input:checked ~ .mark::after
+{
+	transform: translate(-50%, -60%) rotate(45deg) scale(1);
+	opacity: 1;
+}
+
+/* Indeterminate */
+
+.e-2a660528 > .box.indeterminate > .mark::after
+{
+	width: 10px;
+	height: 2px;
+	transform: translate(-50%, -50%) rotate(0) scale(1);
+	opacity: 1;
+	border: none;
+	background: white;
+	border-radius: 1px;
+}
+
+/* Focus */
+
+.e-2a660528 > .box > input:focus-visible ~ .mark
+{
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+/* Active */
+
+.e-2a660528 > .box:active > .mark
+{
+	transform: scale(0.92);
+}
+
+/* Disabled */
+
+.e-2a660528 > .box.disabled
+{
+	cursor: not-allowed;
+}
+
+.e-2a660528 > .box.disabled > .mark
+{
+	opacity: 0.45;
+}
+
+.e-2a660528 > .box.disabled > .info > .label,
+.e-2a660528 > .box.disabled > .info > .description
+{
+	color: var(--ot-text-3);
+	opacity: 0.6;
+}
+
+/* ===== COLOR (checked state) ===== */
+
+.e-2a660528 > .box > input:checked ~ .mark,
+.e-2a660528 > .box.indeterminate > .mark
+{
+	background: var(--ot-brand);
+	border-color: var(--ot-brand);
+}
+
+.e-2a660528 > .box.color-blue > input:checked ~ .mark,
+.e-2a660528 > .box.color-blue.indeterminate > .mark
+{
+	background: var(--ot-blue);
+	border-color: var(--ot-blue);
+}
+
+.e-2a660528 > .box.color-red > input:checked ~ .mark,
+.e-2a660528 > .box.color-red.indeterminate > .mark
+{
+	background: var(--ot-red);
+	border-color: var(--ot-red);
+}
+
+.e-2a660528 > .box.color-orange > input:checked ~ .mark,
+.e-2a660528 > .box.color-orange.indeterminate > .mark
+{
+	background: var(--ot-orange);
+	border-color: var(--ot-orange);
+}
+
+.e-2a660528 > .box.color-green > input:checked ~ .mark,
+.e-2a660528 > .box.color-green.indeterminate > .mark
+{
+	background: var(--ot-green);
+	border-color: var(--ot-green);
+}
+
+/* Focus per color */
+
+.e-2a660528 > .box.color-blue > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-blue-opacity); }
+.e-2a660528 > .box.color-red > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-red-opacity); }
+.e-2a660528 > .box.color-orange > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-orange-opacity); }
+.e-2a660528 > .box.color-green > input:focus-visible ~ .mark { box-shadow: 0 0 0 3px var(--ot-green-opacity); }
+
+/* Icon */
+
+.e-2a660528 > .box > .icon
+{
+	font-size: 18px;
+	color: var(--ot-text-2);
+	flex-shrink: 0;
+	align-self: center;
+}
+
+/* Count */
+
+.e-2a660528 > .box > .count
+{
+	margin-left: auto;
+	padding-left: var(--ot-spacing-s);
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--ot-text-3);
+	font-variant-numeric: tabular-nums;
+	align-self: center;
+}

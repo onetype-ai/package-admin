@@ -1,0 +1,147 @@
+/* ===== FORM TOGGLE ===== */
+
+.e-16dba457
+{
+	display: inline-block;
+}
+
+/* Box */
+
+.e-16dba457 > .box
+{
+	position: relative;
+	display: inline-flex;
+	align-items: flex-start;
+	gap: var(--ot-spacing-s);
+	cursor: pointer;
+	user-select: none;
+	font-family: var(--ot-font-primary);
+}
+
+/* Hidden input */
+
+.e-16dba457 > .box > input
+{
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+}
+
+/* Track */
+
+.e-16dba457 > .box > .track
+{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	flex-shrink: 0;
+	width: 36px;
+	height: 20px;
+	border-radius: 100px;
+	border: 1px solid var(--ot-bg-3-border);
+	background: var(--ot-bg-3);
+	transition: background var(--ot-transition), border-color var(--ot-transition), box-shadow var(--ot-transition);
+}
+
+/* Thumb */
+
+.e-16dba457 > .box > .track > .thumb
+{
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: #fff;
+	transform: translateY(-50%);
+	transition: transform var(--ot-transition);
+}
+
+.e-16dba457 > .box.active > .track > .thumb
+{
+	transform: translate(16px, -50%);
+}
+
+/* Press feedback */
+
+.e-16dba457 > .box:active:not(.disabled) > .track > .thumb
+{
+	transform: translateY(-50%) scaleX(1.15);
+}
+
+.e-16dba457 > .box.active:active:not(.disabled) > .track > .thumb
+{
+	transform: translate(13px, -50%) scaleX(1.25);
+}
+
+/* Focus ring */
+
+.e-16dba457 > .box > input:focus-visible ~ .track
+{
+	box-shadow: 0 0 0 3px var(--ot-brand-opacity);
+}
+
+/* Info */
+
+.e-16dba457 > .box > .info
+{
+	display: inline-flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+	padding-top: 1px;
+}
+
+.e-16dba457 > .box > .info > .label
+{
+	font-size: var(--ot-size-m);
+	font-weight: 500;
+	color: var(--ot-text-1);
+	line-height: 1.3;
+	transition: color var(--ot-transition);
+}
+
+.e-16dba457 > .box > .info > .desc
+{
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+	line-height: 1.4;
+	transition: color var(--ot-transition);
+}
+
+/* Disabled */
+
+.e-16dba457 > .box.disabled
+{
+	cursor: not-allowed;
+}
+
+.e-16dba457 > .box.disabled > .track
+{
+	opacity: 0.45;
+}
+
+.e-16dba457 > .box.disabled > .info > .label,
+.e-16dba457 > .box.disabled > .info > .desc
+{
+	color: var(--ot-text-3);
+	opacity: 0.6;
+}
+
+/* ===== COLOR (active state) ===== */
+
+.e-16dba457 > .box.active.brand > .track { background: var(--ot-brand); border-color: var(--ot-brand); }
+.e-16dba457 > .box.active.blue > .track { background: var(--ot-blue); border-color: var(--ot-blue); }
+.e-16dba457 > .box.active.red > .track { background: var(--ot-red); border-color: var(--ot-red); }
+.e-16dba457 > .box.active.orange > .track { background: var(--ot-orange); border-color: var(--ot-orange); }
+.e-16dba457 > .box.active.green > .track { background: var(--ot-green); border-color: var(--ot-green); }
+
+/* Focus per color */
+
+.e-16dba457 > .box.blue > input:focus-visible ~ .track { box-shadow: 0 0 0 3px var(--ot-blue-opacity); }
+.e-16dba457 > .box.red > input:focus-visible ~ .track { box-shadow: 0 0 0 3px var(--ot-red-opacity); }
+.e-16dba457 > .box.orange > input:focus-visible ~ .track { box-shadow: 0 0 0 3px var(--ot-orange-opacity); }
+.e-16dba457 > .box.green > input:focus-visible ~ .track { box-shadow: 0 0 0 3px var(--ot-green-opacity); }

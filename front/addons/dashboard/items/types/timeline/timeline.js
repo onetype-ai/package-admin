@@ -37,6 +37,6 @@ admin.dashboard.types.Item({
 			});
 		});
 
-		return `<e-ui-data-timeline :background="0" :events="list"></e-ui-data-timeline>`;
+		return `<e-admin-data-timeline :background="0" :events="list"></e-admin-data-timeline>`;
 	}
 });

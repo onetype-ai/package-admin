@@ -25,6 +25,6 @@ admin.navbar.ElementAdd({
 
 		this.logo = 'https://images.onetype.ai/96752e47-1bea-4313-025c-5b76dc174200/public';
 
-		return `<e-ui-navigation-navbar :logo="logo" :items="items"></e-ui-navigation-navbar>`;
+		return `<e-admin-navigation-navbar :logo="logo" :items="items"></e-admin-navigation-navbar>`;
 	}
 });

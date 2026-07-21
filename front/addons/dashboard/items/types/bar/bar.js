@@ -25,6 +25,6 @@ admin.dashboard.types.Item({
 	},
 	render: function()
 	{
-		return `<e-ui-charts-bar :background="0" :bars="payload.bars"></e-ui-charts-bar>`;
+		return `<e-admin-charts-bar :background="0" :bars="payload.bars"></e-admin-charts-bar>`;
 	}
 });

@@ -1,0 +1,297 @@
+/* ===== VIEWS TREE ===== */
+
+.e-19d2f1
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-19d2f1 > .box
+{
+	display: flex;
+	flex-direction: column;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	outline: none;
+}
+
+/* Depth */
+
+.e-19d2f1 > .box.bg-0 { --fill: transparent; --line: transparent; --above: var(--ot-bg-1); --edge: var(--ot-bg-1-border); --hover: var(--ot-bg-1-hover); }
+.e-19d2f1 > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); --hover: var(--ot-bg-2-hover); }
+.e-19d2f1 > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); --hover: var(--ot-bg-3-hover); }
+.e-19d2f1 > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); --hover: var(--ot-bg-3-hover); }
+
+.e-19d2f1 > .box.bg-1,
+.e-19d2f1 > .box.bg-2,
+.e-19d2f1 > .box.bg-3
+{
+	padding: var(--ot-spacing-s);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+}
+
+/* Top */
+
+.e-19d2f1 > .box > .top
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+}
+
+.e-19d2f1 > .box > .top > .find
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	height: 34px;
+	padding: 0 var(--ot-spacing-s);
+	flex: 1;
+	border: 1px solid var(--edge);
+	border-radius: var(--ot-radius-m);
+	background: var(--above);
+	transition: border-color var(--ot-transition-fast);
+}
+
+.e-19d2f1 > .box > .top > .find:focus-within
+{
+	border-color: var(--ot-brand);
+}
+
+.e-19d2f1 > .box > .top > .find > i
+{
+	font-size: 16px;
+	color: var(--ot-text-3);
+}
+
+.e-19d2f1 > .box > .top > .find > input
+{
+	flex: 1;
+	border: none;
+	background: transparent;
+	font-family: inherit;
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-1);
+	outline: none;
+}
+
+.e-19d2f1 > .box > .top > .find > input::placeholder
+{
+	color: var(--ot-text-3);
+}
+
+.e-19d2f1 > .box > .top > .tools
+{
+	display: flex;
+	gap: 2px;
+}
+
+.e-19d2f1 > .box > .top > .tools > button
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	border: 1px solid var(--edge);
+	border-radius: var(--ot-radius-m);
+	background: var(--above);
+	color: var(--ot-text-3);
+	cursor: pointer;
+	transition: background var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-19d2f1 > .box > .top > .tools > button:hover
+{
+	background: var(--hover);
+	color: var(--ot-text-1);
+}
+
+.e-19d2f1 > .box > .top > .tools > button > i
+{
+	font-size: 17px;
+}
+
+/* Void */
+
+.e-19d2f1 > .box > .void
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--ot-spacing-l);
+	font-size: var(--ot-size-s);
+	color: var(--ot-text-3);
+}
+
+/* Rows */
+
+.e-19d2f1 > .box > .rows
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+}
+
+.e-19d2f1 > .box > .rows > .row
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	padding: 5px var(--ot-spacing-s);
+	border-radius: var(--ot-radius-m);
+	cursor: pointer;
+	transition: background var(--ot-transition-fast);
+}
+
+.e-19d2f1 > .box > .rows > .row.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-19d2f1 > .box > .rows > .row.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-19d2f1 > .box > .rows > .row.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-19d2f1 > .box > .rows > .row.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-19d2f1 > .box > .rows > .row.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+.e-19d2f1 > .box > .rows > .row:hover
+{
+	background: var(--hover);
+}
+
+.e-19d2f1 > .box > .rows > .row.active
+{
+	background: var(--tint);
+}
+
+.e-19d2f1 > .box > .rows > .row.disabled
+{
+	cursor: not-allowed;
+	opacity: 0.45;
+}
+
+/* Caret */
+
+.e-19d2f1 > .box > .rows > .row > .caret
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	border-radius: var(--ot-radius-s);
+	color: var(--ot-text-3);
+	flex-shrink: 0;
+	transition: transform var(--ot-transition-fast), color var(--ot-transition-fast);
+}
+
+.e-19d2f1 > .box > .rows > .row > .caret:hover
+{
+	color: var(--ot-text-1);
+}
+
+.e-19d2f1 > .box > .rows > .row > .caret.turned
+{
+	transform: rotate(90deg);
+}
+
+.e-19d2f1 > .box > .rows > .row > .caret > i
+{
+	font-size: 17px;
+}
+
+.e-19d2f1 > .box > .rows > .row > .caret > i.spin
+{
+	animation: e-19d2f1-spin 0.8s linear infinite;
+}
+
+@keyframes e-19d2f1-spin
+{
+	to { transform: rotate(360deg); }
+}
+
+/* Tile */
+
+.e-19d2f1 > .box > .rows > .row > .tile
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	border-radius: var(--ot-radius-s);
+	background: var(--tint);
+	color: var(--accent);
+	flex-shrink: 0;
+}
+
+.e-19d2f1 > .box > .rows > .row > .tile > i
+{
+	font-size: 15px;
+}
+
+/* Words */
+
+.e-19d2f1 > .box > .rows > .row > .words
+{
+	display: flex;
+	align-items: baseline;
+	gap: var(--ot-spacing-s);
+	flex: 1;
+	min-width: 0;
+}
+
+.e-19d2f1 > .box > .rows > .row > .words > .title
+{
+	font-size: var(--ot-size-s);
+	font-weight: 550;
+	color: var(--ot-text-1);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.e-19d2f1 > .box > .rows > .row > .words > .subtitle
+{
+	font-size: 12px;
+	color: var(--ot-text-3);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Chips */
+
+.e-19d2f1 > .box > .rows > .row > .chip
+{
+	padding: 2px 8px;
+	border-radius: 99px;
+	background: var(--tint);
+	font-size: 10.5px;
+	font-weight: 600;
+	color: var(--accent);
+	flex-shrink: 0;
+}
+
+.e-19d2f1 > .box > .rows > .row > .count
+{
+	min-width: 20px;
+	padding: 1px 6px;
+	border-radius: 99px;
+	border: 1px solid var(--edge);
+	background: var(--above);
+	font-family: var(--ot-font-mono);
+	font-size: 10.5px;
+	font-weight: 600;
+	text-align: center;
+	color: var(--ot-text-3);
+	flex-shrink: 0;
+}
+
+.e-19d2f1 > .box > .rows > .row > .meta
+{
+	font-family: var(--ot-font-mono);
+	font-size: 11px;
+	color: var(--ot-text-3);
+	flex-shrink: 0;
+}

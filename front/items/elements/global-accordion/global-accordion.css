@@ -1,0 +1,210 @@
+/* ===== GLOBAL ACCORDION ===== */
+
+.e-6a2c100e
+{
+	display: block;
+	width: 100%;
+}
+
+/* Box */
+
+.e-6a2c100e > .box
+{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	overflow: hidden;
+}
+
+.e-6a2c100e > .box.bg-1,
+.e-6a2c100e > .box.bg-2,
+.e-6a2c100e > .box.bg-3{
+	padding: var(--ot-spacing-x);
+	border: 1px solid var(--line);
+	border-radius: var(--ot-radius-l);
+	background: var(--fill);
+}
+
+.e-6a2c100e > .box.bg-0 { --fill: transparent; --line: transparent; --above: transparent; --edge: transparent; }
+.e-6a2c100e > .box.bg-1 { --fill: var(--ot-bg-1); --line: var(--ot-bg-1-border); --above: var(--ot-bg-2); --edge: var(--ot-bg-2-border); }
+.e-6a2c100e > .box.bg-2 { --fill: var(--ot-bg-2); --line: var(--ot-bg-2-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+.e-6a2c100e > .box.bg-3 { --fill: var(--ot-bg-3); --line: var(--ot-bg-3-border); --above: var(--ot-bg-3); --edge: var(--ot-bg-3-border); }
+
+.e-6a2c100e > .box.brand { --accent: var(--ot-brand); --tint: var(--ot-brand-opacity); }
+.e-6a2c100e > .box.blue { --accent: var(--ot-blue); --tint: var(--ot-blue-opacity); }
+.e-6a2c100e > .box.red { --accent: var(--ot-red); --tint: var(--ot-red-opacity); }
+.e-6a2c100e > .box.orange { --accent: var(--ot-orange); --tint: var(--ot-orange-opacity); }
+.e-6a2c100e > .box.green { --accent: var(--ot-green); --tint: var(--ot-green-opacity); }
+
+/* Item */
+
+.e-6a2c100e > .box > .item
+{
+	border-radius: var(--ot-radius-m);
+	transition: background var(--ot-transition);
+}
+
+.e-6a2c100e > .box > .item:not(:last-child)
+{
+	border-bottom: 1px solid var(--line, var(--ot-bg-2-border));
+}
+
+.e-6a2c100e > .box > .item.open
+{
+	background: color-mix(in srgb, var(--ot-bg-3) 40%, transparent);
+}
+
+.e-6a2c100e > .box > .item.disabled
+{
+	opacity: 0.45;
+	pointer-events: none;
+}
+
+/* Head */
+
+.e-6a2c100e > .box > .item > .head
+{
+	display: flex;
+	align-items: center;
+	gap: var(--ot-spacing-s);
+	width: 100%;
+	padding: var(--ot-spacing-s) var(--ot-spacing-s);
+	border: none;
+	background: transparent;
+	text-align: left;
+	cursor: pointer;
+}
+
+/* Tile */
+
+.e-6a2c100e > .box > .item > .head > .tile
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 34px;
+	height: 34px;
+	border-radius: 10px;
+	background: var(--ot-bg-3);
+	color: var(--ot-text-2);
+	transition: background var(--ot-transition), color var(--ot-transition), transform var(--ot-transition);
+}
+
+.e-6a2c100e > .box > .item > .head > .tile > i
+{
+	font-size: 17px;
+}
+
+.e-6a2c100e > .box > .item:hover > .head > .tile
+{
+	color: var(--ot-text-1);
+}
+
+.e-6a2c100e > .box > .item.open > .head > .tile
+{
+	background: var(--tint);
+	color: var(--accent);
+	transform: scale(1.05);
+}
+
+/* Text */
+
+.e-6a2c100e > .box > .item > .head > .text
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1px;
+	flex: 1;
+	min-width: 0;
+}
+
+.e-6a2c100e > .box > .item > .head > .text > .title
+{
+	color: var(--ot-text-2);
+	font-family: var(--ot-font-primary);
+	font-size: var(--ot-size-m);
+	font-weight: 550;
+	transition: color var(--ot-transition-fast);
+}
+
+.e-6a2c100e > .box > .item:hover > .head > .text > .title,
+.e-6a2c100e > .box > .item.open > .head > .text > .title
+{
+	color: var(--ot-text-1);
+}
+
+.e-6a2c100e > .box > .item > .head > .text > .description
+{
+	color: var(--ot-text-3);
+	font-size: var(--ot-size-s);
+}
+
+/* Chip */
+
+.e-6a2c100e > .box > .item > .head > .chip
+{
+	flex-shrink: 0;
+	padding: 2px 8px;
+	border-radius: 99px;
+	background: var(--tint);
+	color: var(--accent);
+	font-size: 10px;
+	font-weight: 650;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+/* Chevron */
+
+.e-6a2c100e > .box > .item > .head > .chevron
+{
+	flex-shrink: 0;
+	color: var(--ot-text-3);
+	font-size: 18px;
+	transition: transform var(--ot-transition), color var(--ot-transition-fast);
+}
+
+.e-6a2c100e > .box > .item.open > .head > .chevron
+{
+	transform: rotate(180deg);
+	color: var(--accent);
+}
+
+/* Panel — animated through grid rows */
+
+.e-6a2c100e > .box > .item > .panel
+{
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--ot-transition-slow);
+}
+
+.e-6a2c100e > .box > .item.open > .panel
+{
+	grid-template-rows: 1fr;
+}
+
+.e-6a2c100e > .box > .item > .panel > .inner
+{
+	min-height: 0;
+	overflow: hidden;
+}
+
+.e-6a2c100e > .box > .item > .panel > .inner > .content
+{
+	padding: 0 var(--ot-spacing-s) var(--ot-spacing-m) calc(34px + var(--ot-spacing-s) + var(--ot-spacing-s));
+	color: var(--ot-text-2);
+	font-size: var(--ot-size-m);
+	line-height: 1.6;
+	opacity: 0;
+	transform: translateY(-4px);
+	transition: opacity var(--ot-transition-slow), transform var(--ot-transition-slow);
+}
+
+.e-6a2c100e > .box > .item.open > .panel > .inner > .content
+{
+	opacity: 1;
+	transform: translateY(0);
+}

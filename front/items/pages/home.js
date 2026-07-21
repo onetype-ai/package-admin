@@ -20,7 +20,7 @@ pages.Item({
 
 			return `
 				<div ot-if="!ready" style="width: 100%; height: 100%;">
-					<e-ui-status-loading></e-ui-status-loading>
+					<e-admin-status-loading></e-admin-status-loading>
 				</div>
 				<div ot-if="ready" style="display: grid; width: 100%; height: 100%; grid-template-areas: 'navbar navbar' 'rail workspace' 'status status'; grid-template-columns: auto 1fr; grid-template-rows: 46px 1fr 32px;">
 					<div style="grid-area: navbar;"><e-admin-navbar-bar></e-admin-navbar-bar></div>
