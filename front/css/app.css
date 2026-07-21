@@ -47,3 +47,61 @@ a
 	html { font-size: 90%; }
 	p { line-height: 1.4; }
 }
+
+i
+{
+	font-family: 'Material Symbols Rounded';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	color: inherit;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	font-variation-settings: 'opsz' 24, 'wght' 300, 'FILL' 0, 'GRAD' 0;
+}
+
+*
+{
+	scrollbar-width: thin;
+	scrollbar-color: var(--ot-bg-3) transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track
+{
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: var(--ot-bg-3);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+	background: var(--ot-bg-3-hover);
+}
+
+hr
+{
+	border: none;
+	border-top: 1px solid var(--ot-bg-1-border);
+}
+
+ul, ol
+{
+	list-style: none;
+}
