@@ -13,7 +13,7 @@
 	position: relative;
 	border: 1px solid var(--ot-bg-1-border);
 	border-radius: var(--ot-radius-l) 0 0 var(--ot-radius-l);
-	background: var(--ot-bg-2);
+	background: var(--ot-bg-1);
 	color: var(--ot-text-1);
 	overflow: hidden;
 }
