@@ -48,25 +48,6 @@ a
 	p { line-height: 1.4; }
 }
 
-i
-{
-	font-family: 'Material Symbols Rounded';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 20px;
-	line-height: 1;
-	letter-spacing: normal;
-	text-transform: none;
-	display: inline-block;
-	white-space: nowrap;
-	word-wrap: normal;
-	direction: ltr;
-	color: inherit;
-	-webkit-font-feature-settings: 'liga';
-	-webkit-font-smoothing: antialiased;
-	font-variation-settings: 'opsz' 24, 'wght' 300, 'FILL' 0, 'GRAD' 0;
-}
-
 *
 {
 	scrollbar-width: thin;
