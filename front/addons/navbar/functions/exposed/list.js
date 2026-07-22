@@ -22,7 +22,7 @@ admin.navbar.FnExpose('list', function()
 
 				if(item.Get('popup'))
 				{
-					return item.Get('isOpen') ? admin.navbar.Command('close') : admin.navbar.Command('open', { id: item.Get('id') });
+					return item.Get('isOpen') ? commands.Fn('run', 'admin:navbar:close') : commands.Fn('run', 'admin:navbar:open', { id: item.Get('id') });
 				}
 
 				item.Get('onClick') && item.Get('onClick')(item);

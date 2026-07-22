@@ -10,6 +10,6 @@ admin.modes.ItemOn('modified', (item) =>
 		hint: 'Switch mode',
 		keywords: [item.Get('id')],
 		condition: { app: item.Get('condition').app },
-		callback: () => admin.modes.Command('switch', { id: item.Get('id') })
+		callback: () => commands.Fn('run', 'admin:modes:switch', { id: item.Get('id') })
 	});
 });

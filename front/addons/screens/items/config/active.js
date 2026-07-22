@@ -1,5 +1,5 @@
 config.Item({
-	key: 'admin.screens.active',
+	id: 'admin.screens.active',
 	description: 'ID of the open screen, null while the normal shell shows.',
 	value: null,
 	config: {

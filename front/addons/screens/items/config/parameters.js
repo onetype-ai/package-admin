@@ -1,5 +1,5 @@
 config.Item({
-	key: 'admin.screens.parameters',
+	id: 'admin.screens.parameters',
 	description: 'Route parameters of the open screen, kept so the screen restores completely on the next load.',
 	value: {},
 	config: {

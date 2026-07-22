@@ -6,6 +6,6 @@ onetype.AddonReady('shortcuts', (shortcuts) =>
 		group: 'Explorer',
 		description: 'Opens and closes the universal search.',
 		key: 'meta+e',
-		callback: () => admin.explorer.Command('toggle')
+		callback: () => commands.Fn('run', 'admin:explorer:toggle')
 	});
 });

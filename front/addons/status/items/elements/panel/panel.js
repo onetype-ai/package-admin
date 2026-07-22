@@ -33,7 +33,7 @@ admin.status.ElementAdd({
 
 		this.close = () =>
 		{
-			admin.layouts.Command('close', { id: 'status-panel' });
+			commands.Fn('run', 'admin:layouts:close', { id: 'status-panel' });
 		};
 
 		return `

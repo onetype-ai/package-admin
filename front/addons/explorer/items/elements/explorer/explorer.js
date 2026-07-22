@@ -45,7 +45,7 @@ admin.explorer.ElementAdd({
 		{
 			$ot.float.close();
 
-			admin.explorer.Command('run', { id: entry.id });
+			commands.Fn('run', 'admin:explorer:run', { id: entry.id });
 		};
 
 		this.scroll = () =>

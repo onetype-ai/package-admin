@@ -26,7 +26,7 @@ admin.modes.ElementAdd({
 
 		this.change = ({ value }) =>
 		{
-			admin.modes.Command('switch', { id: value });
+			commands.Fn('run', 'admin:modes:switch', { id: value });
 		};
 
 		return `

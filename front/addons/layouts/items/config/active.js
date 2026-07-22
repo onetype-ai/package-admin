@@ -1,5 +1,5 @@
 config.Item({
-	key: 'admin.layouts.active',
+	id: 'admin.layouts.active',
 	description: 'Persisted open state per layout item, keyed by item id.',
 	value: {},
 	config: {

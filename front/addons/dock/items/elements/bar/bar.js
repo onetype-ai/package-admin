@@ -16,7 +16,7 @@ admin.dock.ElementAdd({
 				min: 280,
 				max: 640,
 				onResize: (width) => config.set('admin.dock.width', width),
-				onClose: () => admin.dock.Command('close'),
+				onClose: () => commands.Fn('run', 'admin:dock:close'),
 				...(open?.panel || {})
 			};
 
@@ -36,7 +36,7 @@ admin.dock.ElementAdd({
 
 					if(item.render)
 					{
-						return item.isOpen ? admin.dock.Command('close') : admin.dock.Command('open', { id: item.id });
+						return item.isOpen ? commands.Fn('run', 'admin:dock:close') : commands.Fn('run', 'admin:dock:open', { id: item.id });
 					}
 
 					item.onClick && item.onClick(item);

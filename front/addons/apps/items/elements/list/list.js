@@ -33,14 +33,14 @@ admin.apps.ElementAdd({
 
 		this.open = (app) =>
 		{
-			admin.apps.Command('open', { id: app.id });
-			admin.dock.Command('close');
+			commands.Fn('run', 'admin:apps:open', { id: app.id });
+			commands.Fn('run', 'admin:dock:close');
 		};
 
 		this.jump = (link) =>
 		{
 			link.onClick && link.onClick(link);
-			admin.dock.Command('close');
+			commands.Fn('run', 'admin:dock:close');
 		};
 
 		return `

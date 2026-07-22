@@ -16,7 +16,7 @@ admin.explorer.ElementAdd({
 	{
 		this.open = () =>
 		{
-			admin.explorer.Command('open');
+			commands.Fn('run', 'admin:explorer:open');
 		};
 
 		return `

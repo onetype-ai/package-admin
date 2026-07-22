@@ -1,5 +1,5 @@
 config.Item({
-	key: 'admin.apps.active',
+	id: 'admin.apps.active',
 	description: 'ID of the app open on the rail, null while none is active.',
 	value: null,
 	config: {

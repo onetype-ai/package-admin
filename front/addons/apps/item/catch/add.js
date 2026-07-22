@@ -18,7 +18,7 @@ admin.apps.ItemOn('add', (item) =>
 			isActive: () => item.Get('isActive'),
 			render: item.Get('render'),
 			badge: item.Get('badge'),
-			onClick: () => item.Get('isActive') ? admin.apps.Command('close') : admin.apps.Command('open', { id: item.Get('id') })
+			onClick: () => item.Get('isActive') ? commands.Fn('run', 'admin:apps:close') : commands.Fn('run', 'admin:apps:open', { id: item.Get('id') })
 		});
 	});
 
@@ -38,7 +38,7 @@ admin.apps.ItemOn('add', (item) =>
 			label: item.Get('name'),
 			hint: 'Open application',
 			keywords: [item.Get('id')],
-			callback: () => admin.apps.Command('open', { id: item.Get('id') })
+			callback: () => commands.Fn('run', 'admin:apps:open', { id: item.Get('id') })
 		});
 	});
 });

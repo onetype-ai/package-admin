@@ -52,11 +52,11 @@ admin.status.ElementAdd({
 
 			if(item.open)
 			{
-				admin.layouts.Command('close', { id: 'status-panel' });
+				commands.Fn('run', 'admin:layouts:close', { id: 'status-panel' });
 			}
 			else
 			{
-				admin.layouts.Command('open', { id: 'status-panel', data: { tab: item.id } });
+				commands.Fn('run', 'admin:layouts:open', { id: 'status-panel', data: { tab: item.id } });
 			}
 		};
 
