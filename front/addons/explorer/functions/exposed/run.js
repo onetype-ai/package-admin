@@ -1,15 +1,15 @@
 admin.explorer.FnExpose('run', function(id)
 {
-	const item = this.ItemGet(id);
+    const item = this.ItemGet(id);
 
-	if(!item)
-	{
-		return false;
-	}
+    if(!item)
+    {
+        return false;
+    }
 
-	item.Get('callback')();
+    item.Get('callback')();
 
-	onetype.Emit('admin.explorer.run', { id });
+    onetype.Emit('admin.explorer.run', { id });
 
-	return true;
+    return true;
 });

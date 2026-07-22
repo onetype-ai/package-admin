@@ -1,4 +1,4 @@
 admin.screens.FnExpose('data', function()
 {
-	return this.StoreGet('data') || {};
+    return this.StoreGet('data') || {};
 });

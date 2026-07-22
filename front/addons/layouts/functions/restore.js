@@ -1,26 +1,26 @@
 admin.layouts.Fn('restore', function()
 {
-	const active = config.get('admin.layouts.active');
-	const opened = [];
+    const active = config.get('admin.layouts.active');
+    const opened = [];
 
-	Object.entries(active).forEach(([id, open]) =>
-	{
-		const item = this.ItemGet(id);
+    Object.entries(active).forEach(([id, open]) =>
+    {
+        const item = this.ItemGet(id);
 
-		if(!item)
-		{
-			return;
-		}
+        if(!item)
+        {
+            return;
+        }
 
-		item.Set('isActive', open, false);
+        item.Set('isActive', open, false);
 
-		if(open)
-		{
-			opened.push(id);
-		}
-	});
+        if(open)
+        {
+            opened.push(id);
+        }
+    });
 
-	onetype.Emit('admin.layouts.open', { ids: opened });
+    onetype.Emit('admin.layouts.open', { ids: opened });
 
-	return active;
+    return active;
 });

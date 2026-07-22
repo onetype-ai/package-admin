@@ -1,4 +1,4 @@
 admin.layouts.Fn('data', function()
 {
-	return admin.screens.data();
+    return admin.screens.data();
 });

@@ -1,27 +1,27 @@
 admin.apps.FnExpose('close', function()
 {
-	const active = admin.apps.active();
+    const active = admin.apps.active();
 
-	if(!active)
-	{
-		return false;
-	}
+    if(!active)
+    {
+        return false;
+    }
 
-	if(active.Get('onDeactivate'))
-	{
-		active.Get('onDeactivate')(active);
-	}
+    if(active.Get('onDeactivate'))
+    {
+        active.Get('onDeactivate')(active);
+    }
 
-	const screen = admin.screens.active();
+    const screen = admin.screens.active();
 
-	if(screen && screen.Get('app') === active.Get('id'))
-	{
-		admin.screens.close();
-	}
+    if(screen && screen.Get('app') === active.Get('id'))
+    {
+        admin.screens.close();
+    }
 
-	config.set('admin.apps.active', null);
+    config.set('admin.apps.active', null);
 
-	onetype.Emit('admin.apps.close', { id: active.Get('id') });
+    onetype.Emit('admin.apps.close', { id: active.Get('id') });
 
-	return true;
+    return true;
 });

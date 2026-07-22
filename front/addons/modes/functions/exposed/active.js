@@ -1,14 +1,14 @@
 admin.modes.FnExpose('active', function()
 {
-	const active = config.get('admin.modes.active');
-	const visible = Object.values(this.Items()).filter((item) => item.Fn('visible'));
+    const active = config.get('admin.modes.active');
+    const visible = Object.values(this.Items()).filter((item) => item.Fn('visible'));
 
-	const current = visible.find((item) => active.includes(item.Get('id')));
+    const current = visible.find((item) => active.includes(item.Get('id')));
 
-	if(current)
-	{
-		return current;
-	}
+    if(current)
+    {
+        return current;
+    }
 
-	return visible.find((item) => item.Get('isDefault')) || null;
+    return visible.find((item) => item.Get('isDefault')) || null;
 });

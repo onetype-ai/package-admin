@@ -1,17 +1,17 @@
 admin.dock.ItemOn('add', (item) =>
 {
-	const render = item.Get('render');
+    const render = item.Get('render');
 
-	if(render)
-	{
-		admin.dock.RenderAdd(item.Get('id'), function()
-		{
-			if(typeof render === 'function')
-			{
-				return render.call(this);
-			}
+    if(render)
+    {
+        admin.dock.RenderAdd(item.Get('id'), function()
+        {
+            if(typeof render === 'function')
+            {
+                return render.call(this);
+            }
 
-			return render;
-		});
-	}
+            return render;
+        });
+    }
 });

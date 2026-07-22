@@ -1,16 +1,16 @@
 $ot.platform.boot.then(() =>
 {
-	const match = admin.screens.match(window.location.pathname);
+    const match = admin.screens.match(window.location.pathname);
 
-	if(match)
-	{
-		return commands.Fn('run', 'admin:screens:open', { id: match.item.Get('id'), parameters: match.parameters });
-	}
+    if(match)
+    {
+        return commands.Fn('run', 'admin:screens:open', { id: match.item.Get('id'), parameters: match.parameters });
+    }
 
-	const active = admin.screens.active();
+    const active = admin.screens.active();
 
-	if(active)
-	{
-		commands.Fn('run', 'admin:screens:open', { id: active.Get('id'), parameters: config.get('admin.screens.parameters') });
-	}
+    if(active)
+    {
+        commands.Fn('run', 'admin:screens:open', { id: active.Get('id'), parameters: config.get('admin.screens.parameters') });
+    }
 });

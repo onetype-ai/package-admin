@@ -1,28 +1,28 @@
 admin.explorer.Fn('item.visible', function(item)
 {
-	const condition = item.Get('condition');
+    const condition = item.Get('condition');
 
-	if(condition.app.length && !condition.app.includes(admin.apps.active()?.Get('id')))
-	{
-		return false;
-	}
+    if(condition.app.length && !condition.app.includes(admin.apps.active()?.Get('id')))
+    {
+        return false;
+    }
 
-	if(condition.mode.length && !condition.mode.includes(admin.modes.active()?.Get('id')))
-	{
-		return false;
-	}
+    if(condition.mode.length && !condition.mode.includes(admin.modes.active()?.Get('id')))
+    {
+        return false;
+    }
 
-	if(condition.user && !$ot.get('user'))
-	{
-		return false;
-	}
+    if(condition.user && !$ot.get('user'))
+    {
+        return false;
+    }
 
-	/* @todo permission check — wire once permissions has/grant API exists */
+    /* @todo permission check — wire once permissions has/grant API exists */
 
-	if(condition.callback && condition.callback.call({}, item) === false)
-	{
-		return false;
-	}
+    if(condition.callback && condition.callback.call({}, item) === false)
+    {
+        return false;
+    }
 
-	return true;
+    return true;
 });

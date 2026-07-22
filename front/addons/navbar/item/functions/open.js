@@ -1,61 +1,61 @@
 admin.navbar.Fn('item.open', function(item)
 {
-	const popup = item.Get('popup');
+    const popup = item.Get('popup');
 
-	this.methods.content = () =>
-	{
-		return typeof popup.render === 'function' ? popup.render : () => popup.render;
-	};
+    this.methods.content = () =>
+    {
+        return typeof popup.render === 'function' ? popup.render : () => popup.render;
+    };
 
-	this.methods.options = () =>
-	{
-		const options = { ...popup };
-		const finish = popup.onClose;
+    this.methods.options = () =>
+    {
+        const options = { ...popup };
+        const finish = popup.onClose;
 
-		delete options.type;
-		delete options.render;
+        delete options.type;
+        delete options.render;
 
-		options.id = 'admin-navbar-' + item.Get('id');
+        options.id = 'admin-navbar-' + item.Get('id');
 
-		options.onClose = () =>
-		{
-			admin.navbar.StoreSet('open', null);
+        options.onClose = () =>
+        {
+            admin.navbar.StoreSet('open', null);
 
-			onetype.Emit('admin.navbar.close', {});
+            onetype.Emit('admin.navbar.close', {});
 
-			finish && finish();
-		};
+            finish && finish();
+        };
 
-		return options;
-	};
+        return options;
+    };
 
-	this.methods.dropdown = () =>
-	{
-		const target = document.querySelector('[data-navbar-id="' + item.Get('id') + '"]');
+    this.methods.dropdown = () =>
+    {
+        const target = document.querySelector('[data-navbar-id="' + item.Get('id') + '"]');
 
-		if(!target)
-		{
-			return false;
-		}
+        if(!target)
+        {
+            return false;
+        }
 
-		$ot.float.popup(target, this.methods.content(), this.methods.options());
+        $ot.float.popup(target, this.methods.content(), this.methods.options());
 
-		return true;
-	};
+        return true;
+    };
 
-	this.methods.surface = () =>
-	{
-		const options = this.methods.options();
+    this.methods.surface = () =>
+    {
+        const options = this.methods.options();
 
-		$ot.float.drawer({
-			...options,
-			content: this.methods.content(),
-			position: options.position || (popup.type === 'drawer' ? 'right' : 'center'),
-			clean: !options.title && !options.description
-		});
+        $ot.float.drawer({
+            ...options,
+            content: this.methods.content(),
+            position: options.position || (popup.type === 'drawer' ? 'right' : 'center'),
+            clean: !options.title && !options.description
+        });
 
-		return true;
-	};
+        return true;
+    };
 
-	return (popup.type || 'default') === 'dropdown' ? this.methods.dropdown() : this.methods.surface();
+    return (popup.type || 'default') === 'dropdown' ? this.methods.dropdown() : this.methods.surface();
 });

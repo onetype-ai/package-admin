@@ -1,161 +1,161 @@
 admin.ElementAdd({
-	id: 'data-list',
-	icon: 'list',
-	name: 'List',
-	description: 'Ranked list with icons, labels, trailing values, an optional progress fill behind each row and row clicks.',
-	category: 'Data',
-	collection: 'Home',
-	author: 'OneType',
-	config: {
-		rows: {
-			type: 'array',
-			value: [
-				{ icon: 'description', label: '/pricing', sublabel: '12,480 views', value: '+8%', percent: 88, color: 'green' },
-				{ icon: 'description', label: '/features', sublabel: '9,120 views', value: '+3%', percent: 64, color: 'blue' },
-				{ icon: 'description', label: '/blog/launch', sublabel: '6,840 views', value: '-2%', percent: 48, color: 'red' },
-				{ icon: 'description', label: '/docs', sublabel: '4,210 views', value: '+11%', percent: 30, color: 'orange' }
-			],
-			each: {
-				type: 'object',
-				config: {
-					icon: {
-						type: 'string',
-						description: 'Leading Material Symbols icon.'
-					},
-					label: {
-						type: 'string',
-						description: 'Row title.'
-					},
-					sublabel: {
-						type: 'string',
-						description: 'Muted text under the label.'
-					},
-					value: {
-						type: 'string|number',
-						description: 'Trailing value.'
-					},
-					percent: {
-						type: 'number',
-						description: 'Fill of the progress bar behind the row, 0 to 100. Empty draws no bar.'
-					},
-					color: {
-						type: 'string',
-						value: 'brand',
-						options: ['brand', 'blue', 'red', 'orange', 'green'],
-						description: 'Bar and value color.'
-					},
-					onClick: {
-						type: 'function',
-						description: 'Called with the row on click. Makes the row interactive.'
-					}
-				}
-			},
-			description: 'Rows top to bottom.'
-		},
-		search: {
-			type: 'boolean',
-			value: false,
-			description: 'Shows a search field above the rows, filtering by label and sublabel as you type.'
-		},
-		placeholder: {
-			type: 'string',
-			value: 'Search...',
-			description: 'Placeholder of the search field while search is on.'
-		},
-		background: {
-			type: 'number',
-			value: 1,
-			options: [0, 1, 2, 3],
-			description: 'Background depth of the surface from 1 to 3. 0 renders transparent, without background or borders.'
-		},
-		glow: {
-			type: 'string',
-			options: ['brand', 'blue', 'red', 'orange', 'green'],
-			description: 'Colored glow on top of the surface. Empty renders no glow.'
-		}
-	},
-	render: function()
-	{
-		/* ===== STATE ===== */
+    id: 'data-list',
+    icon: 'list',
+    name: 'List',
+    description: 'Ranked list with icons, labels, trailing values, an optional progress fill behind each row and row clicks.',
+    category: 'Data',
+    collection: 'Home',
+    author: 'OneType',
+    config: {
+        rows: {
+            type: 'array',
+            value: [
+                { icon: 'description', label: '/pricing', sublabel: '12,480 views', value: '+8%', percent: 88, color: 'green' },
+                { icon: 'description', label: '/features', sublabel: '9,120 views', value: '+3%', percent: 64, color: 'blue' },
+                { icon: 'description', label: '/blog/launch', sublabel: '6,840 views', value: '-2%', percent: 48, color: 'red' },
+                { icon: 'description', label: '/docs', sublabel: '4,210 views', value: '+11%', percent: 30, color: 'orange' }
+            ],
+            each: {
+                type: 'object',
+                config: {
+                    icon: {
+                        type: 'string',
+                        description: 'Leading Material Symbols icon.'
+                    },
+                    label: {
+                        type: 'string',
+                        description: 'Row title.'
+                    },
+                    sublabel: {
+                        type: 'string',
+                        description: 'Muted text under the label.'
+                    },
+                    value: {
+                        type: 'string|number',
+                        description: 'Trailing value.'
+                    },
+                    percent: {
+                        type: 'number',
+                        description: 'Fill of the progress bar behind the row, 0 to 100. Empty draws no bar.'
+                    },
+                    color: {
+                        type: 'string',
+                        value: 'brand',
+                        options: ['brand', 'blue', 'red', 'orange', 'green'],
+                        description: 'Bar and value color.'
+                    },
+                    onClick: {
+                        type: 'function',
+                        description: 'Called with the row on click. Makes the row interactive.'
+                    }
+                }
+            },
+            description: 'Rows top to bottom.'
+        },
+        search: {
+            type: 'boolean',
+            value: false,
+            description: 'Shows a search field above the rows, filtering by label and sublabel as you type.'
+        },
+        placeholder: {
+            type: 'string',
+            value: 'Search...',
+            description: 'Placeholder of the search field while search is on.'
+        },
+        background: {
+            type: 'number',
+            value: 1,
+            options: [0, 1, 2, 3],
+            description: 'Background depth of the surface from 1 to 3. 0 renders transparent, without background or borders.'
+        },
+        glow: {
+            type: 'string',
+            options: ['brand', 'blue', 'red', 'orange', 'green'],
+            description: 'Colored glow on top of the surface. Empty renders no glow.'
+        }
+    },
+    render: function()
+    {
+        /* ===== STATE ===== */
 
-		this.query = '';
+        this.query = '';
 
-		this.visible = () =>
-		{
-			const query = this.query.trim().toLowerCase();
+        this.visible = () =>
+        {
+            const query = this.query.trim().toLowerCase();
 
-			if(!query)
-			{
-				return this.rows;
-			}
+            if(!query)
+            {
+                return this.rows;
+            }
 
-			return this.rows.filter((row) =>
-			{
-				const label = row.label ? String(row.label).toLowerCase() : '';
-				const sublabel = row.sublabel ? String(row.sublabel).toLowerCase() : '';
+            return this.rows.filter((row) =>
+            {
+                const label = row.label ? String(row.label).toLowerCase() : '';
+                const sublabel = row.sublabel ? String(row.sublabel).toLowerCase() : '';
 
-				return label.includes(query) || sublabel.includes(query);
-			});
-		};
+                return label.includes(query) || sublabel.includes(query);
+            });
+        };
 
-		this.type = () => ({ value }) =>
-		{
-			this.query = value;
-		};
+        this.type = () => ({ value }) =>
+        {
+            this.query = value;
+        };
 
-		/* ===== CLASSES ===== */
+        /* ===== CLASSES ===== */
 
-		this.classes = () =>
-		{
-			const list = ['box'];
+        this.classes = () =>
+        {
+            const list = ['box'];
 
-			if(this.background || this.background === 0)
-			{
-				list.push('bg-' + this.background);
-			}
+            if(this.background || this.background === 0)
+            {
+                list.push('bg-' + this.background);
+            }
 
-			return list.join(' ');
-		};
+            return list.join(' ');
+        };
 
-		this.state = (row) =>
-		{
-			return row.onClick ? 'row ' + row.color + ' clickable' : 'row ' + row.color;
-		};
+        this.state = (row) =>
+        {
+            return row.onClick ? 'row ' + row.color + ' clickable' : 'row ' + row.color;
+        };
 
-		/* ===== HANDLERS ===== */
+        /* ===== HANDLERS ===== */
 
-		this.bar = (row) =>
-		{
-			return 'width: ' + Math.min(Math.max(row.percent, 0), 100) + '%';
-		};
+        this.bar = (row) =>
+        {
+            return 'width: ' + Math.min(Math.max(row.percent, 0), 100) + '%';
+        };
 
-		this.run = (row) =>
-		{
-			if(row.onClick)
-			{
-				row.onClick(row);
-			}
-		};
+        this.run = (row) =>
+        {
+            if(row.onClick)
+            {
+                row.onClick(row);
+            }
+        };
 
-		/* ===== RENDER ===== */
+        /* ===== RENDER ===== */
 
-		return /* html */ `
-			<div :class="classes()">
-				<div ot-if="search" class="search">
-					<i>search</i>
-					<input type="text" :placeholder="placeholder" ot-input="type()" ot-key="search" />
-				</div>
-				<div ot-if="!visible().length" class="empty">{{ rows.length ? 'No matches' : 'No data' }}</div>
-				<div ot-for="row in visible()" :ot-key="row.label" :class="state(row)" ot-click="() => run(row)">
-					<div ot-if="row.percent != null" class="fill" :style="bar(row)"></div>
-				<i ot-if="row.icon" class="lead">{{ row.icon }}</i>
-					<div class="text">
-						<span class="label">{{ row.label }}</span>
-						<span ot-if="row.sublabel" class="sub">{{ row.sublabel }}</span>
-					</div>
-					<span ot-if="row.value !== '' && row.value != null" class="value">{{ row.value }}</span>
-				</div>
-			</div>
-		`;
-	}
+        return /* html */ `
+            <div :class="classes()">
+                <div ot-if="search" class="search">
+                    <i>search</i>
+                    <input type="text" :placeholder="placeholder" ot-input="type()" ot-key="search" />
+                </div>
+                <div ot-if="!visible().length" class="empty">{{ rows.length ? 'No matches' : 'No data' }}</div>
+                <div ot-for="row in visible()" :ot-key="row.label" :class="state(row)" ot-click="() => run(row)">
+                    <div ot-if="row.percent != null" class="fill" :style="bar(row)"></div>
+                <i ot-if="row.icon" class="lead">{{ row.icon }}</i>
+                    <div class="text">
+                        <span class="label">{{ row.label }}</span>
+                        <span ot-if="row.sublabel" class="sub">{{ row.sublabel }}</span>
+                    </div>
+                    <span ot-if="row.value !== '' && row.value != null" class="value">{{ row.value }}</span>
+                </div>
+            </div>
+        `;
+    }
 });

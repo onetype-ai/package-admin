@@ -1,13 +1,13 @@
 admin.explorer.FnExpose('open', function()
 {
-	if(admin.navbar.opened()?.Get('id') === 'explorer')
-	{
-		return false;
-	}
+    if(admin.navbar.opened()?.Get('id') === 'explorer')
+    {
+        return false;
+    }
 
-	admin.navbar.open('explorer');
+    admin.navbar.open('explorer');
 
-	onetype.Emit('admin.explorer.open', {});
+    onetype.Emit('admin.explorer.open', {});
 
-	return true;
+    return true;
 });
