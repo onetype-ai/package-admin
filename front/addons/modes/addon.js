@@ -17,35 +17,7 @@ onetype.AddonReady('admin', (admin) =>
         addon.Field('condition', {
             type: 'object',
             value: {},
-            config: {
-                app: {
-                    type: 'array|boolean',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'App ids the mode shows in. Empty array means every app. True means any app must be active, false means only while no app is active.'
-                },
-                screen: {
-                    type: 'array',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Screen ids the item shows on. Empty means every screen and the shell.'
-                },
-                user: {
-                    type: 'boolean',
-                    value: false,
-                    description: 'When true, the mode shows only while a user is logged in.'
-                },
-                permission: {
-                    type: 'array',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Permission ids required to see the mode. Empty means no permission needed.'
-                },
-                callback: {
-                    type: 'function',
-                    description: 'Custom check called with the item. Return false to hide. Runs after user and permission pass.'
-                }
-            },
+            config: 'admin.condition',
             description: 'Visibility rules. Empty object means the mode shows everywhere.'
         });
 

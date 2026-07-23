@@ -17,41 +17,7 @@ onetype.AddonReady('admin', (admin) =>
         addon.Field('condition', {
             type: 'object',
             value: {},
-            config: {
-                app: {
-                    type: 'array|boolean',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'App ids the item shows in. Empty array means every app. True means any app must be active, false means only while no app is active.'
-                },
-                screen: {
-                    type: 'array',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Screen ids the item shows on. Empty means every screen and the shell.'
-                },
-                mode: {
-                    type: 'array|boolean',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Mode ids the item shows in. Empty array means every mode. True means any mode must be active, false means only while no mode is active.'
-                },
-                user: {
-                    type: 'boolean',
-                    value: false,
-                    description: 'When true, the item shows only while a user is logged in.'
-                },
-                permission: {
-                    type: 'array',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Permission ids required to see the item. Empty means no permission needed.'
-                },
-                callback: {
-                    type: 'function',
-                    description: 'Custom check called with the item. Return false to hide. Runs after app, mode, user and permission pass.'
-                }
-            },
+            config: 'admin.condition',
             description: 'Visibility rules. Empty object means the item shows everywhere.'
         });
 
@@ -71,80 +37,8 @@ onetype.AddonReady('admin', (admin) =>
 
         addon.Field('popup', {
             type: 'object',
-            config: {
-                type: {
-                    type: 'string',
-                    value: 'default',
-                    options: ['default', 'drawer', 'dropdown'],
-                    description: 'Surface kind. default opens a centered surface, drawer docks to a screen edge, dropdown anchors to the button.'
-                },
-                title: {
-                    type: 'string',
-                    description: 'Surface heading. Passing a title or description gives the surface its chrome, without both it renders bare.'
-                },
-                description: {
-                    type: 'string',
-                    description: 'Surface subheading below the title.'
-                },
-                width: {
-                    type: 'string',
-                    options: ['s', 'm', 'l'],
-                    description: 'Surface width preset.'
-                },
-                padding: {
-                    type: 'string',
-                    options: ['none', 's', 'm', 'l'],
-                    description: 'Surface content padding preset.'
-                },
-                position: {
-                    type: 'string|object',
-                    description: 'Where the surface sits. A place name like center, right, left, top or bottom for default and drawer, or an {x, y} object for dropdowns.'
-                },
-                offset: {
-                    type: 'object',
-                    config: {
-                        x: {
-                            type: 'number',
-                            value: 0,
-                            description: 'Horizontal offset in pixels.'
-                        },
-                        y: {
-                            type: 'number',
-                            value: 4,
-                            description: 'Vertical offset in pixels.'
-                        }
-                    },
-                    description: 'Dropdown offset from its anchor.'
-                },
-                backdrop: {
-                    type: 'number',
-                    description: 'Backdrop opacity between 0 and 1.'
-                },
-                closeable: {
-                    type: 'boolean',
-                    value: true,
-                    description: 'Whether clicking outside closes the surface.'
-                },
-                escape: {
-                    type: 'boolean',
-                    value: true,
-                    description: 'Whether the Escape key closes the surface.'
-                },
-                render: {
-                    type: 'string|function',
-                    required: true,
-                    description: 'Surface content.'
-                },
-                onOpen: {
-                    type: 'function',
-                    description: 'Called with the overlay item after the surface opens.'
-                },
-                onClose: {
-                    type: 'function',
-                    description: 'Called after the surface closes.'
-                }
-            },
-            description: 'Floating surface the item opens on click. Without it the click runs onClick.'
+            config: 'admin.popup',
+            description: 'Popup surface opened by the item, when it has one.'
         });
 
         addon.Field('icon', {

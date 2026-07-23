@@ -1,20 +1,11 @@
+onetype.AddonReady('elements', (elements) =>
 {
-    const ICONS = {
-        brand: 'bolt',
-        blue: 'info',
-        red: 'error',
-        orange: 'warning',
-        green: 'check_circle'
-    };
-
-    admin.ElementAdd({
-        id: 'global-notice',
-        icon: 'info',
+    elements.Item({
+        id: 'admin-global-notice',
+        addon: 'admin',
         name: 'Notice',
         description: 'Notice banner with an icon tile, title, text, optional action button and a dismiss control.',
-        category: 'Global',
         collection: 'Home',
-        author: 'OneType',
         config: {
             title: {
                 type: 'string',
@@ -62,16 +53,20 @@
         },
         render: function()
         {
-            this.visible = true;
+            const icons = {
+                brand: 'bolt',
+                blue: 'info',
+                red: 'error',
+                orange: 'warning',
+                green: 'check_circle'
+            };
 
-            /* ===== DATA ===== */
+            this.visible = true;
 
             this.Compute(() =>
             {
-                this.symbol = this.icon ? this.icon : ICONS[this.color];
+                this.symbol = this.icon ? this.icon : icons[this.color];
             });
-
-            /* ===== HANDLERS ===== */
 
             this.run = (event) =>
             {
@@ -91,9 +86,7 @@
                 }
             };
 
-            /* ===== RENDER ===== */
-
-            return /* html */ `
+            return `
                 <div ot-if="visible" :class="'box bg-' + background + ' ' + color">
                     <div class="rail"></div>
                     <div class="tile"><i>{{ symbol }}</i></div>
@@ -107,4 +100,4 @@
             `;
         }
     });
-}
+});

@@ -26,7 +26,7 @@ admin.navbar.FnExpose('open', function(id)
 
     this.StoreSet('open', id);
 
-    onetype.Emit('admin.navbar.open', { id });
+    onetype.emitters.fire('admin.navbar.open', { id });
 
     return true;
 });

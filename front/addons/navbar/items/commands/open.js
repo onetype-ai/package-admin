@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:navbar:open',
         addon: 'admin.navbar',
-        description: 'Open the popup of a navbar item. Closes any other open item first, tracks the state and emits admin.navbar.open. Does nothing when the item is already open.',
+        description: 'Open a navbar item popup. Closes any other open item, tracks state and emits admin.navbar.open. Does nothing when already open.',
         exposed: true,
         in: {
             id: {

@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:screens:open',
         addon: 'admin.screens',
-        description: 'Open a screen. Replaces the active screen, writes the screen route into the address bar and emits admin.screens.open. Only layouts assigned to the screen stay visible while it is open.',
+        description: 'Open a screen. Replaces the active screen, writes its route to the address bar, emits admin.screens.open. Only its layouts stay visible.',
         exposed: true,
         in: {
             id: {

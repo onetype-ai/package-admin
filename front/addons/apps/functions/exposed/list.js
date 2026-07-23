@@ -1,6 +1,6 @@
 admin.apps.FnExpose('list', function()
 {
-    return Object.values(this.Items()).filter((item) => item.Fn('visible')).sort((a, b) => a.Get('order') - b.Get('order')).map((item) =>
+    return Object.values(this.Items()).filter((item) => item.Fn('visible')).sort((left, right) => left.Get('order') - right.Get('order')).map((item) =>
     {
         return {
             id: item.Get('id'),

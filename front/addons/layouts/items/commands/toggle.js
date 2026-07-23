@@ -36,7 +36,10 @@ onetype.AddonReady('commands', (commands) =>
 
             if(open)
             {
-                await commands.Fn('run', 'admin:layouts:open', properties.data ? { id: properties.id, data: properties.data } : { id: properties.id });
+                await commands.Fn('run', 'admin:layouts:open', properties.data ? {
+                    id: properties.id,
+                    data: properties.data
+                } : { id: properties.id });
             }
             else
             {

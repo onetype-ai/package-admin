@@ -29,7 +29,7 @@ onetype.AddonReady('commands', (commands) =>
 
             item.Get('callback')();
 
-            onetype.Emit('admin.explorer.run', { id: properties.id });
+            onetype.emitters.fire('admin.explorer.run', { id: properties.id });
 
             resolve({ id: properties.id }, 'Entry ' + properties.id + ' executed.');
         }

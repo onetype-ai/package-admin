@@ -40,41 +40,7 @@ onetype.AddonReady('admin', (admin) =>
         addon.Field('condition', {
             type: 'object',
             value: {},
-            config: {
-                app: {
-                    type: 'array|boolean',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'App ids the item shows in. Empty array means every app. True means any app must be active, false means only while no app is active.'
-                },
-                screen: {
-                    type: 'array',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Screen ids the item shows on. Empty means every screen and the shell.'
-                },
-                mode: {
-                    type: 'array|boolean',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Mode ids the item shows in. Empty array means every mode. True means any mode must be active, false means only while no mode is active.'
-                },
-                user: {
-                    type: 'boolean',
-                    value: false,
-                    description: 'When true, the item shows only while a user is logged in.'
-                },
-                permission: {
-                    type: 'array',
-                    value: [],
-                    each: { type: 'string' },
-                    description: 'Permission ids required to see the item. Empty means no permission needed.'
-                },
-                callback: {
-                    type: 'function',
-                    description: 'Custom check called with the item. Return false to hide. Runs after mode, user and permission pass.'
-                }
-            },
+            config: 'admin.condition',
             description: 'Visibility rules. Empty object means the item shows everywhere.'
         });
 
@@ -92,7 +58,7 @@ onetype.AddonReady('admin', (admin) =>
 
         addon.Field('render', {
             type: 'string|function',
-            description: 'Content shown to the right of the rail while this item is open. When set, clicking the item opens or closes it instead of running click.'
+            description: 'Content shown right of the rail while open. When set, clicking opens or closes it instead of running click.'
         });
 
         addon.Field('panel', {
@@ -139,7 +105,7 @@ onetype.AddonReady('admin', (admin) =>
                     description: 'Shows the close button in the panel header.'
                 }
             },
-            description: 'Chrome of the open panel. Empty object renders a bare panel, the header appears only while title, description, actions or close are set.'
+            description: 'Chrome of the open panel. Empty renders bare; the header appears while title, description, actions or close are set.'
         });
 
         addon.Field('badge', {
@@ -152,10 +118,10 @@ onetype.AddonReady('admin', (admin) =>
             value: false,
             description: 'Computed. True when this item is the one open on the rail. Reads and writes through the persisted admin.dock.open setting.'
         },
-        (value, item) => config.get('admin.dock.open') === item.Get('id'),
+        (value, item) => platform.config.get('admin.dock.open') === item.Get('id'),
         (value, previous, item) =>
         {
-            config.set('admin.dock.open', value ? item.Get('id') : null);
+            platform.config.set('admin.dock.open', value ? item.Get('id') : null);
 
             return value;
         });

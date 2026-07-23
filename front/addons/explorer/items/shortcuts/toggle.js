@@ -1,7 +1,7 @@
 onetype.AddonReady('shortcuts', (shortcuts) =>
 {
     shortcuts.Item({
-        id: 'explorer-toggle',
+        id: 'admin.explorer.toggle',
         name: 'Toggle Explorer',
         group: 'Explorer',
         description: 'Opens and closes the universal search.',

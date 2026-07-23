@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:dock:open',
         addon: 'admin.dock',
-        description: 'Open a dock item. Items with a render show it here instead of running click; opening one closes any other open item first. Persists the open item and emits admin.dock.open. Does nothing when the item is already open.',
+        description: 'Open a dock item render, closing any other open item. Persists the open item and emits admin.dock.open. Does nothing when already open.',
         exposed: true,
         in: {
             id: {

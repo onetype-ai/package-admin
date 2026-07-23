@@ -14,9 +14,9 @@ admin.layouts.FnExpose('close', function(id)
 
     item.Set('isActive', false);
 
-    this.Fn('persist');
+    this.Fn('do.persist');
 
-    onetype.Emit('admin.layouts.close', { ids: [id] });
+    onetype.emitters.fire('admin.layouts.close', { ids: [id] });
 
     return true;
 });

@@ -27,7 +27,7 @@ onetype.AddonReady('admin', (admin) =>
 
         addon.Field('color', {
             type: 'string',
-            description: 'Accent color of the app, a hex or rgba value. CSS variables are not allowed, the color drives the brand theme while the app is active.'
+            description: 'Accent color of the app, a hex or rgba value. CSS variables are not allowed, the color drives the brand theme.'
         });
 
         addon.Field('scheme', {
@@ -58,7 +58,7 @@ onetype.AddonReady('admin', (admin) =>
                     type: 'array|boolean',
                     value: [],
                     each: { type: 'string' },
-                    description: 'Mode ids the app shows in. Empty array means every mode. True means any mode must be active, false means only while no mode is active.'
+                    description: 'Mode ids the app shows in. Empty means every mode. True means any mode active, false means none active.'
                 },
                 user: {
                     type: 'boolean',
@@ -88,7 +88,7 @@ onetype.AddonReady('admin', (admin) =>
         addon.Field('isHidden', {
             type: 'boolean',
             value: false,
-            description: 'Removes the app from every surface: the dock rail, the apps list and the explorer. The app still exists and can be opened programmatically.'
+            description: 'Removes the app from every surface: the dock rail, the apps list and the explorer. It can still be opened programmatically.'
         });
 
         addon.Field('render', {

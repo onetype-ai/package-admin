@@ -9,7 +9,7 @@ admin.dock.FnExpose('close', function()
 
     item.Set('isOpen', false);
 
-    onetype.Emit('admin.dock.close', {});
+    onetype.emitters.fire('admin.dock.close', {});
 
     return true;
 });

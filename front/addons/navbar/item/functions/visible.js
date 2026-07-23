@@ -48,8 +48,6 @@ admin.navbar.Fn('item.visible', function(item)
         return false;
     }
 
-    /* @todo permission check — wire once permissions has/grant API exists */
-
     if(condition.callback && condition.callback.call({}, item) === false)
     {
         return false;

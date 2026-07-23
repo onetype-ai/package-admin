@@ -31,15 +31,25 @@ admin.explorer.FnExpose('search', function(query)
         }
 
         const name = item.Get('group');
-        const group = groups[name] = groups[name] || { id: name, group: name, order: item.Get('order'), results: [] };
+        const group = groups[name] = groups[name] || {
+            id: name,
+            group: name,
+            order: item.Get('order'),
+            results: []
+        };
 
         group.order = Math.min(group.order, item.Get('order'));
-        group.results.push({ id: item.Get('id'), icon: item.Get('icon'), label: item.Get('label'), hint: item.Get('hint') });
+        group.results.push({
+            id: item.Get('id'),
+            icon: item.Get('icon'),
+            label: item.Get('label'),
+            hint: item.Get('hint')
+        });
     }
 
-    return Object.values(groups).sort((a, b) => a.order - b.order).map((group) =>
+    return Object.values(groups).sort((left, right) => left.order - right.order).map((group) =>
     {
-        group.results = group.results.sort((a, b) => a.label.localeCompare(b.label)).slice(0, only ? 15 : 5);
+        group.results = group.results.sort((left, right) => left.label.localeCompare(right.label)).slice(0, only ? 15 : 5);
 
         return group;
     });

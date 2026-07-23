@@ -1,6 +1,6 @@
 admin.explorer.FnExpose('close', function()
 {
-    if(admin.navbar.opened()?.Get('id') !== 'explorer')
+    if(admin.navbar.opened()?.Get('id') !== 'search')
     {
         return false;
     }

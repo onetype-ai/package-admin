@@ -20,7 +20,7 @@ onetype.AddonReady('commands', (commands) =>
         },
         callback: async function(properties, resolve)
         {
-            const context = await onetype.Middleware('admin.layouts.close', { properties, cancel: false });
+            const context = await onetype.middlewares.run('admin.layouts.close', { properties, cancel: false });
 
             if(context.value.cancel)
             {

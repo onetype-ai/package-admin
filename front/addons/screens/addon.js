@@ -14,17 +14,17 @@ onetype.AddonReady('admin', (admin) =>
                 type: 'string',
                 description: 'A single route pattern.'
             },
-            description: 'URL patterns the screen lives on, like /developer/elements/:id. Opening the screen writes the best matching pattern into the address bar, loading a matching path opens the screen with its parameters.'
+            description: 'URL patterns the screen lives on, like /developer/elements/:id. Opening writes the best pattern to the URL bar, a matching URL opens.'
         });
 
         addon.Field('app', {
             type: 'string',
-            description: 'App the screen belongs to. Opening the screen opens the app, opening another app closes the screen. Empty closes the active app while the screen is open.'
+            description: 'App the screen belongs to. Opening the screen opens the app, opening another closes it. Empty closes the active app while open.'
         });
 
         addon.Field('mode', {
             type: 'string',
-            description: 'Mode the screen switches to on open. Switching modes opens the sibling screen of the new mode, or closes the screen when the mode has none. Empty leaves modes alone.'
+            description: 'Mode the screen switches to on open. Switching modes opens the sibling screen of the new mode, closes it if none. Empty leaves alone.'
         });
 
         addon.Field('isDefault', {
@@ -35,7 +35,7 @@ onetype.AddonReady('admin', (admin) =>
 
         addon.Field('data', {
             type: 'function',
-            description: 'Called with the route parameters as this on open. Returns values merged into the layouts data while the screen is open, never persisted, recomputed from the URL on every load.'
+            description: 'Called with the route parameters as this on open. Returns values merged into layouts data while open, never persisted, always live.'
         });
 
         addon.Field('config', {

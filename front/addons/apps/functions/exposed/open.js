@@ -26,14 +26,14 @@ admin.apps.FnExpose('open', function(id)
         admin.screens.close();
     }
 
-    config.set('admin.apps.active', id);
+    platform.config.set('admin.apps.active', id);
 
     if(item.Get('onActivate'))
     {
         item.Get('onActivate')(item);
     }
 
-    onetype.Emit('admin.apps.open', { id });
+    onetype.emitters.fire('admin.apps.open', { id });
 
     return true;
 });

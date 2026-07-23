@@ -9,7 +9,7 @@ admin.explorer.FnExpose('run', function(id)
 
     item.Get('callback')();
 
-    onetype.Emit('admin.explorer.run', { id });
+    onetype.emitters.fire('admin.explorer.run', { id });
 
     return true;
 });

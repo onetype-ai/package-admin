@@ -19,9 +19,9 @@ admin.apps.FnExpose('close', function()
         admin.screens.close();
     }
 
-    config.set('admin.apps.active', null);
+    platform.config.set('admin.apps.active', null);
 
-    onetype.Emit('admin.apps.close', { id: active.Get('id') });
+    onetype.emitters.fire('admin.apps.close', { id: active.Get('id') });
 
     return true;
 });

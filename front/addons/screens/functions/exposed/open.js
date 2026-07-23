@@ -7,11 +7,11 @@ admin.screens.FnExpose('open', function(id, parameters = {})
         return false;
     }
 
-    config.set('admin.screens.parameters', parameters);
+    platform.config.set('admin.screens.parameters', parameters);
 
     this.StoreSet('data', item.Get('data') ? item.Get('data').call(parameters) : {});
 
-    config.set('admin.screens.active', id);
+    platform.config.set('admin.screens.active', id);
 
     if(item.Get('app'))
     {
@@ -27,14 +27,14 @@ admin.screens.FnExpose('open', function(id, parameters = {})
         admin.modes.switch(item.Get('mode'));
     }
 
-    const url = this.Fn('url', item);
+    const url = this.Fn('get.url', item);
 
     if(url && window.location.pathname !== url)
     {
         history.replaceState(null, '', url);
     }
 
-    onetype.Emit('admin.screens.open', { id });
+    onetype.emitters.fire('admin.screens.open', { id });
 
     return true;
 });

@@ -9,7 +9,7 @@ admin.dock.FnExpose('open', function(id)
 
     item.Set('isOpen', true);
 
-    onetype.Emit('admin.dock.open', { id });
+    onetype.emitters.fire('admin.dock.open', { id });
 
     return true;
 });

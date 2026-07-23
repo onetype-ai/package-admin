@@ -1,6 +1,6 @@
 admin.modes.FnExpose('active', function()
 {
-    const active = config.get('admin.modes.active');
+    const active = platform.config.get('admin.modes.active');
     const visible = Object.values(this.Items()).filter((item) => item.Fn('visible'));
 
     const current = visible.find((item) => active.includes(item.Get('id')));

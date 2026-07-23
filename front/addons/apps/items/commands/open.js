@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:apps:open',
         addon: 'admin.apps',
-        description: 'Open an app by id. Deactivates the current app, persists the new one as active, runs its activate hook and emits admin.apps.open. Does nothing when the app is already active.',
+        description: 'Open an app by id. Deactivates the current app, persists and activates the new one, emits admin.apps.open. Skips an already active app.',
         exposed: true,
         in: {
             id: {

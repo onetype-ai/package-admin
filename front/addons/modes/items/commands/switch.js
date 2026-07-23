@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:modes:switch',
         addon: 'admin.modes',
-        description: 'Switch the current mode. Deactivates the visible active modes, activates the given one, persists the change, runs the activate hook and emits admin.modes.switch. Does nothing when the mode is already the current one. Active modes that are not visible stay active, they take over again once visible.',
+        description: 'Switches the current mode. Deactivates active modes, activates the given one and persists it. No-op when already active.',
         exposed: true,
         in: {
             id: {

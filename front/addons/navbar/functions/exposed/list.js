@@ -1,6 +1,6 @@
 admin.navbar.FnExpose('list', function()
 {
-    return Object.values(this.Items()).filter((item) => item.Fn('visible')).sort((a, b) => a.Get('order') - b.Get('order')).map((item) =>
+    return Object.values(this.Items()).filter((item) => item.Fn('visible')).sort((left, right) => left.Get('order') - right.Get('order')).map((item) =>
     {
         const active = item.Get('isActive');
         const render = item.Get('render');
@@ -18,7 +18,7 @@ admin.navbar.FnExpose('list', function()
             render: item.Get('type') === 'default' && render ? (data) => admin.navbar.Render(item.Get('id'), data || {}).Element : null,
             click: () =>
             {
-                onetype.Emit('admin.navbar.click', { id: item.Get('id') });
+                onetype.emitters.fire('admin.navbar.click', { id: item.Get('id') });
 
                 if(item.Get('popup'))
                 {

@@ -15,7 +15,7 @@ onetype.AddonReady('commands', (commands) =>
         },
         callback: async function(properties, resolve)
         {
-            const open = admin.navbar.opened()?.Get('id') !== 'explorer';
+            const open = admin.navbar.opened()?.Get('id') !== 'search';
 
             await admin.explorer.Command(open ? 'open' : 'close');
 

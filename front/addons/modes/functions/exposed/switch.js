@@ -26,7 +26,7 @@ admin.modes.FnExpose('switch', function(id)
 
     active.push(id);
 
-    config.set('admin.modes.active', active);
+    platform.config.set('admin.modes.active', active);
 
     if(item.Get('onActivate'))
     {
@@ -50,7 +50,7 @@ admin.modes.FnExpose('switch', function(id)
         }
     }
 
-    onetype.Emit('admin.modes.switch', { id });
+    onetype.emitters.fire('admin.modes.switch', { id });
 
     return true;
 });

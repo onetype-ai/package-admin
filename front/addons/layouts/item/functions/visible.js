@@ -30,9 +30,7 @@ admin.layouts.Fn('item.visible', function(item)
         return false;
     }
 
-    /* @todo permission check — wire once permissions has/grant API exists */
-
-    if(condition.callback && condition.callback.call(admin.layouts.Fn('data'), item) === false)
+    if(condition.callback && condition.callback.call(admin.layouts.Fn('get.data'), item) === false)
     {
         return false;
     }

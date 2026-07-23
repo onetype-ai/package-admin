@@ -2,14 +2,11 @@ admin.screens.FnExpose('match', function(path)
 {
     for(const item of Object.values(this.Items()))
     {
-        for(const route of [].concat(item.Get('route') || []))
-        {
-            const result = onetype.RouteMatch(route, path);
+        const result = admin.screens.Fn('do.match', item, path);
 
-            if(result.match)
-            {
-                return { item, parameters: result.params };
-            }
+        if(result)
+        {
+            return result;
         }
     }
 

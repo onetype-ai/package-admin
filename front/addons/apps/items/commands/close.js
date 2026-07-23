@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:apps:close',
         addon: 'admin.apps',
-        description: 'Close the active app so none is selected. Runs the deactivate hook, persists the empty state and emits admin.apps.close. Does nothing when no app is active.',
+        description: 'Close the active app. Runs the deactivate hook, persists the empty state and emits admin.apps.close. Does nothing when none is active.',
         exposed: true,
         out: {
             id: {

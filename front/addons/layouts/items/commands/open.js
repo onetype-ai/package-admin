@@ -3,7 +3,7 @@ onetype.AddonReady('commands', (commands) =>
     commands.Item({
         id: 'admin:layouts:open',
         addon: 'admin.layouts',
-        description: 'Open a layout item by id, optionally passing data to the renders. Persists the state and emits admin.layouts.open. An item that is already open only receives the new data.',
+        description: 'Open a layout item by id, passing data to the renders. Emits admin.layouts.open. An already open item only receives the new data.',
         exposed: true,
         in: {
             id: {
@@ -24,7 +24,7 @@ onetype.AddonReady('commands', (commands) =>
         },
         callback: async function(properties, resolve)
         {
-            const context = await onetype.Middleware('admin.layouts.open', { properties, cancel: false });
+            const context = await onetype.middlewares.run('admin.layouts.open', { properties, cancel: false });
 
             if(context.value.cancel)
             {

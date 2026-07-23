@@ -1,10 +1,16 @@
 admin.layouts.FnExpose('slots', function(zone)
 {
-    const slots = {top: [], bottom: [], left: [], right: [], center: []};
+    const slots = {
+        top: [],
+        bottom: [],
+        left: [],
+        right: [],
+        center: []
+    };
 
-    const data = this.Fn('data');
+    const data = this.Fn('get.data');
 
-    Object.values(this.Items()).sort((a, b) => a.Get('order') - b.Get('order')).forEach((item) =>
+    Object.values(this.Items()).sort((left, right) => left.Get('order') - right.Get('order')).forEach((item) =>
     {
         if(item.Get('zone') !== zone)
         {

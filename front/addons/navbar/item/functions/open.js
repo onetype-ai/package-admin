@@ -21,7 +21,7 @@ admin.navbar.Fn('item.open', function(item)
         {
             admin.navbar.StoreSet('open', null);
 
-            onetype.Emit('admin.navbar.close', {});
+            onetype.emitters.fire('admin.navbar.close', {});
 
             finish && finish();
         };

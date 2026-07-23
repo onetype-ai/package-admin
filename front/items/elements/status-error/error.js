@@ -1,95 +1,89 @@
-admin.ElementAdd({
-    id: 'status-error',
-    icon: 'error',
-    name: 'Error',
-    description: 'Error state with icon, message, retry action and optional surface background.',
-    category: 'Status',
-    collection: 'Home',
-    author: 'OneType',
-    config: {
-        icon: {
-            type: 'string',
-            value: 'error',
-            description: 'Center icon name.'
-        },
-        title: {
-            type: 'string',
-            value: 'Something went wrong',
-            description: 'Error heading.'
-        },
-        description: {
-            type: 'string',
-            value: 'An unexpected error occurred. Please try again.',
-            description: 'Error detail text.'
-        },
-        action: {
-            type: 'string',
-            description: 'Retry button label. Empty hides button.'
-        },
-        color: {
-            type: 'string',
-            value: 'red',
-            options: ['brand', 'blue', 'red', 'orange', 'green'],
-            description: 'Icon circle accent color.'
-        },
-        background: {
-            type: 'number',
-            value: 1,
-            options: [0, 1, 2, 3],
-            description: 'Background depth from 1 to 3, renders the error state on its own bordered surface. 0 renders transparent, without background or borders.'
-        },
-        _click: {
-            type: 'function',
-            description: 'Retry handler. Receives { event }. Reloads page if not set.'
-        }
-    },
-    render: function()
-    {
-        /* ===== CLASSES ===== */
-
-        this.classes = () =>
-        {
-            const list = ['box', this.color];
-
-            if(this.background || this.background === 0)
-            {
-                list.push('bg-' + this.background);
+onetype.AddonReady('elements', (elements) =>
+{
+    elements.Item({
+        id: 'admin-status-error',
+        addon: 'admin',
+        name: 'Error',
+        description: 'Error state with icon, message, retry action and optional surface background.',
+        collection: 'Home',
+        config: {
+            icon: {
+                type: 'string',
+                value: 'error',
+                description: 'Center icon name.'
+            },
+            title: {
+                type: 'string',
+                value: 'Something went wrong',
+                description: 'Error heading.'
+            },
+            description: {
+                type: 'string',
+                value: 'An unexpected error occurred. Please try again.',
+                description: 'Error detail text.'
+            },
+            action: {
+                type: 'string',
+                description: 'Retry button label. Empty hides button.'
+            },
+            color: {
+                type: 'string',
+                value: 'red',
+                options: ['brand', 'blue', 'red', 'orange', 'green'],
+                description: 'Icon circle accent color.'
+            },
+            background: {
+                type: 'number',
+                value: 1,
+                options: [0, 1, 2, 3],
+                description: 'Background depth from 1 to 3, own bordered surface. 0 renders transparent, without background or borders.'
+            },
+            _click: {
+                type: 'function',
+                description: 'Retry handler. Receives { event }. Reloads page if not set.'
             }
-
-            return list.join(' ');
-        };
-
-        /* ===== HANDLERS ===== */
-
-        this.retry = ({ event }) =>
+        },
+        render: function()
         {
-            if(this._click)
+            this.classes = () =>
             {
-                this._click({ event });
-                return;
-            }
+                const list = ['box', this.color];
 
-            window.location.reload();
-        };
+                if(this.background || this.background === 0)
+                {
+                    list.push('bg-' + this.background);
+                }
 
-        /* ===== RENDER ===== */
+                return list.join(' ');
+            };
 
-        return /* html */ `
-            <div :class="classes()">
-                <div class="inner">
-                    <div class="circle"><i>{{ icon }}</i></div>
-                    <h2 ot-if="title" class="title">{{ title }}</h2>
-                    <p ot-if="description" class="description">{{ description }}</p>
-                    <e-admin-form-button
-                        ot-if="action"
-                        :text="action"
-                        icon="refresh"
-                        color="brand"
+            this.retry = ({ event }) =>
+            {
+                if(this._click)
+                {
+                    this._click({ event });
+                    return;
+                }
 
-                        :_click="retry"
-                    ></e-admin-form-button>
+                window.location.reload();
+            };
+
+            return `
+                <div :class="classes()">
+                    <div class="inner">
+                        <div class="circle"><i>{{ icon }}</i></div>
+                        <h2 ot-if="title" class="title">{{ title }}</h2>
+                        <p ot-if="description" class="description">{{ description }}</p>
+                        <e-admin-form-button
+                            ot-if="action"
+                            :text="action"
+                            icon="refresh"
+                            color="brand"
+                            :_click="retry"
+                        ></e-admin-form-button>
+                    </div>
                 </div>
-            </div>
-        `;
-    }
+            `;
+        }
+    });
 });

@@ -1,6 +1,6 @@
-import runtimes from '@onetype/platform/runtimes';
+import platform from '@onetype/platform/addon';
 
-runtimes.Item({
+platform.runtimes.Item({
     id: 'admin',
     name: 'Admin',
     description: 'The universal workspace runtime. Loads the shell with dock, navbar, dashboard and every application. The place a user starts from.',
